@@ -10,7 +10,41 @@ public class Town {
 	
 	//create array of towns visited by player already from config file
 	
+	/*
+	 * Remove Main when you go to include this into the town and map
+	 */
+	public static void main (String[] args)
+	{
+	//Create list of Towns
+	Towns[] arr;
 	
+	arr = new Towns[2];
+	arr[0] = new Towns(1, "One");
+	arr[1] = new Towns(2,"Two");
 	
+//	Town_ID
+//	Town_Name
+//	NCP_One
+//	NCP_Two
+//	NCP_Three
+//	Next_Town_E_ID
+//	Next_Town_W_ID
+//	Next_Town_N_ID
+//	Next_Town_S_ID
+	
+	for (int i = 0; i < arr.length; i++) 
+        System.out.println("Element at " + i + " : " + arr[i].Town_ID +" "+ arr[i].Town_Name);
+	
+	}
+}
+class Towns {
+	
+	public int Town_ID;
+	public String Town_Name;
+	Towns(int Town_ID, String Town_Name)
+	{
+		this.Town_ID = Town_ID;
+		this.Town_Name = Town_Name;
+	}
 	
 }

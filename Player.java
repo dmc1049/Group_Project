@@ -12,28 +12,32 @@ public class Player {
 
 	public static String CHARACTER_TYPE = null;
 	public static String CHARACTER_NAME = null;
+	public static String CURRENT_TOWN = null;
 	private static String FILE_NAME = "GameChar.txt";
 	private static String FILE_PATH = "";
 	
-		//is there a saved character or does the user need to make one
-			//User has saved game character
-				//look on system for save file
-				//Ask user if they want to load currently saved character or delete it and make a new one
-				//Load character from file
+		//is there a saved character or does the user need to make one - DONE
+			//User has saved game character - DONE
+				//look on system for save file - DONE
+				//Ask user if they want to load currently saved character or delete it and make a new one - DONE
+				//Load character from file - DONE
 				//load all modifiers
 	
-			//User needs to make character and name it
-				//User selects male or female
-				//user names character
+			//User needs to make character and name it - DONE
+				//User selects male or female - DONE
+				//user names character - DONE
 				//Character base attributes are loaded into player stats
 		
+			//User gets players Armor and Weapon Loaded
+			//User gets players cash added to bank
+	
 		//section for modifiers
-	
+		//Section for Player Stats
 		//section for wearable objects
-	
 		//section for weapons
-	
 		//section for cash
+	
+	
 	public static void SaveCharacterPlayer() {
 		//Save the player character when exiting the game
 		PrintWriter writer = null;
@@ -48,7 +52,9 @@ public class Player {
 		}
 		writer.println(CHARACTER_TYPE);
 		writer.println(CHARACTER_NAME);
+		writer.println(CURRENT_TOWN);
 		writer.close();
+		
 	}
 	
 	public static void CheckSavedCharacter() {
@@ -123,9 +129,14 @@ public class Player {
 						CHARACTER_TYPE = data;
 						i+=i;
 					}
-					else {
+					else if (i == 2){
 						CHARACTER_NAME = data;
+						i+=i;
 					}
+					else {
+						CURRENT_TOWN = data;
+					}
+					
 				}
 			}
 			//myReader.close();
@@ -144,6 +155,7 @@ public class Player {
 		//Create the Character for the Player and save
 		PlayerClassType();
 		PlayerCharacterName();
+		CURRENT_TOWN = "1";
 		PrintWriter writer = null;
 		try {
 			writer = new PrintWriter(FILE_NAME, "UTF-8");
@@ -156,6 +168,7 @@ public class Player {
 		}
 		writer.println(CHARACTER_TYPE);
 		writer.println(CHARACTER_NAME);
+		writer.println(CURRENT_TOWN);
 		writer.close();
 		
 	}
