@@ -180,7 +180,7 @@ public class GameEngine {
 	private static void CurrentTown() {
 		//TODO Auto-generated method stub
 		String OptionChoose = "";
-		Scanner scannerCurrentTown = new Scanner(System.in);
+		Scanner scannerCurrentTown = new Scanner(System.in);		
 		System.out.println("");
 		System.out.println("You are in Town One...What do you want to do?" + NEWLINE);
 		System.out.print("A) Go to Next Town" + NEWLINE + "B) go to Black Smith" + NEWLINE + "C) Go to Witch" + NEWLINE + "X) Exit Game" +NEWLINE + "Choose Wisely: " );
