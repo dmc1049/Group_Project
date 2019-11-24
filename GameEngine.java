@@ -148,24 +148,24 @@ public class GameEngine {
 		//scannerCurrentTown.close();
 		switch(OptionChoose) {
 			case "E":
-				//Go to next Town
+				//Go to Town to East
 				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed");
 				TravelNextTown();
 				//break;
 			case "W":
-				//Go to Black Smith
+				//Go to Town to West
 				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed");
-				ncpBlackSmith();
+				TravelNextTown();
 				//break;
 			case "N":
-				//Go to Witch
+				//Go to Town to North
 				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed" + NEWLINE);
-				ncpWitch();
+				TravelNextTown();
 				//break;
 			case "S":
-				//Go to Witch
+				//Go to Town to South
 				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed" + NEWLINE);
-				ncpWitch();
+				TravelNextTown();
 				//break;
 			case "X":
 				//Exit Game
