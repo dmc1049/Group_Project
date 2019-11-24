@@ -7,46 +7,26 @@ public class GameEngine {
 	public static void main(String[] args) {
 		//
 		
-		//Check if saved Character is present
-			//check if player wants to use saved character
-			//check if player wants to create new character
+		//Check if saved Character is present - DONE
+			//check if player wants to use saved character - DONE
+			//check if player wants to Delete current character and create new character - DONE
 		
-		//Check for saved game
+		//Check for saved game - DONE
 			//check if player wants to use current saved game
 		
-		//check if player wants to use saved char and saved game
-		
-		//check if player wants to delete saved game and char and start over
+		//check if player wants to use saved game
+			//check if player wants to delete saved game and start over with current character
+			//check if wants to delete both game and character and start over
 		
 		//open last town or 1st town in game if new character
 		
 		//basic code for game
-		String PlayerClass = "";
-		//String PlayerClass = Player.PlayerClassType();
-		String PlayerCharacter = "";
-		//String PlayerCharacter = Player.PlayerCharacterName();
-		//String NEWLINE = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
-		Scanner scannerMain = new Scanner(System.in);
-		try {
-		System.out.print("Enter your Character Class: M for Male or F for Female: ");
-		PlayerClass = scannerMain.next(); 
-		if(PlayerClass == "M") { 
-			  PlayerClass = "Male";
-		  }
-		else if(PlayerClass == "F"){ 
-			  PlayerClass = "Female"; 
-			  } 
-		else {
-		    //System.out.println("Invalid Selection, Try again"); 
-		    //PlayerClass = "";
-		    //System.exit(0); 
-		    //return; 
-	    }
-		 		
-		System.out.print("Enter your Characters Name: "); 
-		PlayerCharacter = scannerMain.next(); 
 		
-		System.out.println(String.format("Your Character is %s, the name of your character is %s", PlayerClass, PlayerCharacter));
+		Player.CheckSavedCharacter();
+		
+		//Scanner scannerMain = new Scanner(System.in);
+		
+		System.out.println(String.format("Your Character is %s, the name of your character is %s", Player.CHARACTER_TYPE, Player.CHARACTER_NAME));
 		System.out.println("");
 		
 		System.out.println("Welcome to TAG, you are currently in a Town named One. Enjoy! ");
@@ -54,12 +34,7 @@ public class GameEngine {
 		System.out.println("To play the game you need to select what you want to do from the options given to you. " + NEWLINE + "For this first town you can select from the options below.");
 		System.out.println("--------------");
 		CurrentTown();
-			
-		
-		}
-		catch (Exception e) { 
-            System.out.println("Exception thrown:\n" + e); 
-        } 
+			 
 		//scannerMain.close();
 	}
 
@@ -67,6 +42,7 @@ public class GameEngine {
 		// TODO Auto-generated method stub
 		String ncpOption = "";
 		Scanner scannerNCPWitch = new Scanner(System.in);
+		System.out.println("-------Witches Hut-------");
 		System.out.println(NEWLINE + "Hello I am the local Witch, What can I do for you?" + NEWLINE + "H) Get healed" + NEWLINE + "T) Talk to Witch about this town" + NEWLINE + "A) Ask for a Date" + NEWLINE + "X) Leave Witch" + NEWLINE +":");
 		ncpOption = scannerNCPWitch.next();
 		ncpOption = ncpOption.toUpperCase();
@@ -75,16 +51,19 @@ public class GameEngine {
 			case "H":
 				//Heal player
 				System.out.println("The Witch heals you, now go away!");
+				System.out.println("--------------");
 				//break;
 				ncpWitch();
 			case "T":
 				//talk to Witch
 				System.out.println("The Witch ignores you.");
+				System.out.println("--------------");
 				//break;
 				ncpWitch();
 			case "A":
 				//ask for date
 				System.out.println("The Witch turns you into a frog...");
+				System.out.println("--------------");
 				//break;
 				ncpWitch();
 			case "X":
@@ -104,6 +83,7 @@ public class GameEngine {
 		// TODO Auto-generated method stub
 		String ncpOption = "";
 		Scanner scannerNCPWitch = new Scanner(System.in);
+		System.out.println("-------Blacksniths Shoppe-------");
 		System.out.println(NEWLINE + "Hello I am the local BlackSmith, What can I do for you?" + NEWLINE + "W) Get Weapons fixed" + NEWLINE + "T) Talk to Blacksmith about this town" + NEWLINE + "Q) Ask about the Quest" + NEWLINE + "X) Leave Blacksmith" + NEWLINE +":");
 		ncpOption = scannerNCPWitch.next();
 		ncpOption = ncpOption.toUpperCase();
@@ -141,6 +121,7 @@ public class GameEngine {
 		String OptionChoose = "";
 		Scanner scannerNextTown = new Scanner(System.in);
 		System.out.println("");
+		System.out.println("-------Travel to New Town-------");
 		System.out.println("You are in Town One...Where do you want to go?" + NEWLINE);
 		System.out.print("E) Go to Next Town to East" + NEWLINE + "W) Go to Next Town to West" + NEWLINE + "N) Go to Next Town to North" + NEWLINE + "S) Go to Next Town to South" + NEWLINE + "X) Exit Back to Current Town" +NEWLINE + "Choose Wisely: " );
 		OptionChoose = scannerNextTown.next();
@@ -182,6 +163,7 @@ public class GameEngine {
 		String OptionChoose = "";
 		Scanner scannerCurrentTown = new Scanner(System.in);		
 		System.out.println("");
+		System.out.println("--------------");
 		System.out.println("You are in Town One...What do you want to do?" + NEWLINE);
 		System.out.print("A) Go to Next Town" + NEWLINE + "B) go to Black Smith" + NEWLINE + "C) Go to Witch" + NEWLINE + "X) Exit Game" +NEWLINE + "Choose Wisely: " );
 		OptionChoose = scannerCurrentTown.next();
@@ -212,7 +194,5 @@ public class GameEngine {
 				
 		}
 	}
-	
-	
 
 }

@@ -27,10 +27,7 @@ public class GameEngineTwo {
 		//String PlayerCharacter = Player.PlayerCharacterName();
 		Player.CheckSavedCharacter();
 		
-		String OptionChoose = "";
-		
-		
-		Scanner scannerMain = new Scanner(System.in);
+		//Scanner scannerMain = new Scanner(System.in);
 		
 		System.out.println(String.format("Your Character is %s, the name of your character is %s", Player.CHARACTER_TYPE, Player.CHARACTER_NAME));
 		System.out.println("");
@@ -48,6 +45,7 @@ public class GameEngineTwo {
 		// TODO Auto-generated method stub
 		String ncpOption = "";
 		Scanner scannerNCPWitch = new Scanner(System.in);
+		System.out.println("-------Witches Hut-------");
 		System.out.println(NEWLINE + "Hello I am the local Witch, What can I do for you?" + NEWLINE + "H) Get healed" + NEWLINE + "T) Talk to Witch about this town" + NEWLINE + "A) Ask for a Date" + NEWLINE + "X) Leave Witch" + NEWLINE +":");
 		ncpOption = scannerNCPWitch.next();
 		ncpOption = ncpOption.toUpperCase();
@@ -56,16 +54,19 @@ public class GameEngineTwo {
 			case "H":
 				//Heal player
 				System.out.println("The Witch heals you, now go away!");
+				System.out.println("--------------");
 				//break;
 				ncpWitch();
 			case "T":
 				//talk to Witch
 				System.out.println("The Witch ignores you.");
+				System.out.println("--------------");
 				//break;
 				ncpWitch();
 			case "A":
 				//ask for date
 				System.out.println("The Witch turns you into a frog...");
+				System.out.println("--------------");
 				//break;
 				ncpWitch();
 			case "X":
@@ -85,6 +86,7 @@ public class GameEngineTwo {
 		// TODO Auto-generated method stub
 		String ncpOption = "";
 		Scanner scannerNCPWitch = new Scanner(System.in);
+		System.out.println("-------Blacksniths Shoppe-------");
 		System.out.println(NEWLINE + "Hello I am the local BlackSmith, What can I do for you?" + NEWLINE + "W) Get Weapons fixed" + NEWLINE + "T) Talk to Blacksmith about this town" + NEWLINE + "Q) Ask about the Quest" + NEWLINE + "X) Leave Blacksmith" + NEWLINE +":");
 		ncpOption = scannerNCPWitch.next();
 		ncpOption = ncpOption.toUpperCase();
@@ -122,6 +124,7 @@ public class GameEngineTwo {
 		String OptionChoose = "";
 		Scanner scannerNextTown = new Scanner(System.in);
 		System.out.println("");
+		System.out.println("-------Travel to New Town-------");
 		System.out.println("You are in Town One...Where do you want to go?" + NEWLINE);
 		System.out.print("E) Go to Next Town to East" + NEWLINE + "W) Go to Next Town to West" + NEWLINE + "N) Go to Next Town to North" + NEWLINE + "S) Go to Next Town to South" + NEWLINE + "X) Exit Back to Current Town" +NEWLINE + "Choose Wisely: " );
 		OptionChoose = scannerNextTown.next();
@@ -163,6 +166,7 @@ public class GameEngineTwo {
 		String OptionChoose = "";
 		Scanner scannerCurrentTown = new Scanner(System.in);		
 		System.out.println("");
+		System.out.println("--------------");
 		System.out.println("You are in Town One...What do you want to do?" + NEWLINE);
 		System.out.print("A) Go to Next Town" + NEWLINE + "B) go to Black Smith" + NEWLINE + "C) Go to Witch" + NEWLINE + "X) Exit Game" +NEWLINE + "Choose Wisely: " );
 		OptionChoose = scannerCurrentTown.next();
