@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class Player {
 
+	private static String CHARACTER_TYPE = null;
+	private static String CHARACTER_NAME = null;
+	
 		//is there a saved character or does the user need to make one
 			//User has saved game character
 				//look on system for save file
@@ -21,16 +24,34 @@ public class Player {
 		//section for weapons
 	
 		//section for cash
+	public static SaveCharacterPlayer() {
+		//Save the player character when exiting the game
+		
+	}
+	
+	public static CheckSavedCharacter() {
+		//look for saved character file, if none create character, 
+		//if present ask if player wants to use this character or create new one
+		
+		
+	}
+	public static CreateCharacterPlayer() {
+		//Create the Character for the Player and save
+		
+		
+	}
 	
 	public static String PlayerClassType() {
 		// Get Character Class
 		
 		Scanner scanner1 = new Scanner(System.in);
-		String Class="";
+		String Class = "";
 		System.out.print("Enter your Character Class: M for Male or F for Female: ");
 		//scanner.nextLine();
 		Class = scanner1.next();
 		Class = Class.toUpperCase();
+		CHARACTER_TYPE = Class;
+		
 		//scanner1.close();
 		
 			if(Class == "M") {
@@ -55,6 +76,7 @@ public class Player {
 		System.out.print("Enter your Characters Name: ");
 		//scanner.nextLine();
 		CharName = scanner2.next();
+		CHARACTER_NAME = CharName;
 		//scanner2.close();
 		return CharName;
 	}
