@@ -30,7 +30,8 @@ public class Player {
 		System.out.print("Enter your Character Class: M for Male or F for Female: ");
 		//scanner.nextLine();
 		Class = scanner1.next();
-		scanner1.close();
+		Class = Class.toUpperCase();
+		//scanner1.close();
 		
 			if(Class == "M") {
 					Class = "Male";
@@ -54,7 +55,7 @@ public class Player {
 		System.out.print("Enter your Characters Name: ");
 		//scanner.nextLine();
 		CharName = scanner2.next();
-		scanner2.close();
+		//scanner2.close();
 		return CharName;
 	}
 }

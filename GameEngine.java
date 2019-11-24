@@ -126,7 +126,7 @@ public class GameEngine {
 				ncpBlackSmith();
 			case "X":
 				//leave Witch
-				System.out.println("You thank the Witch and leave as fast as you can!" + NEWLINE);
+				System.out.println("You thank the Blacksmith and leave back to Town One." + NEWLINE);
 				//return to town
 				CurrentTown();
 				//break;
@@ -190,12 +190,12 @@ public class GameEngine {
 		switch(OptionChoose) {
 			case "A":
 				//Go to next Town
-				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed");
+				System.out.println("You will travel to the next Town, over hill and through Dale, Don't get killed");
 				TravelNextTown();
 				//break;
 			case "B":
 				//Go to Black Smith
-				System.out.println("The BlackSmith may have a quest for you");
+				System.out.println("The Blacksmith may have a quest for you");
 				ncpBlackSmith();
 				//break;
 			case "C":
