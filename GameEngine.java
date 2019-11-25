@@ -51,6 +51,7 @@ public class GameEngine {
 			case "H":
 				//Heal player
 				System.out.println("The Witch heals you, now go away!");
+				Player.CHAR_HIT_POINTS = Player.CHAR_MAX_HIT_POINTS;
 				System.out.println("--------------");
 				//break;
 				ncpWitch();
