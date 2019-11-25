@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class NCP_Characters {
 	
+
 	private static final String NEWLINE = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
 	//array of NCP characters
 	//Witch - Done
@@ -45,7 +46,7 @@ public class NCP_Characters {
 				NCPQuest.NCPBlacksmith();
 			case "X":
 				//leave Blacksmith
-				System.out.println("You thank the Blacksmith and leave back to Town One." + NEWLINE);
+				System.out.println("You thank the Blacksmith and leave back to Town " + Town.CurrentTownIn + "." + NEWLINE);
 				//return to town
 				GameEngine.CurrentTown();
 				//break;
@@ -99,6 +100,44 @@ public class NCP_Characters {
 	}
 	public static void ncpWizard() {
 		
+		String ncpOption = "";
+		Scanner scannerNCPWizard = new Scanner(System.in);
+		System.out.println("-------Wizards Shoppe-------");
+		System.out.println(NEWLINE + "Greetings and Salutations, I am the local Wizard, What can I do for you?" + NEWLINE + "W) Get Magical Weapons and Armor fixed" + NEWLINE + "T) Talk to Wizard about this town" + NEWLINE + "Q) Ask about the Quest" + NEWLINE + "X) Leave Wizard" + NEWLINE +"Choose Wisely:");
+		ncpOption = scannerNCPWizard.next();
+		ncpOption = ncpOption.toUpperCase();
+		//scannerNCPWizard.close();
+		switch(ncpOption){
+			case "W":
+				//Heal Magical weapon and armor
+				System.out.println("The Wizard repairs your Magical Weapons and Armor.");
+				//add in cost and see if player has enough coin to repair magic armor
+				//augment the difference between what they have and what they can afford
+				Player.CHAR_MAGIC_ARMOR_POINTS = Player.CHAR_MAX_MAGIC_ARMOR_POINTS;
+				Player.CHAR_MAGIC_WEAPON_DAMAGE = Player.CHAR_MAX_MAGIC_WEAPON_DAMAGE;
+				//break;
+				ncpWizard();
+			case "T":
+				//talk to Blacksmith
+				//Add random talking points here
+				System.out.println("The Wizard tells you that the Town is great, but you should explore the outerlands.");
+				//break;
+				ncpWizard();
+			case "Q":
+				//Quest details
+				System.out.println("The Wizard tells you about how he needs something from outside of town and asks you to go retrieve it...");
+				//break;
+				NCPQuest.NCPWizard();
+			case "X":
+				//leave Blacksmith
+				System.out.println("You thank the Wizard and leave back to Town " + Town.CurrentTownIn + "." + NEWLINE);
+				//return to town
+				GameEngine.CurrentTown();
+				//break;
+			//default:
+				//default option
+		
+		}
 	}
 	public static void ncpHealer() {
 		

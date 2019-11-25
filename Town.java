@@ -1,6 +1,7 @@
 
 public class Town {
 
+	public static final String CurrentTownIn = "One";
 	//passed info from game engine of saved info or new info to open
 	
 	//load town

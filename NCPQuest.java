@@ -53,4 +53,10 @@ public class NCPQuest {
 		System.out.println("You venture to the caves on the outskirts of town, you get afraid and turn around and run back to town with your tail between your legs");
 		NCP_Characters.ncpBlackSmith();
 	}
+	public static void NCPWizard() {
+	
+	}
+	public static void NCPWitch() {
+		
+	}
 }

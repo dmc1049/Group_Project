@@ -20,6 +20,12 @@ public class Player {
 	public static int CHAR_MAX_HIT_POINTS = 0;
 	public static int CHAR_ARMOR_POINTS = 0;
 	public static int CHAR_MAX_ARMOR_POINTS = 0;
+	public static int CHAR_WEAPON_POINTS = 0;
+	public static int CHAR_MAX_WEAPON_POINTS = 0;
+	public static int CHAR_MAGIC_WEAPON_DAMAGE = 0;
+	public static int CHAR_MAX_MAGIC_WEAPON_DAMAGE =0;
+	public static int CHAR_MAGIC_ARMOR_POINTS = 0;
+	public static int CHAR_MAX_MAGIC_ARMOR_POINTS = 0;
 	public static int CHAR_COIN = 0;
 	
 		//is there a saved character or does the user need to make one - DONE
@@ -63,6 +69,12 @@ public class Player {
 		writer.println(CHAR_MAX_HIT_POINTS);
 		writer.println(CHAR_ARMOR_POINTS);
 		writer.println(CHAR_MAX_ARMOR_POINTS);
+		writer.println(CHAR_WEAPON_POINTS);
+		writer.println(CHAR_MAX_WEAPON_POINTS);
+		writer.println(CHAR_MAGIC_WEAPON_DAMAGE);
+		writer.println(CHAR_MAX_MAGIC_WEAPON_DAMAGE);
+		writer.println(CHAR_MAGIC_ARMOR_POINTS);
+		writer.println(CHAR_MAX_MAGIC_ARMOR_POINTS);
 		writer.println(CHAR_COIN);
 		writer.println(CURRENT_TOWN);
 		writer.close();
@@ -166,6 +178,30 @@ public class Player {
 						i+=i;
 					}
 					else if (i == 8) {
+						CHAR_WEAPON_POINTS = Integer.parseInt(data.trim());
+						i+=i;
+					}
+					else if (i == 9) {
+						CHAR_MAX_WEAPON_POINTS = Integer.parseInt(data.trim());
+						i+=i;
+					}
+					else if (i == 10 ) {
+						CHAR_MAGIC_WEAPON_DAMAGE = Integer.parseInt(data.trim());
+						i+=i;
+					}
+					else if (i == 11) {
+						CHAR_MAX_MAGIC_WEAPON_DAMAGE = Integer.parseInt(data.trim());
+						i+=i;
+					}
+					else if (i == 12) {
+						CHAR_MAGIC_ARMOR_POINTS = Integer.parseInt(data.trim());
+						i+=i;
+					}
+					else if (i == 13) {
+						CHAR_MAX_MAGIC_ARMOR_POINTS = Integer.parseInt(data.trim());
+						i+=i;
+					}
+					else if (i == 14) {
 						CHAR_COIN = Integer.parseInt(data.trim());
 						i+=i;
 					}
@@ -201,10 +237,21 @@ public class Player {
 		CHAR_ARMOR_POINTS = 100;
 		//Max Armor Points
 		CHAR_MAX_ARMOR_POINTS = 100;
+		//Weapons Points
+		CHAR_WEAPON_POINTS = 100;
+		//Max Weapons Points
+		CHAR_MAX_WEAPON_POINTS = 100;
 		//Character Starting Coin
 		CHAR_COIN = 100;
 		//Character Starting Level
 		CHARACTER_LEVEL = 1;
+		//Magic weapon
+		CHAR_MAGIC_WEAPON_DAMAGE = 0;
+		CHAR_MAX_MAGIC_WEAPON_DAMAGE = 0;
+		//Magic Armor
+		CHAR_MAGIC_ARMOR_POINTS = 0;
+		CHAR_MAX_MAGIC_ARMOR_POINTS = 0;
+		
 		PrintWriter writer = null;
 		try {
 			writer = new PrintWriter(FILE_NAME, "UTF-8");
@@ -222,6 +269,12 @@ public class Player {
 		writer.println(CHAR_MAX_HIT_POINTS);
 		writer.println(CHAR_ARMOR_POINTS);
 		writer.println(CHAR_MAX_ARMOR_POINTS);
+		writer.println(CHAR_WEAPON_POINTS);
+		writer.println(CHAR_MAX_WEAPON_POINTS);
+		writer.println(CHAR_MAGIC_WEAPON_DAMAGE);
+		writer.println(CHAR_MAX_MAGIC_WEAPON_DAMAGE);
+		writer.println(CHAR_MAGIC_ARMOR_POINTS);
+		writer.println(CHAR_MAX_MAGIC_ARMOR_POINTS);
 		writer.println(CHAR_COIN);
 		writer.println(CURRENT_TOWN);
 		writer.close();
