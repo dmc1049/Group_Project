@@ -19,6 +19,7 @@ public class Player {
 	public static int CHAR_MAX_HIT_POINTS = 0;
 	public static int CHAR_ARMOR_POINTS = 0;
 	public static int CHAR_MAX_ARMOR_POINTS = 0;
+	public static int CHAR_COIN = 0;
 	
 		//is there a saved character or does the user need to make one - DONE
 			//User has saved game character - DONE
@@ -60,6 +61,7 @@ public class Player {
 		writer.println(CHAR_MAX_HIT_POINTS);
 		writer.println(CHAR_ARMOR_POINTS);
 		writer.println(CHAR_MAX_ARMOR_POINTS);
+		writer.println(CHAR_COIN);
 		writer.println(CURRENT_TOWN);
 		writer.close();
 		
@@ -156,6 +158,10 @@ public class Player {
 						CHAR_MAX_ARMOR_POINTS = Integer.parseInt(data.trim());
 						i+=i;
 					}
+					else if (i == 7) {
+						CHAR_COIN = Integer.parseInt(data.trim());
+						i+=i;
+					}
 					else {
 						CURRENT_TOWN = data;
 					}
@@ -186,8 +192,10 @@ public class Player {
 		//base Armor Points
 		//Armor gives you 50% more hitpoints based on armor rating
 		CHAR_ARMOR_POINTS = 100;
-		//MAx Armor Points
+		//Max Armor Points
 		CHAR_MAX_ARMOR_POINTS = 100;
+		//Character Starting Coin
+		CHAR_COIN = 100;
 		PrintWriter writer = null;
 		try {
 			writer = new PrintWriter(FILE_NAME, "UTF-8");
@@ -204,6 +212,7 @@ public class Player {
 		writer.println(CHAR_MAX_HIT_POINTS);
 		writer.println(CHAR_ARMOR_POINTS);
 		writer.println(CHAR_MAX_ARMOR_POINTS);
+		writer.println(CHAR_COIN);
 		writer.println(CURRENT_TOWN);
 		writer.close();
 		

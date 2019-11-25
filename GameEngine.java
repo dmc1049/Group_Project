@@ -26,7 +26,7 @@ public class GameEngine {
 		
 		//Scanner scannerMain = new Scanner(System.in);
 		
-		System.out.println(String.format("Your Character is %s, the name of your character is %s", Player.CHARACTER_TYPE, Player.CHARACTER_NAME));
+		System.out.println(String.format("Your Character Class is %s, the name of your character is %s", Player.CHARACTER_TYPE, Player.CHARACTER_NAME));
 		System.out.println("");
 		
 		System.out.println("Welcome to TAG, you are currently in a Town named One. Enjoy! ");
@@ -91,8 +91,9 @@ public class GameEngine {
 		//scannerNCPWitch.close();
 		switch(ncpOption){
 			case "W":
-				//Heal player
-				System.out.println("The Blacksmith repairs your weapons.");
+				//Heal weapon and armor
+				System.out.println("The Blacksmith repairs your weapons and armor.");
+				Player.CHAR_ARMOR_POINTS = Player.CHAR_MAX_ARMOR_POINTS;
 				//break;
 				ncpBlackSmith();
 			case "T":
