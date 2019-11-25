@@ -15,6 +15,8 @@ public class Player {
 	public static String CURRENT_TOWN = null;
 	private static String FILE_NAME = "GameChar.txt";
 	private static String FILE_PATH = "";
+	public static int CHAR_HIT_POINTS = (Integer) null;
+	public static int CHAR_ARMOR_POINTS = (Integer) null;
 	
 		//is there a saved character or does the user need to make one - DONE
 			//User has saved game character - DONE
@@ -52,6 +54,8 @@ public class Player {
 		}
 		writer.println(CHARACTER_TYPE);
 		writer.println(CHARACTER_NAME);
+		writer.println(CHAR_HIT_POINTS);
+		writer.println(CHAR_ARMOR_POINTS);
 		writer.println(CURRENT_TOWN);
 		writer.close();
 		
@@ -64,7 +68,7 @@ public class Player {
 		Scanner scannerDeleteCharacter = new Scanner(System.in);
 		String UseChar = "";
 		String DeleteChar = "";
-		File PlayerCharFile = new File("GameChar.txt");
+		File PlayerCharFile = new File(FILE_NAME);//<- changed to FILE_NAME
 		boolean exists = PlayerCharFile.exists();
 		if (exists) {
 			System.out.print("Do you want to use saved character: Y for Yes, N for No: ");
@@ -101,7 +105,7 @@ public class Player {
 	private static void DeleteCharacterPlayer() {
 		// TODO Auto-generated method stub
 		// Delete the Saved Char file
-		File file = new File(FILE_NAME);
+		File file = new File(FILE_NAME);//<- changed to FILE_NAME
 		if(file.delete()) {
 			System.out.println("Character File Deleted");
 		}
@@ -115,7 +119,7 @@ public class Player {
 	private static void LoadPlayerChar() {
 		// TODO Auto-generated method stub
 		// Load Char file
-		File PlayerCharFile = new File("GameChar.txt");
+		File PlayerCharFile = new File(FILE_NAME);//<-changed to FILE_NAME
 		boolean exists = PlayerCharFile.exists();
 		if(PlayerCharFile.exists() && PlayerCharFile.isFile()) {
 			//read file and populate constants of Type and Name
@@ -131,6 +135,14 @@ public class Player {
 					}
 					else if (i == 2){
 						CHARACTER_NAME = data;
+						i+=i;
+					}
+					else if (i == 3 ) {
+						CHAR_HIT_POINTS = Integer.parseInt(data.trim());
+						i+=i;
+					}
+					else if (i == 4) {
+						CHAR_ARMOR_POINTS = Integer.parseInt(data.trim());
 						i+=i;
 					}
 					else {
@@ -156,6 +168,11 @@ public class Player {
 		PlayerClassType();
 		PlayerCharacterName();
 		CURRENT_TOWN = "1";
+		//base hitpoints
+		CHAR_HIT_POINTS = 100;
+		//base Armor Points
+		//Armor gives you 50% more hitpoints based on armor rating
+		CHAR_ARMOR_POINTS = 100;
 		PrintWriter writer = null;
 		try {
 			writer = new PrintWriter(FILE_NAME, "UTF-8");
@@ -168,6 +185,8 @@ public class Player {
 		}
 		writer.println(CHARACTER_TYPE);
 		writer.println(CHARACTER_NAME);
+		writer.println(CHAR_HIT_POINTS);
+		writer.println(CHAR_ARMOR_POINTS);
 		writer.println(CURRENT_TOWN);
 		writer.close();
 		

@@ -18,7 +18,7 @@ public class GameEngine {
 			//check if player wants to delete saved game and start over with current character
 			//check if wants to delete both game and character and start over
 		
-		//open last town or 1st town in game if new character
+		//open last town or 1st town in game if new character - DONE
 		
 		//basic code for game
 		

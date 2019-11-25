@@ -3,6 +3,12 @@ import java.util.Scanner;
 
 public class NCPQuest {
 	//create a quest based on the NCP character
+		//Blacksmith
+		//Witch
+		//Shop Keeper
+		//Inn
+		//Trader
+		//Other
 	private static final String NEWLINE = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
 	
 	public static void NCPBlacksmith(){
