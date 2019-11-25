@@ -51,6 +51,8 @@ public class GameEngine {
 			case "H":
 				//Heal player
 				System.out.println("The Witch heals you, now go away!");
+				//add in cost in coin and see if player has enough for the cost of healing
+				//agument the difference between what they have and what they can afford
 				Player.CHAR_HIT_POINTS = Player.CHAR_MAX_HIT_POINTS;
 				System.out.println("--------------");
 				//break;
@@ -93,21 +95,24 @@ public class GameEngine {
 			case "W":
 				//Heal weapon and armor
 				System.out.println("The Blacksmith repairs your weapons and armor.");
+				//add in cost and see if player has enough coin to repair armor
+				//agument the difference between what they have and what they can afford
 				Player.CHAR_ARMOR_POINTS = Player.CHAR_MAX_ARMOR_POINTS;
 				//break;
 				ncpBlackSmith();
 			case "T":
-				//talk to Witch
+				//talk to Blacksmith
+				//Add random talking points here
 				System.out.println("The Blacksmith tells you that the Town is great, but you should explore the outerlands.");
 				//break;
 				ncpBlackSmith();
 			case "Q":
-				//ask for date
+				//Quest Details
 				System.out.println("The tells you about how he needs something from outside of town and asks you to go retrieve it...");
 				//break;
 				NCPQuest.NCPBlacksmith();
 			case "X":
-				//leave Witch
+				//leave Blacksmith
 				System.out.println("You thank the Blacksmith and leave back to Town One." + NEWLINE);
 				//return to town
 				CurrentTown();
@@ -118,7 +123,7 @@ public class GameEngine {
 		}
 	}
 
-	private static void TravelNextTown() {
+	public static void TravelNextTown() {
 		// TODO Auto-generated method stub
 		String OptionChoose = "";
 		Scanner scannerNextTown = new Scanner(System.in);
@@ -160,7 +165,7 @@ public class GameEngine {
 		}
 	}
 
-	private static void CurrentTown() {
+	public static void CurrentTown() {
 		//TODO Auto-generated method stub
 		String OptionChoose = "";
 		Player.CURRENT_TOWN = "1";
@@ -181,12 +186,12 @@ public class GameEngine {
 			case "B":
 				//Go to Black Smith
 				System.out.println("The Blacksmith may have a quest for you");
-				ncpBlackSmith();
+				NCP_Characters.ncpBlackSmith();
 				//break;
 			case "C":
 				//Go to Witch
 				System.out.println("Going to the Witch, don't talk to long her, she will turn you into a Frog." + NEWLINE);
-				ncpWitch();
+				NCP_Characters.ncpWitch();
 				//break;
 			case "X":
 				//Exit Game

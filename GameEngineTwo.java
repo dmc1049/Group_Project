@@ -25,101 +25,24 @@ public class GameEngineTwo {
 		
 		//String PlayerClass = Player.PlayerClassType();
 		//String PlayerCharacter = Player.PlayerCharacterName();
-		Player.CheckSavedCharacter();
+Player.CheckSavedCharacter();
 		
 		//Scanner scannerMain = new Scanner(System.in);
 		
-		System.out.println(String.format("Your Character is %s, the name of your character is %s", Player.CHARACTER_TYPE, Player.CHARACTER_NAME));
+		System.out.println(String.format("Your Character Class is %s, the name of your character is %s", Player.CHARACTER_TYPE, Player.CHARACTER_NAME));
 		System.out.println("");
 		
 		System.out.println("Welcome to TAG, you are currently in a Town named One. Enjoy! ");
 		System.out.println("");
 		System.out.println("To play the game you need to select what you want to do from the options given to you. " + NEWLINE + "For this first town you can select from the options below.");
-		System.out.println("--------------");
+		//System.out.println("--------------");
 		CurrentTown();
 			 
 		//scannerMain.close();
 	}
 
-	private static void ncpWitch() {
-		// TODO Auto-generated method stub
-		String ncpOption = "";
-		Scanner scannerNCPWitch = new Scanner(System.in);
-		System.out.println("-------Witches Hut-------");
-		System.out.println(NEWLINE + "Hello I am the local Witch, What can I do for you?" + NEWLINE + "H) Get healed" + NEWLINE + "T) Talk to Witch about this town" + NEWLINE + "A) Ask for a Date" + NEWLINE + "X) Leave Witch" + NEWLINE +"Choose Wisely:");
-		ncpOption = scannerNCPWitch.next();
-		ncpOption = ncpOption.toUpperCase();
-		//scannerNCPWitch.close();
-		switch(ncpOption){
-			case "H":
-				//Heal player
-				System.out.println("The Witch heals you, now go away!");
-				System.out.println("--------------");
-				//break;
-				ncpWitch();
-			case "T":
-				//talk to Witch
-				System.out.println("The Witch ignores you.");
-				System.out.println("--------------");
-				//break;
-				ncpWitch();
-			case "A":
-				//ask for date
-				System.out.println("The Witch turns you into a frog...");
-				System.out.println("--------------");
-				//break;
-				ncpWitch();
-			case "X":
-				//leave Witch
-				System.out.println("You thank the Witch and leave as fast as you can!" + NEWLINE);
-				//return to town
-				CurrentTown();
-				//break;
-			//default:
-				//default option
-		
-		}
-		
-	}
-
-	public static void ncpBlackSmith() {
-		// TODO Auto-generated method stub
-		String ncpOption = "";
-		Scanner scannerNCPBlackSmith = new Scanner(System.in);
-		System.out.println("-------BlackSmiths Shoppe-------");
-		System.out.println(NEWLINE + "Hello I am the local BlackSmith, What can I do for you?" + NEWLINE + "W) Get Weapons fixed" + NEWLINE + "T) Talk to Blacksmith about this town" + NEWLINE + "Q) Ask about the Quest" + NEWLINE + "X) Leave Blacksmith" + NEWLINE +"Choose Wisely:");
-		ncpOption = scannerNCPBlackSmith.next();
-		ncpOption = ncpOption.toUpperCase();
-		//scannerNCPWitch.close();
-		switch(ncpOption){
-			case "W":
-				//Heal player
-				System.out.println("The Blacksmith repairs your weapons.");
-				//break;
-				ncpBlackSmith();
-			case "T":
-				//talk to Witch
-				System.out.println("The Blacksmith tells you that the Town is great, but you should explore the outerlands.");
-				//break;
-				ncpBlackSmith();
-			case "Q":
-				//ask for date
-				System.out.println("The tells you about how he needs something from outside of town and asks you to go retrieve it...");
-				//break;
-				NCPQuest.NCPBlacksmith();
-			case "X":
-				//leave Witch
-				System.out.println("You thank the Blacksmith and leave back to Town One." + NEWLINE);
-				//return to town
-				CurrentTown();
-				//break;
-			//default:
-				//default option
-		
-		}
-	}
-
-	private static void TravelNextTown() {
+	
+	public static void TravelNextTown() {
 		// TODO Auto-generated method stub
 		String OptionChoose = "";
 		Scanner scannerNextTown = new Scanner(System.in);
@@ -161,9 +84,10 @@ public class GameEngineTwo {
 		}
 	}
 
-	private static void CurrentTown() {
+	public static void CurrentTown() {
 		//TODO Auto-generated method stub
 		String OptionChoose = "";
+		Player.CURRENT_TOWN = "1";
 		Scanner scannerCurrentTown = new Scanner(System.in);		
 		System.out.println("");
 		System.out.println("--------------");
@@ -181,12 +105,12 @@ public class GameEngineTwo {
 			case "B":
 				//Go to Black Smith
 				System.out.println("The Blacksmith may have a quest for you");
-				ncpBlackSmith();
+				NCP_Characters.ncpBlackSmith();
 				//break;
 			case "C":
 				//Go to Witch
 				System.out.println("Going to the Witch, don't talk to long her, she will turn you into a Frog." + NEWLINE);
-				ncpWitch();
+				NCP_Characters.ncpWitch();
 				//break;
 			case "X":
 				//Exit Game

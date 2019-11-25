@@ -19,6 +19,7 @@ public class Town {
 	Towns[] arr;
 	
 	arr = new Towns[2];
+	//Array setup: TownID, Town Name, Set NCP1, Set NCP2, Random NCP3, Town_e_id, Town_w_id, Town_n_id, Town_s_id
 	arr[0] = new Towns(1, "One");
 	arr[1] = new Towns(2,"Two");
 	
@@ -26,7 +27,7 @@ public class Town {
 //	Town_Name
 //	NCP_One
 //	NCP_Two
-//	NCP_Three
+//	Random_NCP_Three
 //	Next_Town_E_ID
 //	Next_Town_W_ID
 //	Next_Town_N_ID
@@ -35,6 +36,10 @@ public class Town {
 	for (int i = 0; i < arr.length; i++) 
         System.out.println("Element at " + i + " : " + arr[i].Town_ID +" "+ arr[i].Town_Name);
 	
+	}
+	public static void CurrentTown() {
+		//Taken form game engine
+		//might leave in game engine???
 	}
 }
 class Towns {
