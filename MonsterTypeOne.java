@@ -7,6 +7,7 @@ public class MonsterTypeOne {
 	//hydra
 	//Zombie
 	//Other
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//
