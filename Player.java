@@ -12,6 +12,7 @@ public class Player {
 
 	public static String CHARACTER_TYPE = null;
 	public static String CHARACTER_NAME = null;
+	public static int CHARACTER_LEVEL = 0;
 	public static String CURRENT_TOWN = null;
 	private static String FILE_NAME = "GameChar.txt";
 	private static String FILE_PATH = "";
@@ -57,6 +58,7 @@ public class Player {
 		}
 		writer.println(CHARACTER_TYPE);
 		writer.println(CHARACTER_NAME);
+		writer.println(CHARACTER_LEVEL);
 		writer.println(CHAR_HIT_POINTS);
 		writer.println(CHAR_MAX_HIT_POINTS);
 		writer.println(CHAR_ARMOR_POINTS);
@@ -144,21 +146,26 @@ public class Player {
 						i+=i;
 					}
 					else if (i == 3 ) {
+						CHARACTER_LEVEL = Integer.parseInt(data.trim());
+						i+=i;
+					}
+					else if (i == 4 ) {
 						CHAR_HIT_POINTS = Integer.parseInt(data.trim());
 						i+=i;
 					}
-					else if (i == 4) {
-						CHAR_MAX_HIT_POINTS = Integer.parseInt(data.trim());
-					}
 					else if (i == 5) {
-						CHAR_ARMOR_POINTS = Integer.parseInt(data.trim());
+						CHAR_MAX_HIT_POINTS = Integer.parseInt(data.trim());
 						i+=i;
 					}
 					else if (i == 6) {
-						CHAR_MAX_ARMOR_POINTS = Integer.parseInt(data.trim());
+						CHAR_ARMOR_POINTS = Integer.parseInt(data.trim());
 						i+=i;
 					}
 					else if (i == 7) {
+						CHAR_MAX_ARMOR_POINTS = Integer.parseInt(data.trim());
+						i+=i;
+					}
+					else if (i == 8) {
 						CHAR_COIN = Integer.parseInt(data.trim());
 						i+=i;
 					}
@@ -196,6 +203,8 @@ public class Player {
 		CHAR_MAX_ARMOR_POINTS = 100;
 		//Character Starting Coin
 		CHAR_COIN = 100;
+		//Character Starting Level
+		CHARACTER_LEVEL = 1;
 		PrintWriter writer = null;
 		try {
 			writer = new PrintWriter(FILE_NAME, "UTF-8");
@@ -208,6 +217,7 @@ public class Player {
 		}
 		writer.println(CHARACTER_TYPE);
 		writer.println(CHARACTER_NAME);
+		writer.println(CHARACTER_LEVEL);
 		writer.println(CHAR_HIT_POINTS);
 		writer.println(CHAR_MAX_HIT_POINTS);
 		writer.println(CHAR_ARMOR_POINTS);

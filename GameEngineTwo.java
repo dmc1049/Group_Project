@@ -41,7 +41,6 @@ Player.CheckSavedCharacter();
 		//scannerMain.close();
 	}
 
-	
 	public static void TravelNextTown() {
 		// TODO Auto-generated method stub
 		String OptionChoose = "";
