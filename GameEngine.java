@@ -10,16 +10,12 @@ public class GameEngine {
 		//Check if saved Character is present - DONE
 			//check if player wants to use saved character - DONE
 			//check if player wants to Delete current character and create new character - DONE
-		
 		//Check for saved game - DONE
 			//check if player wants to use current saved game
-		
 		//check if player wants to use saved game
 			//check if player wants to delete saved game and start over with current character
 			//check if wants to delete both game and character and start over
-		
 		//open last town or 1st town in game if new character - DONE
-		
 		//basic code for game
 		
 		Player.CheckSavedCharacter();

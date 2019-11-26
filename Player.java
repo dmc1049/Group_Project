@@ -13,17 +13,18 @@ public class Player {
 	public static String CHARACTER_TYPE = null;
 	public static String CHARACTER_NAME = null;
 	public static int CHARACTER_LEVEL = 0;
+	public static int CHAR_EXP_POINTS = 1;
 	public static String CURRENT_TOWN = null;
 	private static String FILE_NAME = "GameChar.txt";
 	private static String FILE_PATH = "";
 	public static int CHAR_HIT_POINTS = 0;
 	public static int CHAR_MAX_HIT_POINTS = 0;
-	public static int CHAR_ARMOR_POINTS = 0;
-	public static int CHAR_MAX_ARMOR_POINTS = 0;
-	public static int CHAR_WEAPON_POINTS = 0;
-	public static int CHAR_MAX_WEAPON_POINTS = 0;
-	public static int CHAR_MAGIC_WEAPON_DAMAGE = 0;
-	public static int CHAR_MAX_MAGIC_WEAPON_DAMAGE =0;
+	public static int CHAR_ARMOR_POINTS = 0; // also durability
+	public static int CHAR_MAX_ARMOR_POINTS = 0; //also durability
+	public static int CHAR_WEAPON_DAMAGE = 0; // damage done to enemy
+	public static int CHAR_MAX_WEAPON_DAMAGE = 0; //damage done to enemy
+	public static int CHAR_MAGIC_WEAPON_DAMAGE = 0; //damage done to enemy
+	public static int CHAR_MAX_MAGIC_WEAPON_DAMAGE =0; //damage done to enemy
 	public static int CHAR_MAGIC_ARMOR_POINTS = 0;
 	public static int CHAR_MAX_MAGIC_ARMOR_POINTS = 0;
 	public static int CHAR_COIN = 0;
@@ -66,11 +67,12 @@ public class Player {
 		writer.println(CHARACTER_NAME);
 		writer.println(CHARACTER_LEVEL);
 		writer.println(CHAR_HIT_POINTS);
+		writer.println(CHAR_EXP_POINTS);
 		writer.println(CHAR_MAX_HIT_POINTS);
 		writer.println(CHAR_ARMOR_POINTS);
 		writer.println(CHAR_MAX_ARMOR_POINTS);
-		writer.println(CHAR_WEAPON_POINTS);
-		writer.println(CHAR_MAX_WEAPON_POINTS);
+		writer.println(CHAR_WEAPON_DAMAGE);
+		writer.println(CHAR_MAX_WEAPON_DAMAGE);
 		writer.println(CHAR_MAGIC_WEAPON_DAMAGE);
 		writer.println(CHAR_MAX_MAGIC_WEAPON_DAMAGE);
 		writer.println(CHAR_MAGIC_ARMOR_POINTS);
@@ -162,46 +164,50 @@ public class Player {
 						i+=i;
 					}
 					else if (i == 4 ) {
+						CHAR_EXP_POINTS = Integer.parseInt(data.trim());
+						i+=i;
+					}
+					else if (i == 5 ) {
 						CHAR_HIT_POINTS = Integer.parseInt(data.trim());
 						i+=i;
 					}
-					else if (i == 5) {
+					else if (i == 6) {
 						CHAR_MAX_HIT_POINTS = Integer.parseInt(data.trim());
 						i+=i;
 					}
-					else if (i == 6) {
+					else if (i == 7) {
 						CHAR_ARMOR_POINTS = Integer.parseInt(data.trim());
 						i+=i;
 					}
-					else if (i == 7) {
+					else if (i == 8) {
 						CHAR_MAX_ARMOR_POINTS = Integer.parseInt(data.trim());
 						i+=i;
 					}
-					else if (i == 8) {
-						CHAR_WEAPON_POINTS = Integer.parseInt(data.trim());
-						i+=i;
-					}
 					else if (i == 9) {
-						CHAR_MAX_WEAPON_POINTS = Integer.parseInt(data.trim());
+						CHAR_WEAPON_DAMAGE = Integer.parseInt(data.trim());
 						i+=i;
 					}
-					else if (i == 10 ) {
+					else if (i == 10) {
+						CHAR_MAX_WEAPON_DAMAGE = Integer.parseInt(data.trim());
+						i+=i;
+					}
+					else if (i == 11 ) {
 						CHAR_MAGIC_WEAPON_DAMAGE = Integer.parseInt(data.trim());
 						i+=i;
 					}
-					else if (i == 11) {
+					else if (i == 12) {
 						CHAR_MAX_MAGIC_WEAPON_DAMAGE = Integer.parseInt(data.trim());
 						i+=i;
 					}
-					else if (i == 12) {
+					else if (i == 13) {
 						CHAR_MAGIC_ARMOR_POINTS = Integer.parseInt(data.trim());
 						i+=i;
 					}
-					else if (i == 13) {
+					else if (i == 14) {
 						CHAR_MAX_MAGIC_ARMOR_POINTS = Integer.parseInt(data.trim());
 						i+=i;
 					}
-					else if (i == 14) {
+					else if (i == 15) {
 						CHAR_COIN = Integer.parseInt(data.trim());
 						i+=i;
 					}
@@ -232,15 +238,17 @@ public class Player {
 		CHAR_HIT_POINTS = 100;
 		//Starting Max hit points
 		CHAR_MAX_HIT_POINTS = 100;
+		//experiance points
+		CHAR_EXP_POINTS = 1;
 		//base Armor Points
 		//Armor gives you 50% more hitpoints based on armor rating
 		CHAR_ARMOR_POINTS = 100;
 		//Max Armor Points
 		CHAR_MAX_ARMOR_POINTS = 100;
 		//Weapons Points
-		CHAR_WEAPON_POINTS = 100;
+		CHAR_WEAPON_DAMAGE = 100;
 		//Max Weapons Points
-		CHAR_MAX_WEAPON_POINTS = 100;
+		CHAR_MAX_WEAPON_DAMAGE = 100;
 		//Character Starting Coin
 		CHAR_COIN = 100;
 		//Character Starting Level
@@ -265,12 +273,13 @@ public class Player {
 		writer.println(CHARACTER_TYPE);
 		writer.println(CHARACTER_NAME);
 		writer.println(CHARACTER_LEVEL);
+		writer.println(CHAR_EXP_POINTS);
 		writer.println(CHAR_HIT_POINTS);
 		writer.println(CHAR_MAX_HIT_POINTS);
 		writer.println(CHAR_ARMOR_POINTS);
 		writer.println(CHAR_MAX_ARMOR_POINTS);
-		writer.println(CHAR_WEAPON_POINTS);
-		writer.println(CHAR_MAX_WEAPON_POINTS);
+		writer.println(CHAR_WEAPON_DAMAGE);
+		writer.println(CHAR_MAX_WEAPON_DAMAGE);
 		writer.println(CHAR_MAGIC_WEAPON_DAMAGE);
 		writer.println(CHAR_MAX_MAGIC_WEAPON_DAMAGE);
 		writer.println(CHAR_MAGIC_ARMOR_POINTS);

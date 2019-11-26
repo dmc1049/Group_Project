@@ -8,7 +8,9 @@ public class MonsterTypeBoss {
 		//Zombie
 		//ZombieDragon
 		//Other
-		
+	
+		private static final String NEWLINE = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
+	
 		public static void main(String[] args) {
 			// TODO Auto-generated method stub
 			//
@@ -22,6 +24,9 @@ public class MonsterTypeBoss {
 		public static int RandNumMethod() {
 			Random randNum = new Random();
 			int rand_int1 = randNum.nextInt(100);
+			if (rand_int1 <= 30) {
+				rand_int1 = rand_int1 + 50;
+			}
 			return rand_int1;
 		}
 		public static int RandNumMethod2() {
@@ -81,6 +86,7 @@ public class MonsterTypeBoss {
 			int j = MagicItem();
 			int k = Encounter();
 			int m = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Troll--------");
 			System.out.println("The hitpoints for this Troll is: " + hitPoints + " and drops item number: " + RandNumMethod());
@@ -97,7 +103,7 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit());
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
 			
 		}
@@ -113,6 +119,7 @@ public class MonsterTypeBoss {
 			int j = MagicItem();
 			int k = Encounter();
 			int m = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Imp--------");
 			System.out.println("The hitpoints for this Imp is: " + hitPoints + " and drops item number: " + RandNumMethod());
@@ -129,7 +136,7 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit());
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
 			
 		}
@@ -145,6 +152,7 @@ public class MonsterTypeBoss {
 			int j = MagicItem();
 			int k = Encounter();
 			int m = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Hydra--------");
 			System.out.println("The hitpoints for this Hydra is: " + hitPoints + " and drops item number: " + RandNumMethod());
@@ -161,7 +169,7 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit());
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
 			
 		}
@@ -177,6 +185,7 @@ public class MonsterTypeBoss {
 			int j = MagicItem();
 			int k = Encounter();
 			int m = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Zombie--------");
 			System.out.println("The hitpoints for this Zombie is: " + hitPoints + " and drops item number: " + RandNumMethod());
@@ -193,7 +202,7 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit());
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
 			
 		}
@@ -209,6 +218,7 @@ public class MonsterTypeBoss {
 			int j = MagicItem();
 			int k = Encounter();
 			int m = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Other--------");
 			System.out.println("The hitpoints for this Other is: " + hitPoints + " and drops item number: " + RandNumMethod());
@@ -225,7 +235,7 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit());
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
 			
 		}
@@ -241,6 +251,7 @@ public class MonsterTypeBoss {
 			int j = MagicItem();
 			int k = Encounter();
 			int m = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Boss Zombie Dragon--------");
 			System.out.println("The hitpoints for this Boss Zombie Dragon is: " + hitPoints + " and drops item number: " + RandNumMethod());
@@ -257,7 +268,7 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit());
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
 			
 		}

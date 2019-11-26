@@ -7,6 +7,7 @@ public class MonsterTypeOne {
 	//hydra
 	//Zombie
 	//Other
+	private static final String NEWLINE = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -20,6 +21,9 @@ public class MonsterTypeOne {
 	public static int RandNumMethod() {
 		Random randNum = new Random();
 		int rand_int1 = randNum.nextInt(100);
+		if (rand_int1 <= 5) {
+			rand_int1 = rand_int1 +5;
+		}
 		return rand_int1;
 	}
 	public static int RandNumMethod2() {
@@ -67,6 +71,7 @@ public class MonsterTypeOne {
 		//random encounter
 		//random Magic item
 		//Damage per hit
+		//Exp Points
 		
 		int i = MagicItemChance();
 		int j = MagicItem();
@@ -88,7 +93,7 @@ public class MonsterTypeOne {
 			j=0;
 		}
 		System.out.println(" and magic drop item is number: " + j);
-		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit());
+		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + RandNumMethod());
 		System.out.println("----------------");
 		
 	}
@@ -119,7 +124,7 @@ public class MonsterTypeOne {
 			j=0;
 		}
 		System.out.println(" and magic drop item is number: " + j);
-		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit());
+		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + RandNumMethod());
 		System.out.println("----------------");
 		
 	}
@@ -150,7 +155,7 @@ public class MonsterTypeOne {
 			j=0;
 		}
 		System.out.println(" and magic drop item is number: " + j);
-		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit());
+		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + RandNumMethod());
 		System.out.println("----------------");
 		
 	}
@@ -181,7 +186,7 @@ public class MonsterTypeOne {
 			j=0;
 		}
 		System.out.println(" and magic drop item is number: " + j);
-		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit());
+		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + RandNumMethod());
 		System.out.println("----------------");
 		
 	}
@@ -212,7 +217,7 @@ public class MonsterTypeOne {
 			j=0;
 		}
 		System.out.println(" and magic drop item is number: " + j);
-		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit());
+		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + RandNumMethod());
 		System.out.println("----------------");
 		
 	}

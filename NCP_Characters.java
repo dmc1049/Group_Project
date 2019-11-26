@@ -31,6 +31,7 @@ public class NCP_Characters {
 				//add in cost and see if player has enough coin to repair armor
 				//agument the difference between what they have and what they can afford
 				Player.CHAR_ARMOR_POINTS = Player.CHAR_MAX_ARMOR_POINTS;
+				Player.CHAR_WEAPON_DAMAGE = Player.CHAR_MAX_WEAPON_DAMAGE;
 				//break;
 				ncpBlackSmith();
 			case "T":
@@ -118,7 +119,7 @@ public class NCP_Characters {
 				//break;
 				ncpWizard();
 			case "T":
-				//talk to Blacksmith
+				//talk to Wizard
 				//Add random talking points here
 				System.out.println("The Wizard tells you that the Town is great, but you should explore the outerlands.");
 				//break;
@@ -129,7 +130,7 @@ public class NCP_Characters {
 				//break;
 				NCPQuest.NCPWizard();
 			case "X":
-				//leave Blacksmith
+				//leave Wizard
 				System.out.println("You thank the Wizard and leave back to Town " + Town.CurrentTownIn + "." + NEWLINE);
 				//return to town
 				GameEngine.CurrentTown();
