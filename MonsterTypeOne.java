@@ -75,6 +75,8 @@ public class MonsterTypeOne {
 		
 		int hitPoints = RandNumMethod();
 		int damagePerHit = DamagePerHit();
+		int expPoints = RandNumMethod();
+		int coinDrop = RandNumMethod();
 		int i = MagicItemChance();
 		int j = MagicItem();
 		int k = Encounter();
@@ -95,26 +97,31 @@ public class MonsterTypeOne {
 			j=0;
 		}
 		System.out.println(" and magic drop item is number: " + j);
-		System.out.println("Damage per hit upon Player Character is: " + damagePerHit + NEWLINE +"Experience Points Gained: " + RandNumMethod());
+		System.out.println("Damage per hit upon Player Character is: " + damagePerHit + NEWLINE +"Experience Points Gained: " + expPoints);
+		System.out.println("Coin Drop: " + coinDrop);
 		System.out.println("----------------");
 		
-		return new int[] {hitPoints, damagePerHit};
+		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
 		
 	}
-	public static void Imp() {
+	public static int[] Imp() {
 		//random hitpoints
 		//random dropitem on death
 		//random encounter
 		//random Magic item
 		//Damage per hit
 		
+		int hitPoints = RandNumMethod();
+		int damagePerHit = DamagePerHit();
+		int expPoints = RandNumMethod();
+		int coinDrop = RandNumMethod();
 		int i = MagicItemChance();
 		int j = MagicItem();
 		int k = Encounter();
 		int m = DropItem();
 		
 		System.out.println("--------For Imp--------");
-		System.out.println("The hitpoints for this Imp is: " + RandNumMethod() + " and drops item number: " + RandNumMethod());
+		System.out.println("The hitpoints for this Imp is: " + hitPoints + " and drops item number: " + RandNumMethod());
 		System.out.print("Encounter percentage chance on Quest: " + k + "%");
 		if (k == 0) {
 			m=0;
@@ -128,24 +135,31 @@ public class MonsterTypeOne {
 			j=0;
 		}
 		System.out.println(" and magic drop item is number: " + j);
-		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + RandNumMethod());
+		System.out.println("Damage per hit upon Player Character is: " + damagePerHit + NEWLINE +"Experience Points Gained: " + expPoints);
+		System.out.println("Coin Drop: " + coinDrop);
 		System.out.println("----------------");
 		
+		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+		
 	}
-	public static void Hydra() {
+	public static int[] Hydra() {
 		//random hitpoints
 		//random dropitem on death
 		//random encounter
 		//random Magic item
 		//Damage per hit
 		
+		int hitPoints = RandNumMethod();
+		int damagePerHit = DamagePerHit();
+		int expPoints = RandNumMethod();
+		int coinDrop = RandNumMethod();
 		int i = MagicItemChance();
 		int j = MagicItem();
 		int k = Encounter();
 		int m = DropItem();
 		
 		System.out.println("--------For Hydra--------");
-		System.out.println("The hitpoints for this Hydra is: " + RandNumMethod() + " and drops item number: " + RandNumMethod());
+		System.out.println("The hitpoints for this Hydra is: " + hitPoints + " and drops item number: " + RandNumMethod());
 		System.out.print("Encounter percentage chance on Quest: " + k + "%");
 		if (k == 0) {
 			m=0;
@@ -159,24 +173,30 @@ public class MonsterTypeOne {
 			j=0;
 		}
 		System.out.println(" and magic drop item is number: " + j);
-		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + RandNumMethod());
+		System.out.println("Damage per hit upon Player Character is: " + damagePerHit + NEWLINE +"Experience Points Gained: " + expPoints);
+		System.out.println("Coin Drop: " + coinDrop);
 		System.out.println("----------------");
 		
+		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
 	}
-	public static void Zombie() {
+	public static int[] Zombie() {
 		//random hitpoints
 		//random dropitem on death
 		//random encounter
 		//random Magic item
 		//Damage per hit
 		
+		int hitPoints = RandNumMethod();
+		int damagePerHit = DamagePerHit();
+		int expPoints = RandNumMethod();
+		int coinDrop = RandNumMethod();
 		int i = MagicItemChance();
 		int j = MagicItem();
 		int k = Encounter();
 		int m = DropItem();
 		
-		System.out.println("--------For Zombie--------");
-		System.out.println("The hitpoints for this Zombie is: " + RandNumMethod() + " and drops item number: " + RandNumMethod());
+		System.out.println("--------For Imp--------");
+		System.out.println("The hitpoints for this Zombie is: " + hitPoints + " and drops item number: " + RandNumMethod());
 		System.out.print("Encounter percentage chance on Quest: " + k + "%");
 		if (k == 0) {
 			m=0;
@@ -190,24 +210,31 @@ public class MonsterTypeOne {
 			j=0;
 		}
 		System.out.println(" and magic drop item is number: " + j);
-		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + RandNumMethod());
+		System.out.println("Damage per hit upon Player Character is: " + damagePerHit + NEWLINE +"Experience Points Gained: " + expPoints);
+		System.out.println("Coin Drop: " + coinDrop);
 		System.out.println("----------------");
 		
+		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+		
 	}
-	public static void Other() {
+	public static int[] Other() {
 		//random hitpoints
 		//random dropitem on death
 		//random encounter
 		//random Magic item
 		//Damage per hit
 		
+		int hitPoints = RandNumMethod();
+		int damagePerHit = DamagePerHit();
+		int expPoints = RandNumMethod();
+		int coinDrop = RandNumMethod();
 		int i = MagicItemChance();
 		int j = MagicItem();
 		int k = Encounter();
 		int m = DropItem();
 		
-		System.out.println("--------For Other--------");
-		System.out.println("The hitpoints for this Other is: " + RandNumMethod() + " and drops item number: " + RandNumMethod());
+		System.out.println("--------For Imp--------");
+		System.out.println("The hitpoints for this Other is: " + hitPoints + " and drops item number: " + RandNumMethod());
 		System.out.print("Encounter percentage chance on Quest: " + k + "%");
 		if (k == 0) {
 			m=0;
@@ -221,8 +248,11 @@ public class MonsterTypeOne {
 			j=0;
 		}
 		System.out.println(" and magic drop item is number: " + j);
-		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + RandNumMethod());
+		System.out.println("Damage per hit upon Player Character is: " + damagePerHit + NEWLINE +"Experience Points Gained: " + expPoints);
+		System.out.println("Coin Drop: " + coinDrop);
 		System.out.println("----------------");
+		
+		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
 		
 	}
 }

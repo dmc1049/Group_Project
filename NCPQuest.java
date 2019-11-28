@@ -46,8 +46,9 @@ public class NCPQuest {
 	}
 	private static void BSSwamp() {
 		// TODO Auto-generated method stub
-		System.out.println("You venture to the Swamp and when you get there, you are scared. You turn around and run back to town.");
-		NCP_Characters.ncpBlackSmith();
+		System.out.println("You venture to the Swamp and when you get there you see the hydra circling the Chest.");
+		//NCP_Characters.ncpBlackSmith();
+		BattleMonster("BlackSmith","Hydra");
 	}
 	private static void BSCaves() {
 		
@@ -67,47 +68,71 @@ public class NCPQuest {
 			//hitpoints
 			//Weapon Damage
 			//health
-			//
+			//coin
+			//exp points
 		//get monster data
-		//Player strikes first
-		//Player Hit points
-		//Player Attack damage
-		int CharHitPoints, CharDamagePerHit;
-		CharHitPoints = Player.CHAR_HIT_POINTS + Player.CHAR_ARMOR_POINTS;
-		CharDamagePerHit = Player.CHAR_WEAPON_DAMAGE;
+			//hitpoints
+			//Damage
+			//exp points for player
+			//Coin drop
 		
-		int mhitPoints = 0, mdamagePerHit = 0;
+		//Player strikes first
+		
+		int CharHitPoints, CharDamagePerHit, ExpPoints;
+		CharHitPoints = Player.CHAR_HIT_POINTS;
+		CharDamagePerHit = Player.CHAR_WEAPON_DAMAGE;
+		ExpPoints = Player.CHAR_EXP_POINTS;
+		
+		int mhitPoints = 0, mdamagePerHit = 0, mExpPoints = 0, mCoin = 0;
 		if(Monster == "Troll") {
 			int result[] = MonsterTypeOne.Troll();
 			  //System.out.println(result[0] + result[1]); //retrieve from monster char
 			  mhitPoints = result[0];
 			  mdamagePerHit = result[1];
+			  mExpPoints = result[2];
+			  mCoin = result[3];
+		}
+		if(Monster == "Hydra") {
+			int result[] = MonsterTypeOne.Hydra();
+			  //System.out.println(result[0] + result[1]); //retrieve from monster char
+			  mhitPoints = result[0];
+			  mdamagePerHit = result[1];
+			  mExpPoints = result[2];
+			  mCoin = result[3];
 		}
 		System.out.println("Monster Hit Points at init: " + mhitPoints);
+		System.out.println("Player Hit Points: " + CharHitPoints);
 		String OptionChoose = "";
 		Scanner scannerBattle = new Scanner(System.in);
 		
-		while (OptionChoose != "R") {
+		while (OptionChoose != "R" && mhitPoints >=1) {
 			System.out.println("A) Attack" + NEWLINE + "R) Run Away" + NEWLINE + "Choose Wisely:");
 			OptionChoose = scannerBattle.next();
-			OptionChoose.toUpperCase();
-			
+			OptionChoose.toUpperCase(); // seems to not work here????
+			System.out.println("----" + OptionChoose);
+			if (OptionChoose == "a") { // Still not working
+				OptionChoose = "A";
+			}
 			switch(OptionChoose){
-				
 				case "A":
 					//Attack
 					System.out.println("You Attack!!!");
 					//Do hit code here
-					//BattleMonster(NPC_Char, Monster);
-	
 					mhitPoints = mhitPoints - RandNumPlayerAttack(CharDamagePerHit);
-					
+					System.out.println("--Current Battle Stats--");
 					System.out.println("Player Hit Points: " + CharHitPoints);
 					System.out.println("Monster Hit Points: " + mhitPoints);
+					System.out.println("");
+					
 					
 					if(mhitPoints <= 0) {
 						System.out.println("You have defeated the " + Monster + "...");
-						System.out.println("Press any key to return to town...");
+						Player.CHAR_EXP_POINTS = Player.CHAR_EXP_POINTS + mExpPoints;
+						Player.CHAR_HIT_POINTS = CharHitPoints;
+						Player.CHAR_COIN = Player.CHAR_COIN + mCoin;
+						System.out.println("You have gained " + mExpPoints + " Experience Points!");
+						System.out.println("You have gained " + mCoin + " Coin!");
+						System.out.println("Press R to return to Shoppe Keeper or Current Town...");
 						OptionChoose = scannerBattle.next();
 						if(NPC_Char == "BlackSmith") {
 							NCP_Characters.ncpBlackSmith();
@@ -121,19 +146,21 @@ public class NCPQuest {
 					}
 					if(mhitPoints >= 1) {
 						CharHitPoints = CharHitPoints - RandNumMonsterAttack(mdamagePerHit);
-						if(CharHitPoints < 0) {
+						if(CharHitPoints <= 0) {
 							CharHitPoints = 0;
 							Player.CHAR_HIT_POINTS = CharHitPoints;
 						}
-						if(CharHitPoints <=0) {
+						else if(CharHitPoints <= 0) {
+							Player.CHAR_HIT_POINTS = CharHitPoints;
 							System.out.println("You Died! Press any key to return to town...");
 							OptionChoose = scannerBattle.next();
 							GameEngine.CurrentTown();
 						}
-						if (CharHitPoints >=1) {
+						else if (CharHitPoints >=1) {
 							Player.CHAR_HIT_POINTS = CharHitPoints;
 						}
 					}
+					break;
 				case "R":
 					//Run Away
 					System.out.println("You Run Away!!!");
@@ -146,9 +173,12 @@ public class NCPQuest {
 					else {
 						GameEngine.CurrentTown();
 					}
+					break;
+				default:
+					//loop
 					
-			}
-		}
+			}// End Switch
+		}// End While
 		
 		
 		

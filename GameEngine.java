@@ -104,6 +104,7 @@ public class GameEngine {
 		System.out.println("  Name: " + Player.CHARACTER_NAME + "               |   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL);
 		System.out.println("  CHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "     |   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS);
 		System.out.println("  CHAR_COIN: " + Player.CHAR_COIN  + "           |   Current Town: "+ Player.CURRENT_TOWN);
+		System.out.println("  Experience Points: " + Player.CHAR_EXP_POINTS + "      |");
 		//System.out.println();
 		System.out.println("----------------------------------------------------------------------------------------------");
 		System.out.println();

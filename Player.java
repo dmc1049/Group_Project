@@ -270,7 +270,7 @@ public class Player {
 						GameEngine.PlayerConfig[i] = new String[]{"Current_Town", data};
 						CURRENT_TOWN = data;
 					}
-					System.out.println(data + " --Data from file");
+					//System.out.println(data + " --Data from file");
 					//System.out.println(CHARACTER_TYPE + " from println 1");
 					//System.out.println(CHARACTER_NAME + " from println 2");
 					//System.out.println(GameEngine.PlayerConfig[i][j] + " --From Array");
