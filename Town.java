@@ -1,7 +1,7 @@
 
 public class Town {
 
-	public static final String CurrentTownIn = "One";
+	public static final String CurrentTownIn = Player.CURRENT_TOWN;
 	public static Towns[] TownsConfig;
 	//passed info from game engine of saved info or new info to open
 	//load town
@@ -17,11 +17,18 @@ public class Town {
 		//Create list of Towns
 		Towns[] arr;
 		
-		arr = new Towns[3];
+		arr = new Towns[10];
 		//Array setup: TownID, Town Name, Set NCP1, Set NCP2, Random NCP3, Town_e_id, Town_w_id, Town_n_id, Town_s_id
 		arr[0] = new Towns(1, "One", 1, 2);
 		arr[1] = new Towns(2,"Two", 2, 2);
 		arr[2] = new Towns(3, "Three", 3, 2);
+		arr[3] = new Towns(4, "Four", 1, 2);
+		arr[4] = new Towns(5,"Five", 2, 2);
+		arr[5] = new Towns(6, "Six", 3, 2);
+		arr[6] = new Towns(7, "Seven", 1, 2);
+		arr[7] = new Towns(8,"Eight", 2, 2);
+		arr[8] = new Towns(9, "Nine", 3, 2);
+		arr[9] = new Towns(10, "Ten", 1, 2);
 		
 		TownsConfig = arr.clone();
 		
@@ -40,11 +47,18 @@ public class Town {
 	//Create list of Towns
 			Towns[] arr;
 			
-			arr = new Towns[3];
+			arr = new Towns[10];
 			//Array setup: TownID, Town Name, Set NCP1, Set NCP2, Random NCP3, Town_e_id, Town_w_id, Town_n_id, Town_s_id
 			arr[0] = new Towns(1, "One", 1, 2);
 			arr[1] = new Towns(2,"Two", 2, 2);
 			arr[2] = new Towns(3, "Three", 3, 2);
+			arr[3] = new Towns(4, "Four", 1, 2);
+			arr[4] = new Towns(5,"Five", 2, 2);
+			arr[5] = new Towns(6, "Six", 3, 2);
+			arr[6] = new Towns(7, "Seven", 1, 2);
+			arr[7] = new Towns(8,"Eight", 2, 2);
+			arr[8] = new Towns(9, "Nine", 3, 2);
+			arr[9] = new Towns(10, "Ten", 1, 2);
 			
 			TownsConfig = arr.clone();
 			

@@ -59,8 +59,8 @@ public class GameEngine {
 		System.out.print("E) Go to Next Town to East" + NEWLINE + "W) Go to Next Town to West" + NEWLINE + "N) Go to Next Town to North" + NEWLINE + "S) Go to Next Town to South" + NEWLINE + "X) Exit Back to Current Town" +NEWLINE + "Choose Wisely: " );
 		System.out.println("");
 		Town.LoadTowns();
-		System.out.println("Test grab from Town() At TownsConfig[1].Town_Name: " + Town.TownsConfig[1].Town_Name);
-		System.out.println("");
+		//System.out.println("Test grab from Town() At TownsConfig[1].Town_Name: " + Town.TownsConfig[1].Town_Name);
+		//System.out.println("");
 		OptionChoose = scannerNextTown.next();
 		OptionChoose = OptionChoose.toUpperCase();
 		//scannerCurrentTown.close();
@@ -68,6 +68,7 @@ public class GameEngine {
 			case "E":
 				//Go to Town to East
 				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed");
+				TravelNextTown.TravelToTownEast();
 				TravelNextTown();
 				//break;
 			case "W":
@@ -113,9 +114,9 @@ public class GameEngine {
 		System.out.println("----------------------------------------------------------------------------------------------");
 		System.out.println();
 		//StringBuilder sb = new StringBuilder();
+		String CurrentTown = Player.CURRENT_TOWN;
 		
-		
-		System.out.println("You are in Town One...What do you want to do?" + NEWLINE);
+		System.out.println("You are in Town "+ CurrentTown +"...What do you want to do?" + NEWLINE);
 		System.out.println("T) Go to Next Town" + NEWLINE + "B) Go to Black Smith" + NEWLINE + "W) Go to Witch" + NEWLINE + "X) Exit Game" +NEWLINE + "Z) Exit Without Saving" + NEWLINE + "Choose Wisely: " );
 		
 		OptionChoose = scannerCurrentTown.next();
