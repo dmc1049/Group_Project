@@ -50,6 +50,7 @@ public class NCPQuest {
 		NCP_Characters.ncpBlackSmith();
 	}
 	private static void BSCaves() {
+		
 		System.out.println("You venture to the caves on the outskirts of town, you get afraid and turn around and run back to town with your tail between your legs");
 		NCP_Characters.ncpBlackSmith();
 	}
@@ -57,6 +58,20 @@ public class NCPQuest {
 	
 	}
 	public static void NCPWitch() {
+		
+	}
+	public static void BattleMonster() {
+		//get player data
+			//hitpoints
+			//Weapon Damage
+			//health
+			//
+		//get monster data
+		//Player strikes first
+		//Player.SaveCharacterPlayer();
+		//Player.LoadPlayerChar();
+		
+		System.out.println("A) Attack" + NEWLINE + "R) Run Away" + NEWLINE + "Choose Wisely:");
 		
 	}
 }

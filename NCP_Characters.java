@@ -30,8 +30,20 @@ public class NCP_Characters {
 				System.out.println("The Blacksmith repairs your weapons and armor.");
 				//add in cost and see if player has enough coin to repair armor
 				//agument the difference between what they have and what they can afford
+				System.out.println("Start if debug save player" + NEWLINE + Player.CHAR_COIN);
+				//Player.CHAR_COIN = 75;
+				//Player.CHAR_ARMOR_POINTS = 85;
+				Object coinOnPlayer = Player.CHAR_COIN;
+				Object charArmorPoints = Player.CHAR_ARMOR_POINTS;
+				System.out.println(coinOnPlayer);
+				System.out.println(charArmorPoints);
+				System.out.println("");
 				Player.CHAR_ARMOR_POINTS = Player.CHAR_MAX_ARMOR_POINTS;
 				Player.CHAR_WEAPON_DAMAGE = Player.CHAR_MAX_WEAPON_DAMAGE;
+				if(Player.CHAR_COIN >= 25)
+					Player.CHAR_COIN = Player.CHAR_COIN - 25;
+				else
+					System.out.println("You do not have enough Coin to be healed. Go Battale something or sell something to get the Coin!");
 				//break;
 				ncpBlackSmith();
 			case "T":
@@ -73,7 +85,10 @@ public class NCP_Characters {
 				//add in cost in coin and see if player has enough for the cost of healing
 				//agument the difference between what they have and what they can afford
 				Player.CHAR_HIT_POINTS = Player.CHAR_MAX_HIT_POINTS;
-				System.out.println("--------------");
+				if(Player.CHAR_COIN >= 25)
+					Player.CHAR_COIN = Player.CHAR_COIN - 25;
+				else
+					System.out.println("You do not have enough Coin to be healed. Go Battale something or sell something to get the Coin!");
 				//break;
 				ncpWitch();
 			case "T":

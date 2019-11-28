@@ -19,10 +19,11 @@ public class Town {
 	//Create list of Towns
 	Towns[] arr;
 	
-	arr = new Towns[2];
+	arr = new Towns[3];
 	//Array setup: TownID, Town Name, Set NCP1, Set NCP2, Random NCP3, Town_e_id, Town_w_id, Town_n_id, Town_s_id
-	arr[0] = new Towns(1, "One");
-	arr[1] = new Towns(2,"Two");
+	arr[0] = new Towns(1, "One", 1);
+	arr[1] = new Towns(2,"Two", 2);
+	arr[2] = new Towns(3, "Three", 3);
 	
 //	Town_ID
 //	Town_Name
@@ -35,7 +36,7 @@ public class Town {
 //	Next_Town_S_ID
 	
 	for (int i = 0; i < arr.length; i++) 
-        System.out.println("Element at " + i + " : " + arr[i].Town_ID +" "+ arr[i].Town_Name);
+        System.out.println("Element at " + i + " : " + arr[i].Town_ID +" "+ arr[i].Town_Name +" "+ arr[i].Set_NPC1);
 	
 	}
 	public static void CurrentTown() {
@@ -47,10 +48,13 @@ class Towns {
 	
 	public int Town_ID;
 	public String Town_Name;
-	Towns(int Town_ID, String Town_Name)
+	public int Set_NPC1;
+	Towns(int Town_ID, String Town_Name, int Set_NPC1)
 	{
 		this.Town_ID = Town_ID;
 		this.Town_Name = Town_Name;
+		this.Set_NPC1 = Set_NPC1;
+		
 	}
 	
 }

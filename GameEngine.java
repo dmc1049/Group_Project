@@ -1,9 +1,12 @@
+import java.util.Collection;
 import java.util.Scanner;
 
 public class GameEngine {
 	
 	private static final String NEWLINE = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
-
+	
+	public static String[][] PlayerConfig = new String[16][16]; 
+		
 	public static void main(String[] args) {
 		//
 		
@@ -19,9 +22,21 @@ public class GameEngine {
 		//basic code for game
 		
 		Player.CheckSavedCharacter();
+		//Player.LoadChar();
+		//Player.LoadChar2();
+		//Player.LoadPlayerChar();
+//		System.out.println("-------test array--------");
+//		for(String[] arr2: PlayerConfig)
+//		{
+//		    for(String val: arr2)
+//		        System.out.println(val + " --Array Entry");
+//		}
+		
+		//Testing <--********Delete OR COMMENT when done********
+		//System.out.println("Debug " + Player.CHAR_COIN + " CHAR_COIN");
 		
 		//Scanner scannerMain = new Scanner(System.in);
-		
+		System.out.println("--------------");
 		System.out.println(String.format("Your Character Class is %s, the name of your character is %s", Player.CHARACTER_TYPE, Player.CHARACTER_NAME));
 		System.out.println("");
 		
@@ -79,12 +94,25 @@ public class GameEngine {
 	public static void CurrentTown() {
 		//TODO Auto-generated method stub
 		String OptionChoose = "";
-		Player.CURRENT_TOWN = "1";
+		//Player.CURRENT_TOWN = "1";
+		
 		Scanner scannerCurrentTown = new Scanner(System.in);		
-		System.out.println("");
-		System.out.println("--------------");
+//		System.out.println("");
+		System.out.println("--------------------------------Your Character Stats-------------------------------------------");
+		//System.out.println("DEBUG");
+		//System.out.println("DEBUG");
+		System.out.println("  Name: " + Player.CHARACTER_NAME + "               |   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL);
+		System.out.println("  CHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "     |   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS);
+		System.out.println("  CHAR_COIN: " + Player.CHAR_COIN  + "           |   Current Town: "+ Player.CURRENT_TOWN);
+		//System.out.println();
+		System.out.println("----------------------------------------------------------------------------------------------");
+		System.out.println();
+		//StringBuilder sb = new StringBuilder();
+		
+		
 		System.out.println("You are in Town One...What do you want to do?" + NEWLINE);
-		System.out.print("A) Go to Next Town" + NEWLINE + "B) Go to Black Smith" + NEWLINE + "C) Go to Witch" + NEWLINE + "X) Exit Game" +NEWLINE + "Choose Wisely: " );
+		System.out.println("A) Go to Next Town" + NEWLINE + "B) Go to Black Smith" + NEWLINE + "C) Go to Witch" + NEWLINE + "X) Exit Game" +NEWLINE + "Z) Exit Without Saving" + NEWLINE + "Choose Wisely: " );
+		
 		OptionChoose = scannerCurrentTown.next();
 		OptionChoose = OptionChoose.toUpperCase();
 		//scannerCurrentTown.close();
@@ -108,6 +136,9 @@ public class GameEngine {
 				//Exit Game
 				System.out.println("You are Exiting the game");
 				Player.SaveCharacterPlayer();
+				System.exit(0);
+			case "Z":
+				System.out.println("You are Exiting the game with out saving");
 				System.exit(0);
 			//default:
 				//Some code here as default option
