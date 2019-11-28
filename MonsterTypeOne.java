@@ -65,7 +65,7 @@ public class MonsterTypeOne {
 		int i = RandNumMethod2();
 		return i;
 	}
-	public static void Troll() {
+	public static int[] Troll() {
 		//random hitpoints
 		//random dropitem on death
 		//random encounter
@@ -73,13 +73,15 @@ public class MonsterTypeOne {
 		//Damage per hit
 		//Exp Points
 		
+		int hitPoints = RandNumMethod();
+		int damagePerHit = DamagePerHit();
 		int i = MagicItemChance();
 		int j = MagicItem();
 		int k = Encounter();
 		int m = DropItem();
 		
 		System.out.println("--------For Troll--------");
-		System.out.println("The hitpoints for this Troll is: " + RandNumMethod() + " and drops item number: " + RandNumMethod());
+		System.out.println("The hitpoints for this Troll is: " + hitPoints + " and drops item number: " + RandNumMethod());
 		System.out.print("Encounter percentage chance on Quest: " + k + "%");
 		if (k == 0) {
 			m=0;
@@ -93,8 +95,10 @@ public class MonsterTypeOne {
 			j=0;
 		}
 		System.out.println(" and magic drop item is number: " + j);
-		System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + RandNumMethod());
+		System.out.println("Damage per hit upon Player Character is: " + damagePerHit + NEWLINE +"Experience Points Gained: " + RandNumMethod());
 		System.out.println("----------------");
+		
+		return new int[] {hitPoints, damagePerHit};
 		
 	}
 	public static void Imp() {
