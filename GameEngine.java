@@ -57,6 +57,10 @@ public class GameEngine {
 		System.out.println("-------Travel to New Town-------");
 		System.out.println("You are in Town One...Where do you want to go?" + NEWLINE);
 		System.out.print("E) Go to Next Town to East" + NEWLINE + "W) Go to Next Town to West" + NEWLINE + "N) Go to Next Town to North" + NEWLINE + "S) Go to Next Town to South" + NEWLINE + "X) Exit Back to Current Town" +NEWLINE + "Choose Wisely: " );
+		System.out.println("");
+		Town.LoadTowns();
+		System.out.println("Test grab from Town() At TownsConfig[1].Town_Name: " + Town.TownsConfig[1].Town_Name);
+		System.out.println("");
 		OptionChoose = scannerNextTown.next();
 		OptionChoose = OptionChoose.toUpperCase();
 		//scannerCurrentTown.close();
@@ -112,13 +116,13 @@ public class GameEngine {
 		
 		
 		System.out.println("You are in Town One...What do you want to do?" + NEWLINE);
-		System.out.println("A) Go to Next Town" + NEWLINE + "B) Go to Black Smith" + NEWLINE + "C) Go to Witch" + NEWLINE + "X) Exit Game" +NEWLINE + "Z) Exit Without Saving" + NEWLINE + "Choose Wisely: " );
+		System.out.println("T) Go to Next Town" + NEWLINE + "B) Go to Black Smith" + NEWLINE + "W) Go to Witch" + NEWLINE + "X) Exit Game" +NEWLINE + "Z) Exit Without Saving" + NEWLINE + "Choose Wisely: " );
 		
 		OptionChoose = scannerCurrentTown.next();
 		OptionChoose = OptionChoose.toUpperCase();
 		//scannerCurrentTown.close();
 		switch(OptionChoose) {
-			case "A":
+			case "T":
 				//Go to next Town
 				System.out.println("You will travel to the next Town, over hill and through Dale, Don't get killed");
 				TravelNextTown();
@@ -128,7 +132,7 @@ public class GameEngine {
 				System.out.println("The Blacksmith may have a quest for you");
 				NCP_Characters.ncpBlackSmith();
 				//break;
-			case "C":
+			case "W":
 				//Go to Witch
 				System.out.println("Going to the Witch, don't talk to long her, she will turn you into a Frog." + NEWLINE);
 				NCP_Characters.ncpWitch();

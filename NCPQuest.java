@@ -20,7 +20,7 @@ public class NCPQuest {
 		
 		if (rand_int1 <= 5) {
 			System.out.print("You will need to travel to the caves that are on the outskirts of town." + NEWLINE + "There you will find a cave with the letter S above its opening." + NEWLINE + "Look for a piece of metal about 1 foot long and 6 inches wide. It will be in a chest near the back of the cave." + NEWLINE + "Be careful there is a Troll guarding the chest." + NEWLINE );
-			System.out.println(" Do you accept the Quest? Y for Yes; N for No: ");
+			System.out.println(NEWLINE + " Do you accept the Quest? Y for Yes; N for No: ");
 			scanResult = NCPscan.next();
 			scanResult = scanResult.toUpperCase();
 			if (scanResult.contentEquals("Y")) {
@@ -108,11 +108,9 @@ public class NCPQuest {
 		while (OptionChoose != "R" && mhitPoints >=1) {
 			System.out.println("A) Attack" + NEWLINE + "R) Run Away" + NEWLINE + "Choose Wisely:");
 			OptionChoose = scannerBattle.next();
-			OptionChoose.toUpperCase(); // seems to not work here????
+			OptionChoose = OptionChoose.toUpperCase();
 			System.out.println("----" + OptionChoose);
-			if (OptionChoose == "a") { // Still not working
-				OptionChoose = "A";
-			}
+			
 			switch(OptionChoose){
 				case "A":
 					//Attack
