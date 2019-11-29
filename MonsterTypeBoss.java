@@ -23,7 +23,7 @@ public class MonsterTypeBoss {
 		}
 		public static int RandNumMethod() {
 			Random randNum = new Random();
-			int rand_int1 = randNum.nextInt(100);
+			int rand_int1 = randNum.nextInt(101);
 			if (rand_int1 <= 30) {
 				rand_int1 = rand_int1 + 50;
 			}
@@ -31,7 +31,12 @@ public class MonsterTypeBoss {
 		}
 		public static int RandNumMethod2() {
 			Random randNum = new Random();
-			int rand_int1 = randNum.nextInt(50);
+			int rand_int1 = randNum.nextInt(51);
+			return rand_int1;
+		}
+		public static int RandNumMethod3() {
+			Random randNum = new Random();
+			int rand_int1 = randNum.nextInt(11);
 			return rand_int1;
 		}
 		public static int Encounter() {
@@ -55,12 +60,12 @@ public class MonsterTypeBoss {
 		
 		}
 		public static int MagicItem() {
-			int i = RandNumMethod();
+			int i = RandNumMethod3();
 			return i;
 		}
 		public static int DropItem() {
 			// item in item list array
-			int i = RandNumMethod();
+			int i = RandNumMethod3();
 			return i;
 
 		}
@@ -89,7 +94,7 @@ public class MonsterTypeBoss {
 			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Troll--------");
-			System.out.println("The hitpoints for this Troll is: " + hitPoints + " and drops item number: " + RandNumMethod());
+			System.out.println("The hitpoints for this Troll is: " + hitPoints + " and drops item number: " + RandNumMethod3());
 			System.out.print("Encounter percentage chance on Quest: " + k + "%");
 			if (k == 0) {
 				m=0;
@@ -122,7 +127,7 @@ public class MonsterTypeBoss {
 			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Imp--------");
-			System.out.println("The hitpoints for this Imp is: " + hitPoints + " and drops item number: " + RandNumMethod());
+			System.out.println("The hitpoints for this Imp is: " + hitPoints + " and drops item number: " + RandNumMethod3());
 			System.out.print("Encounter percentage chance on Quest: " + k + "%");
 			if (k == 0) {
 				m=0;
@@ -155,7 +160,7 @@ public class MonsterTypeBoss {
 			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Hydra--------");
-			System.out.println("The hitpoints for this Hydra is: " + hitPoints + " and drops item number: " + RandNumMethod());
+			System.out.println("The hitpoints for this Hydra is: " + hitPoints + " and drops item number: " + RandNumMethod3());
 			System.out.print("Encounter percentage chance on Quest: " + k + "%");
 			if (k == 0) {
 				m=0;
@@ -188,7 +193,7 @@ public class MonsterTypeBoss {
 			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Zombie--------");
-			System.out.println("The hitpoints for this Zombie is: " + hitPoints + " and drops item number: " + RandNumMethod());
+			System.out.println("The hitpoints for this Zombie is: " + hitPoints + " and drops item number: " + RandNumMethod3());
 			System.out.print("Encounter percentage chance on Quest: " + k + "%");
 			if (k == 0) {
 				m=0;
@@ -221,7 +226,7 @@ public class MonsterTypeBoss {
 			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Other--------");
-			System.out.println("The hitpoints for this Other is: " + hitPoints + " and drops item number: " + RandNumMethod());
+			System.out.println("The hitpoints for this Other is: " + hitPoints + " and drops item number: " + RandNumMethod3());
 			System.out.print("Encounter percentage chance on Quest: " + k + "%");
 			if (k == 0) {
 				m=0;
@@ -254,7 +259,7 @@ public class MonsterTypeBoss {
 			int n = ((RandNumMethod() + RandNumMethod())*2);
 			
 			System.out.println("--------For Boss Zombie Dragon--------");
-			System.out.println("The hitpoints for this Boss Zombie Dragon is: " + hitPoints + " and drops item number: " + RandNumMethod());
+			System.out.println("The hitpoints for this Boss Zombie Dragon is: " + hitPoints + " and drops item number: " + RandNumMethod3());
 			System.out.print("Encounter percentage chance on Quest: " + k + "%");
 			if (k == 0) {
 				m=0;

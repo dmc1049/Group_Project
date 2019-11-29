@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class GameEngine {
 	
-	private static final String NEWLINE = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
+	public static final String NEWLINE = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
 	
 	public static String[][] PlayerConfig = new String[16][16]; 
 		
@@ -69,22 +69,25 @@ public class GameEngine {
 				//Go to Town to East
 				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed");
 				TravelNextTown.TravelToTownEast();
-				TravelNextTown();
+				//TravelNextTown();
 				//break;
 			case "W":
 				//Go to Town to West
 				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed");
-				TravelNextTown();
+				TravelNextTown.TravelToTownEast();
+				//TravelNextTown();
 				//break;
 			case "N":
 				//Go to Town to North
 				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed" + NEWLINE);
-				TravelNextTown();
+				TravelNextTown.TravelToTownEast();
+				//TravelNextTown();
 				//break;
 			case "S":
 				//Go to Town to South
 				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed" + NEWLINE);
-				TravelNextTown();
+				TravelNextTown.TravelToTownEast();
+				//TravelNextTown();
 				//break;
 			case "X":
 				//Exit Game
@@ -106,17 +109,17 @@ public class GameEngine {
 		System.out.println("--------------------------------Your Character Stats-------------------------------------------");
 		//System.out.println("DEBUG");
 		//System.out.println("DEBUG");
-		System.out.println("  Name: " + Player.CHARACTER_NAME + "               |   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL);
-		System.out.println("  CHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "     |   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS);
-		System.out.println("  CHAR_COIN: " + Player.CHAR_COIN  + "           |   Current Town: "+ Player.CURRENT_TOWN);
-		System.out.println("  Experience Points: " + Player.CHAR_EXP_POINTS + "      |");
+		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
+				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
+				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN
+				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t|   ");
 		//System.out.println();
-		System.out.println("----------------------------------------------------------------------------------------------");
+		System.out.print("\n----------------------------------------------------------------------------------------------");
 		System.out.println();
 		//StringBuilder sb = new StringBuilder();
 		String CurrentTown = Player.CURRENT_TOWN;
 		
-		System.out.println("You are in Town "+ CurrentTown +"...What do you want to do?" + NEWLINE);
+		System.out.println("You are in Town "+ CurrentTown +"... What do you want to do?" + NEWLINE);
 		System.out.println("T) Go to Next Town" + NEWLINE + "B) Go to Black Smith" + NEWLINE + "W) Go to Witch" + NEWLINE + "X) Exit Game" +NEWLINE + "Z) Exit Without Saving" + NEWLINE + "Choose Wisely: " );
 		
 		OptionChoose = scannerCurrentTown.next();

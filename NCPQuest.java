@@ -14,7 +14,7 @@ public class NCPQuest {
 	public static void NCPBlacksmith(){
 		
 		Random randNum = new Random();
-		int rand_int1 = randNum.nextInt(10);
+		int rand_int1 = randNum.nextInt(11);
 		Scanner NCPscan = new Scanner(System.in);
 		String scanResult = "";
 		

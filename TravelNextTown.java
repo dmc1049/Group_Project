@@ -10,10 +10,17 @@ public class TravelNextTown {
 	
 	public static int RandNumMethod() {
 		Random randNum = new Random();
-		int rand_int1 = randNum.nextInt(10);
-		if (rand_int1 <= 5) {
-			rand_int1 = rand_int1 +5;
-		}
+		int rand_int1 = randNum.nextInt(11);
+		return rand_int1;
+	}
+	public static int RandomMonsterMethod() {
+		Random randNum = new Random();
+		int rand_int1 = randNum.nextInt(6);
+		return rand_int1;
+	}
+	public static int RandomTravelerMethod() {
+		Random randNum = new Random();
+		int rand_int1 = randNum.nextInt(6);
 		return rand_int1;
 	}
 	
@@ -25,70 +32,84 @@ public class TravelNextTown {
 		
 		String TownEast = Town.TownsConfig[i].Town_Name;
 		int TownEastID = Town.TownsConfig[i].Town_ID;
-		System.out.print(TownEast);
+		//System.out.print(TownEast);
 		if (TownEastID == Integer.parseInt(strCurrentTown)) {
 			TravelToTownEast();
 		}
-		
+		Player.CURRENT_TOWN = Integer.toString(TownEastID);
+		String TownName = TownEast;
+		String Monster = MonsterTypeOne.RandMonster(RandomMonsterMethod());
+		String Traveler = TravelerTypeOne.RandTraveler(RandomTravelerMethod());
+		TravelBetweenTowns(TownName, Monster, Traveler);
 		
 		
 	}
 	public static void TravelToTownWest() {
 		// get town data from town.java
 		//Random Town
-		int i = RandNumMethod();
-		Town.LoadTowns();
-		String TownWest = Town.TownsConfig[i].Town_Name;
-		System.out.print(TownWest);
-		
+//		int i = RandNumMethod();
+//		Town.LoadTowns();
+//		String TownWest = Town.TownsConfig[i].Town_Name;
+//		System.out.print(TownWest);
+		TravelToTownEast();
 	}
 	public static void TravelToTownNorth() {
 		// get town data from town.java
 		//Random Town
-		int i = RandNumMethod();
-		Town.LoadTowns();
-		String TownNorth = Town.TownsConfig[i].Town_Name;
-		System.out.print(TownNorth);
-		
+//		int i = RandNumMethod();
+//		Town.LoadTowns();
+//		String TownNorth = Town.TownsConfig[i].Town_Name;
+//		System.out.print(TownNorth);
+		TravelToTownEast();
 	}
 	public static void TravelToTownSouth() {
 		// get town data from town.java
 		//Random Town
-		int i = RandNumMethod();
-		Town.LoadTowns();
-		String TownSouth = Town.TownsConfig[i].Town_Name;
-		System.out.print(TownSouth);
-		
+//		int i = RandNumMethod();
+//		Town.LoadTowns();
+//		String TownSouth = Town.TownsConfig[i].Town_Name;
+//		System.out.print(TownSouth);
+		TravelToTownEast();
 	}
 	
-	public static void TravelBetweenTowns(String TownName, String Monster, String Traveller) {
+	public static void TravelBetweenTowns(String TownName, String Monster, String Traveler) {
 		//random chance of coming across monster
 		//random chance you come across traveler
 		
 		int i = RandNumMethod();
 		if (i <=3) {
-			System.out.print("\nSome Text Here");
-			System.out.print("\n\n"
-					+ "\t1. You travel to Town " + TownName + "  and it was a very uneventful travel."
-					+ "\t2. Look Around and see what it has to offer");
+			//System.out.print("\n");
+			System.out.print("\n"
+					+ "\t You travel to the Town " + TownName + " and it was a very uneventful trip." + GameEngine.NEWLINE
+					+ "\t Look Around the town and see what it has to offer\n\n");
+			GameEngine.CurrentTown();
 		}
 		else if ((i >= 4) || (i<= 7)) {
 			Scanner scannerTravel = new Scanner(System.in);
 			String OptionChoose;
-			System.out.print("\nSome Text Here About Monster");
+			//System.out.print("\n\tSome Text Here About Monster");
 			System.out.print("\n\n"
-					+ "\t1. You travel to Town " + TownName + "  and on your way you are confronted with a " + Monster + "."
-					+ "\t2. Do you want to battle it or continue on to the next town? Y for Yes and N for No: ");
+					+ "\t You travel to the Town " + TownName + " and on your way you are confronted with a " + Monster + "." + GameEngine.NEWLINE
+					+ "\t Do you want to battle it or continue on to the next town?" + GameEngine.NEWLINE 
+					+ "\t B) for Battle Monster \n\t C) for Continue to next town: ");
 			OptionChoose = scannerTravel.next();
 			OptionChoose = OptionChoose.toUpperCase();
 			switch (OptionChoose) {
-				case "Y":
+				case "B":
 					//Something here
-					
+					//random monster from RandMonsterMethod()
+					System.out.println("Need to add battle engine here");
+					//Battle Monster Make possible .java file to link to
+					GameEngine.CurrentTown();
 					break;
-				case "N":
+				case "C":
 					//Something here
-					
+					//System.out.print("\nSome Text Here");
+					System.out.print("\n\n"
+							+ "\t You are racked with fear and decide to avoid the monster." + GameEngine.NEWLINE
+							+ "\t You make your way off the Path to the next town and wander through" + GameEngine.NEWLINE
+							+ "\t the woods until you reach the next Town.\n\n");
+					GameEngine.CurrentTown();
 					break;
 				default:
 					//Something
@@ -100,18 +121,21 @@ public class TravelNextTown {
 			String OptionChoose;
 			System.out.print("\nSome Text Here About Traveller");
 			System.out.print("\n\n"
-					+ "\t1. You travel to Town " + TownName + "  and on your way you are confronted with a " + Traveller + "."
-					+ "\t2. Do you want to talk the the Traveller or continue on to the next town? Y for Yes and N for No: ");
+					+ "\t You travel to Town " + TownName + "  and on your way you are confronted with a " + Traveler + "." + GameEngine.NEWLINE
+					+ "\t Do you want to talk the the Traveler or continue on to the next town?" + GameEngine.NEWLINE 
+					+ "\t T) To talk to Traveler" + GameEngine.NEWLINE + "C) To continue to next town: ");
 			OptionChoose = scannerTravel.next();
 			OptionChoose = OptionChoose.toUpperCase();
 			switch (OptionChoose) {
-				case "Y":
+				case "T":
 					//Something here
-					
+					System.out.print("\n\nBased on Traveler we would add text here\n\n");
+					GameEngine.CurrentTown();
 					break;
-				case "N":
+				case "C":
 					//Something here
-					
+					System.out.print("\n\t You continue on your way to the next town\n");
+					GameEngine.CurrentTown();
 					break;
 				default:
 					//Something
