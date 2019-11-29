@@ -120,7 +120,9 @@ public class GameEngine {
 		String CurrentTown = Player.CURRENT_TOWN;
 		
 		System.out.println("You are in Town "+ CurrentTown +"... What do you want to do?" + NEWLINE);
-		System.out.println("T) Go to Next Town" + NEWLINE + "B) Go to Black Smith" + NEWLINE + "W) Go to Witch" + NEWLINE + "X) Exit Game" +NEWLINE + "Z) Exit Without Saving" + NEWLINE + "Choose Wisely: " );
+		System.out.println("T) Go to Next Town" + NEWLINE + "B) Go to Black Smith" + NEWLINE + "W) Go to Witch" + NEWLINE + 
+				"O) Go to the Wizard" + NEWLINE + "X) Exit Game" +NEWLINE + "Z) Exit Without Saving" + NEWLINE + 
+				"Choose Wisely: " );
 		
 		OptionChoose = scannerCurrentTown.next();
 		OptionChoose = OptionChoose.toUpperCase();
@@ -141,6 +143,10 @@ public class GameEngine {
 				System.out.println("Going to the Witch, don't talk to long her, she will turn you into a Frog." + NEWLINE);
 				NCP_Characters.ncpWitch();
 				//break;
+			case "O":
+				//Go to Wizard
+				System.out.print("The Wizard is a little quarky, he likes to mumble a lot\n");
+				NCP_Characters.ncpWizard();
 			case "X":
 				//Exit Game
 				System.out.println("You are Exiting the game");
