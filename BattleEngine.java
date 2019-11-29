@@ -79,12 +79,13 @@ public class BattleEngine {
 			  mExpPoints = result[2];
 			  mCoin = result[3];
 		}
+		System.out.print("\n\tPlayer Hit Points: " + CharHitPoints +"\n");
 		System.out.print("\n\tMonster Hit Points: " + mhitPoints);
 		if(mhitPoints ==0) {
 			System.out.print("\n\t The " + Monster + " saw you and died instantly!\n\n");
 			GameEngine.CurrentTown();
 		}
-		System.out.print("\n\tPlayer Hit Points: " + CharHitPoints +"\n");
+		
 		String OptionChoose = "";
 		Scanner scannerBattle = new Scanner(System.in);
 		

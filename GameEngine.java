@@ -152,17 +152,17 @@ public class GameEngine {
 				//break;
 			case "B":
 				//Go to Black Smith
-				System.out.println("The Blacksmith may have a quest for you");
+				System.out.println("\tThe Blacksmith may have a quest for you");
 				NCP_Characters.ncpBlackSmith();
 				//break;
 			case "W":
 				//Go to Witch
-				System.out.println("Going to the Witch, don't talk to long her, she will turn you into a Frog." + NEWLINE);
+				System.out.println("\tGoing to the Witch, don't talk to her for a long time. \n\tShe will turn you into a Frog." + NEWLINE);
 				NCP_Characters.ncpWitch();
 				//break;
 			case "O":
 				//Go to Wizard
-				System.out.print("The Wizard is a little quarky, he likes to mumble a lot\n");
+				System.out.print("\tThe Wizard is a little quarky, he likes to mumble a lot\n");
 				NCP_Characters.ncpWizard();
 			case "X":
 				//Exit Game
