@@ -89,7 +89,7 @@ public class BattleEngine {
 		Scanner scannerBattle = new Scanner(System.in);
 		
 		while (OptionChoose != "R" && mhitPoints >=1) {
-			System.out.println("A) Attack" + GameEngine.NEWLINE + "R) Run Away" + GameEngine.NEWLINE + "Choose Wisely:");
+			System.out.println("\tA) Attack" + GameEngine.NEWLINE + "\tR) Run Away" + GameEngine.NEWLINE + "\tChoose Wisely:");
 			OptionChoose = scannerBattle.next();
 			OptionChoose = OptionChoose.toUpperCase();
 			//System.out.println("----" + OptionChoose);
@@ -97,12 +97,12 @@ public class BattleEngine {
 			switch(OptionChoose){
 				case "A":
 					//Attack
-					System.out.println("You Attack!!!");
+					System.out.println("\tYou Attack!!!");
 					//Do hit code here
 					mhitPoints = mhitPoints - RandNumPlayerAttack(CharDamagePerHit);
-					System.out.println("--Current Battle Stats--");
-					System.out.println("Player Hit Points: " + CharHitPoints);
-					System.out.println("Monster Hit Points: " + mhitPoints);
+					System.out.println("\t--Current Battle Stats--");
+					System.out.println("\tPlayer Hit Points: " + CharHitPoints);
+					System.out.println("\tMonster Hit Points: " + mhitPoints);
 					System.out.println("");
 					
 					
@@ -137,7 +137,7 @@ public class BattleEngine {
 					break;
 				case "R":
 					//Run Away
-					System.out.println("You Run Away!!!");
+					System.out.println("\n\tYou Run Away!!!\n");
 					GameEngine.CurrentTown();
 					
 					break;

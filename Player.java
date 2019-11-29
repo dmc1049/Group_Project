@@ -57,9 +57,7 @@ public class Player {
 	
 	
 	public static void LoadChar2() {
-		
-		
-		
+		//testing example 1
 		Path path = Paths.get(FILE_NAME);
 		Scanner scanner = null;
 		try {
@@ -78,6 +76,7 @@ public class Player {
 	}
 	
 	public static void LoadChar() {
+		//testing example 2
 		String fileName = FILE_NAME;
 		File file = new File(fileName);
 		FileReader fr = null;
@@ -139,6 +138,9 @@ public class Player {
 	public static void CheckSavedCharacter() {
 		//look for saved character file, if none create character, 
 		//if present ask if player wants to use this character or create new one
+		System.out.print("\n\tWelcome to TAG, a Roll Playing Game of Fantacy and Monsters"
+				+ "\n\tThe first thing we will do is see if you have a saved character."
+				+ "\n\tIf you do not have a saved character we will create one.\n");
 		Scanner scannerCheckCharacter = new Scanner(System.in);
 		Scanner scannerDeleteCharacter = new Scanner(System.in);
 		String UseChar = "";
@@ -146,7 +148,8 @@ public class Player {
 		File PlayerCharFile = new File(FILE_NAME);//<- changed to FILE_NAME
 		boolean exists = PlayerCharFile.exists();
 		if (exists) {
-			System.out.print("Do you want to use saved character: Y for Yes, N for No: ");
+			System.out.print("\n\tYou have a saved character.\n"
+					+ "\n\tDo you want to use the saved character: Y for Yes, N for No: ");
 			UseChar = scannerCheckCharacter.next();
 			UseChar = UseChar.toUpperCase();
 			if (UseChar.equals("Y")) {
@@ -155,7 +158,7 @@ public class Player {
 			if (UseChar.equals("N")) {
 				//Ask if they want to delete their current Character
 				//only one character is allowed at this moment
-				System.out.print("Do you want to Delete your current Character and create a new one? Y for Yes, N for No: ");
+				System.out.print("\n\tDo you want to Delete your current Character and create a new one? Y for Yes, N for No: ");
 				DeleteChar = scannerDeleteCharacter.next();
 				DeleteChar = DeleteChar.toUpperCase();
 				if (DeleteChar.equals("Y")) {
@@ -164,7 +167,7 @@ public class Player {
 					CreateCharacterPlayer();
 				}
 				else {
-					System.out.println("We will load the current Character you have saved.");
+					System.out.println("\n\tWe will load the current Character you have saved.");
 					LoadPlayerChar();
 				}
 			}
@@ -182,11 +185,11 @@ public class Player {
 		// Delete the Saved Char file
 		File file = new File(FILE_NAME);//<- changed to FILE_NAME
 		if(file.delete()) {
-			System.out.println("Character File Deleted");
+			System.out.println("\t\nCharacter File Deleted\n");
 		}
 		else {
-			System.out.println("Failed to delete Character file");
-			System.out.println("But overwrite is working??????");
+			System.out.println("ERROR: Failed to delete Character file");
+			//System.out.println("But overwrite is working??????");
 		}
 		
 	}
@@ -364,7 +367,7 @@ public class Player {
 		
 		Scanner scanner1 = new Scanner(System.in);
 		String Class = "";
-		System.out.print("Enter your Character Class: M for Male or F for Female: ");
+		System.out.print("\n\tEnter your Character Class: M for Male or F for Female: ");
 		//scanner.nextLine();
 		Class = scanner1.next();
 		Class = Class.toUpperCase();
@@ -391,7 +394,7 @@ public class Player {
 		// TODO Auto-generated method stub
 		String CharName = "";
 		Scanner scanner2 = new Scanner(System.in);
-		System.out.print("Enter your Characters Name: ");
+		System.out.print("\n\tEnter your Characters Name: ");
 		//scanner.nextLine();
 		CharName = scanner2.next();
 		CHARACTER_NAME = CharName;

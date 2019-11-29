@@ -10,17 +10,17 @@ public class TravelNextTown {
 	
 	public static int RandNumMethod() {
 		Random randNum = new Random();
-		int rand_int1 = randNum.nextInt(11);
+		int rand_int1 = randNum.nextInt(10);
 		return rand_int1;
 	}
 	public static int RandomMonsterMethod() {
 		Random randNum = new Random();
-		int rand_int1 = randNum.nextInt(6);
+		int rand_int1 = randNum.nextInt(5);
 		return rand_int1;
 	}
 	public static int RandomTravelerMethod() {
 		Random randNum = new Random();
-		int rand_int1 = randNum.nextInt(6);
+		int rand_int1 = randNum.nextInt(5);
 		return rand_int1;
 	}
 	
@@ -84,12 +84,12 @@ public class TravelNextTown {
 					+ "\t Look Around the town and see what it has to offer\n\n");
 			GameEngine.CurrentTown();
 		}
-		else if ((i >= 4) || (i<= 6)) {
+		else if ((i >= 4) && (i<= 6)) {
 			Scanner scannerTravel = new Scanner(System.in);
 			String OptionChoose;
 			//System.out.print("\n\tSome Text Here About Monster");
 			System.out.print("\n"
-					+ "\t You travel to the Town " + TownName + " and on your way you are confronted with a " + Monster + "." + GameEngine.NEWLINE
+					+ "\t You are traveling to the Town " + TownName + " and on your way you are confronted with a " + Monster + "." + GameEngine.NEWLINE
 					+ "\t Do you want to battle it or continue on to the next town?" + GameEngine.NEWLINE 
 					+ "\t B) for Battle Monster \n\t C) for Continue to next town: ");
 			OptionChoose = scannerTravel.next();
@@ -117,12 +117,12 @@ public class TravelNextTown {
 			}
 			//Something else here....
 		}
-		else if(i >=7) {
+		else if(i >= 7) {
 			Scanner scannerTravel = new Scanner(System.in);
 			String OptionChoose;
-			System.out.print("\nSome Text Here About Traveller");
+			//System.out.print("\nSome Text Here About Traveler");
 			System.out.print("\n\n"
-					+ "\t You travel to Town " + TownName + "  and on your way you are confronted with a " + Traveler + "." + GameEngine.NEWLINE
+					+ "\t You travel to Town " + TownName + "  and on your way you are meet with a " + Traveler + "." + GameEngine.NEWLINE
 					+ "\t Do you want to talk the the Traveler or continue on to the next town?" + GameEngine.NEWLINE 
 					+ "\t T) To talk to Traveler\n\t C) To continue to next town: ");
 			OptionChoose = scannerTravel.next();
@@ -130,8 +130,8 @@ public class TravelNextTown {
 			switch (OptionChoose) {
 				case "T":
 					//Something here
-					System.out.print("\n\tYou Meet" + Traveler + " and "+ Traveler+" tells you about how in the next town"
-							+ "\n\tthere are riches to be made on Quests");
+					System.out.print("\n\tYou meet " + Traveler + " and "+ Traveler+" tells you about how in the next town"
+							+ "\n\tthere are riches to be made on Quests\n\n");
 					GameEngine.CurrentTown();
 					break;
 				case "C":
