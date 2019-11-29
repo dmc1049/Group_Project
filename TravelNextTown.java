@@ -84,11 +84,11 @@ public class TravelNextTown {
 					+ "\t Look Around the town and see what it has to offer\n\n");
 			GameEngine.CurrentTown();
 		}
-		else if ((i >= 4) || (i<= 7)) {
+		else if ((i >= 4) || (i<= 6)) {
 			Scanner scannerTravel = new Scanner(System.in);
 			String OptionChoose;
 			//System.out.print("\n\tSome Text Here About Monster");
-			System.out.print("\n\n"
+			System.out.print("\n"
 					+ "\t You travel to the Town " + TownName + " and on your way you are confronted with a " + Monster + "." + GameEngine.NEWLINE
 					+ "\t Do you want to battle it or continue on to the next town?" + GameEngine.NEWLINE 
 					+ "\t B) for Battle Monster \n\t C) for Continue to next town: ");
@@ -98,14 +98,15 @@ public class TravelNextTown {
 				case "B":
 					//Something here
 					//random monster from RandMonsterMethod()
-					System.out.println("Need to add battle engine here");
+					//System.out.println("Need to add battle engine here");
 					//Battle Monster Make possible .java file to link to
-					GameEngine.CurrentTown();
+					//GameEngine.CurrentTown();
+					BattleEngine.BattleMonster(Monster);
 					break;
 				case "C":
 					//Something here
 					//System.out.print("\nSome Text Here");
-					System.out.print("\n\n"
+					System.out.print("\n"
 							+ "\t You are racked with fear and decide to avoid the monster." + GameEngine.NEWLINE
 							+ "\t You make your way off the Path to the next town and wander through" + GameEngine.NEWLINE
 							+ "\t the woods until you reach the next Town.\n\n");
@@ -116,20 +117,21 @@ public class TravelNextTown {
 			}
 			//Something else here....
 		}
-		else {
+		else if(i >=7) {
 			Scanner scannerTravel = new Scanner(System.in);
 			String OptionChoose;
 			System.out.print("\nSome Text Here About Traveller");
 			System.out.print("\n\n"
 					+ "\t You travel to Town " + TownName + "  and on your way you are confronted with a " + Traveler + "." + GameEngine.NEWLINE
 					+ "\t Do you want to talk the the Traveler or continue on to the next town?" + GameEngine.NEWLINE 
-					+ "\t T) To talk to Traveler" + GameEngine.NEWLINE + "C) To continue to next town: ");
+					+ "\t T) To talk to Traveler\n\t C) To continue to next town: ");
 			OptionChoose = scannerTravel.next();
 			OptionChoose = OptionChoose.toUpperCase();
 			switch (OptionChoose) {
 				case "T":
 					//Something here
-					System.out.print("\n\nBased on Traveler we would add text here\n\n");
+					System.out.print("\n\tYou Meet" + Traveler + " and "+ Traveler+" tells you about how in the next town"
+							+ "\n\tthere are riches to be made on Quests");
 					GameEngine.CurrentTown();
 					break;
 				case "C":

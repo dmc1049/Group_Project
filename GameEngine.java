@@ -67,25 +67,25 @@ public class GameEngine {
 		switch(OptionChoose) {
 			case "E":
 				//Go to Town to East
-				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed");
+				System.out.print("\tYou will travel to the next town, over hill and through Dale, Don't get killed");
 				TravelNextTown.TravelToTownEast();
 				//TravelNextTown();
 				//break;
 			case "W":
 				//Go to Town to West
-				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed");
+				System.out.print("\tYou will travel to the next town, over hill and through Dale, Don't get killed");
 				TravelNextTown.TravelToTownEast();
 				//TravelNextTown();
 				//break;
 			case "N":
 				//Go to Town to North
-				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed" + NEWLINE);
+				System.out.print("\tYou will travel to the next town, over hill and through Dale, Don't get killed");
 				TravelNextTown.TravelToTownEast();
 				//TravelNextTown();
 				//break;
 			case "S":
 				//Go to Town to South
-				System.out.println("You will travel to the next town, over hill and through Dale, Don't get killed" + NEWLINE);
+				System.out.print("\tYou will travel to the next town, over hill and through Dale, Don't get killed");
 				TravelNextTown.TravelToTownEast();
 				//TravelNextTown();
 				//break;

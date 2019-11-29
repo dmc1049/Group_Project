@@ -92,6 +92,14 @@ public class NCPQuest {
 			  mExpPoints = result[2];
 			  mCoin = result[3];
 		}
+		if(Monster == "Imp") {
+			int result[] = MonsterTypeOne.Imp();
+			  //System.out.println(result[0] + result[1]); //retrieve from monster char
+			  mhitPoints = result[0];
+			  mdamagePerHit = result[1];
+			  mExpPoints = result[2];
+			  mCoin = result[3];
+		}
 		if(Monster == "Hydra") {
 			int result[] = MonsterTypeOne.Hydra();
 			  //System.out.println(result[0] + result[1]); //retrieve from monster char
@@ -100,6 +108,23 @@ public class NCPQuest {
 			  mExpPoints = result[2];
 			  mCoin = result[3];
 		}
+		if(Monster == "Zombie") {
+			int result[] = MonsterTypeOne.Zombie();
+			  //System.out.println(result[0] + result[1]); //retrieve from monster char
+			  mhitPoints = result[0];
+			  mdamagePerHit = result[1];
+			  mExpPoints = result[2];
+			  mCoin = result[3];
+		}
+		if(Monster == "Other") {
+			int result[] = MonsterTypeOne.Other();
+			  //System.out.println(result[0] + result[1]); //retrieve from monster char
+			  mhitPoints = result[0];
+			  mdamagePerHit = result[1];
+			  mExpPoints = result[2];
+			  mCoin = result[3];
+		}
+		
 		System.out.println("Monster Hit Points at init: " + mhitPoints);
 		System.out.println("Player Hit Points: " + CharHitPoints);
 		String OptionChoose = "";
@@ -180,7 +205,7 @@ public class NCPQuest {
 		
 		
 		
-	}
+	}// End Method
 	public static int RandNumPlayerAttack(int CharDamagePerHit) {
 		
 		Random randNum = new Random();

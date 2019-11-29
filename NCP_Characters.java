@@ -161,7 +161,7 @@ public class NCP_Characters {
 	public static void ncpTrader() {
 		
 	}
-	public static void ncpTraveler() {
+	public static void ncpTravelingSales() {
 		
 	}
 }

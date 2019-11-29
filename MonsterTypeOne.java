@@ -105,7 +105,8 @@ public class MonsterTypeOne {
 		int k = Encounter();
 		int m = DropItem();
 		
-		System.out.println("--------For Troll--------");
+		System.out.print("\n");
+		System.out.println("--------Stats For Troll--------");
 		System.out.println("The hitpoints for this Troll is: " + hitPoints + " and drops item number: " + RandNumMethod3());
 		System.out.print("Encounter percentage chance on Quest: " + k + "%");
 		if (k == 0) {
@@ -143,7 +144,8 @@ public class MonsterTypeOne {
 		int k = Encounter();
 		int m = DropItem();
 		
-		System.out.println("--------For Imp--------");
+		System.out.print("\n");
+		System.out.println("--------Stats For Imp--------");
 		System.out.println("The hitpoints for this Imp is: " + hitPoints + " and drops item number: " + RandNumMethod3());
 		System.out.print("Encounter percentage chance on Quest: " + k + "%");
 		if (k == 0) {
@@ -181,7 +183,8 @@ public class MonsterTypeOne {
 		int k = Encounter();
 		int m = DropItem();
 		
-		System.out.println("--------For Hydra--------");
+		System.out.print("\n");
+		System.out.println("--------Stats For Hydra--------");
 		System.out.println("The hitpoints for this Hydra is: " + hitPoints + " and drops item number: " + RandNumMethod3());
 		System.out.print("Encounter percentage chance on Quest: " + k + "%");
 		if (k == 0) {
@@ -218,7 +221,8 @@ public class MonsterTypeOne {
 		int k = Encounter();
 		int m = DropItem();
 		
-		System.out.println("--------For Imp--------");
+		System.out.print("\n");
+		System.out.println("--------Stats For Zombie--------");
 		System.out.println("The hitpoints for this Zombie is: " + hitPoints + " and drops item number: " + RandNumMethod3());
 		System.out.print("Encounter percentage chance on Quest: " + k + "%");
 		if (k == 0) {
@@ -256,7 +260,8 @@ public class MonsterTypeOne {
 		int k = Encounter();
 		int m = DropItem();
 		
-		System.out.println("--------For Imp--------");
+		System.out.print("\n");
+		System.out.println("--------Stats For Other--------");
 		System.out.println("The hitpoints for this Other is: " + hitPoints + " and drops item number: " + RandNumMethod3());
 		System.out.print("Encounter percentage chance on Quest: " + k + "%");
 		if (k == 0) {

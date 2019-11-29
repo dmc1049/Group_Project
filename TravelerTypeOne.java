@@ -1,6 +1,6 @@
 
 public class TravelerTypeOne {
-// used to fill a viod...
+// used to fill a void...
 	public static String RandTraveler(int Traveler) {
 		int i = Traveler;
 		String TravelerName = "";
