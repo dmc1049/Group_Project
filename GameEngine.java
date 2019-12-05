@@ -70,7 +70,7 @@ public class GameEngine {
 		Scanner scannerNextTown = new Scanner(System.in);
 		System.out.println("");
 		System.out.println("\t-------Travel to New Town-------");
-		System.out.println("\tYou are in Town " + Town.TownsConfig[1].Town_Name + "...Where do you want to go?" + NEWLINE);
+		System.out.println("\tYou are in Town " + Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name + "...Where do you want to go?" + NEWLINE);
 		System.out.print("\tE) Go to Next Town to East" + NEWLINE + "\tW) Go to Next Town to West" + NEWLINE + 
 				"\tN) Go to Next Town to North" + NEWLINE + "\tS) Go to Next Town to South" + NEWLINE + 
 				"\tX) Exit Back to Current Town" +NEWLINE + "\tChoose Wisely: " );
@@ -134,9 +134,9 @@ public class GameEngine {
 		System.out.print("\n----------------------------------------------------------------------------------------------");
 		System.out.print("\n");
 		//StringBuilder sb = new StringBuilder();
-		String CurrentTown = Player.CURRENT_TOWN;
+		//String CurrentTown = Player.CURRENT_TOWN;
 		
-		System.out.println("\tYou are in Town "+ CurrentTown +"... What do you want to do?" + NEWLINE);
+		System.out.println("\tYou are in Town "+ Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name +"... What do you want to do?" + NEWLINE);
 		System.out.println("\tT) Go to Next Town" + NEWLINE + "\tB) Go to Black Smith" + NEWLINE + "\tW) Go to Witch" + NEWLINE + 
 				"\tO) Go to the Wizard" + NEWLINE + "\tX) Exit Game" +NEWLINE + "\tZ) Exit Without Saving" + NEWLINE + 
 				"\tChoose Wisely: " );

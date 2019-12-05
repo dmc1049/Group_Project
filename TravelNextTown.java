@@ -37,7 +37,7 @@ public class TravelNextTown {
 			TravelToTownEast();
 		}
 		Player.CURRENT_TOWN = Integer.toString(TownEastID);
-		String TownName = TownEast;
+		String TownName = Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name;
 		String Monster = MonsterTypeOne.RandMonster(RandomMonsterMethod());
 		String Traveler = TravelerTypeOne.RandTraveler(RandomTravelerMethod());
 		TravelBetweenTowns(TownName, Monster, Traveler);

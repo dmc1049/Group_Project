@@ -22,12 +22,16 @@ public class Player {
 	public static int CHAR_MAX_HIT_POINTS = 0;
 	public static int CHAR_EXP_POINTS = 1;
 	public static int CHAR_ARMOR_POINTS = 0; // also durability
+	public static String CHAR_ARMOR_NAME = null;
 	public static int CHAR_MAX_ARMOR_POINTS = 0; //also durability
 	public static int CHAR_WEAPON_DAMAGE = 0; // damage done to enemy
+	public static String CHAR_WEAPON_NAME = null;
 	public static int CHAR_MAX_WEAPON_DAMAGE = 0; //damage done to enemy
 	public static int CHAR_MAGIC_WEAPON_DAMAGE = 0; //damage done to enemy
+	public static String CHAR_MAGIC_WEAPON_NAME = null;
 	public static int CHAR_MAX_MAGIC_WEAPON_DAMAGE =0; //damage done to enemy
 	public static int CHAR_MAGIC_ARMOR_POINTS = 0;
+	public static String CHAR_MAGIC_ARMOR_NAME = null;
 	public static int CHAR_MAX_MAGIC_ARMOR_POINTS = 0;
 	public static int CHAR_COIN = 99;
 	public static String CURRENT_TOWN = null;
