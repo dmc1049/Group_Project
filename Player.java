@@ -373,24 +373,41 @@ public class Player {
 		String Class = "";
 		System.out.print("\n\tEnter your Character Class: M for Male or F for Female: ");
 		//scanner.nextLine();
-		Class = scanner1.next();
+		
+		//scanner1.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+		Class = scanner1.nextLine();
 		Class = Class.toUpperCase();
+		
+		switch(Class){
+			case "M":
+				//Male
+				Class = "Male";
+				break;
+			case "F":
+				//Female
+				Class = "Female";
+				break;
+			default:
+				//error
+				System.out.println("\tInvalid Entry, Try again...");
+				PlayerClassType();
+		}
 		CHARACTER_TYPE = Class;
 		
 		//scanner1.close();
 		
-			if(Class == "M") {
-					Class = "Male";
-			}
-			else if(Class == "F"){
-				Class = "Female";
-			}
-			else {
-				//System.out.println("Invalid Selection, Try again");
-				//PlayerClass = "";
-				//System.exit(0);
-				//return;
-			}
+//			if(Class == "M") {
+//					Class = "Male";
+//			}
+//			else if(Class == "F"){
+//				Class = "Female";
+//			}
+//			else {
+//				//System.out.println("Invalid Selection, Try again");
+//				//PlayerClass = "";
+//				//System.exit(0);
+//				//return;
+//			}
 		
 		return Class;
 	}
@@ -399,7 +416,6 @@ public class Player {
 		String CharName = "";
 		Scanner scanner2 = new Scanner(System.in);
 		System.out.print("\n\tEnter your Characters Name: ");
-		//scanner.nextLine();
 		CharName = scanner2.next();
 		CHARACTER_NAME = CharName;
 		//scanner2.close();

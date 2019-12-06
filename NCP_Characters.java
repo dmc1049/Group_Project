@@ -67,8 +67,10 @@ public class NCP_Characters {
 				//return to town
 				GameEngine.CurrentTown();
 				//break;
-			//default:
+			default:
 				//default option
+				System.out.println("Invalid Entry, Please try again...");
+				ncpBlackSmith();
 		
 		}
 		
@@ -125,8 +127,10 @@ public class NCP_Characters {
 				//return to town
 				GameEngine.CurrentTown();
 				//break;
-			//default:
+			default:
 				//default option
+				System.out.println("Invalid Entry, Please try again...");
+				ncpWitch();
 		
 		}
 	}
@@ -177,8 +181,10 @@ public class NCP_Characters {
 				//return to town
 				GameEngine.CurrentTown();
 				//break;
-			//default:
+			default:
 				//default option
+				System.out.println("Invalid Entry, Please try again...");
+				ncpWizard();
 		
 		}
 	}

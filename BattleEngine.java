@@ -108,14 +108,14 @@ public class BattleEngine {
 					
 					
 					if(mhitPoints <= 0) {
-						System.out.println("You have defeated the " + Monster + "...");
-						System.out.print("\nYou hit the " + Monster + " so hard that you split it in two!!!\n");
+						System.out.println("\tYou have defeated the " + Monster + "...");
+						System.out.print("\t\nYou hit the " + Monster + " so hard that you split it in two!!!\n\n");
 						Player.CHAR_EXP_POINTS = Player.CHAR_EXP_POINTS + mExpPoints;
 						Player.CHAR_HIT_POINTS = CharHitPoints;
 						Player.CHAR_COIN = Player.CHAR_COIN + mCoin;
-						System.out.println("You have gained " + mExpPoints + " Experience Points!");
-						System.out.println("You have gained " + mCoin + " Coin!");
-						System.out.println("Press R to go to Town...");
+						System.out.println("\tYou have gained " + mExpPoints + " Experience Points!");
+						System.out.println("\tYou have gained " + mCoin + " Coin!");
+						System.out.println("\tPress R to continue on to the next Town...");
 						OptionChoose = scannerBattle.next();
 						GameEngine.CurrentTown();
 					}

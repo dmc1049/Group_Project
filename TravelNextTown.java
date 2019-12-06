@@ -114,6 +114,8 @@ public class TravelNextTown {
 					break;
 				default:
 					//Something
+					System.out.println("\tInvalid Entry, Please try again");
+					TravelNextTown.TravelToTownEast();
 			}
 			//Something else here....
 		}

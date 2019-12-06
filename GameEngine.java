@@ -41,14 +41,21 @@ public class GameEngine {
 		String characterType = Player.CHARACTER_TYPE;
 		//System.out.println("\tChar Type: " + characterType +"\n");
 		
-		if(characterType == "M") {
-			characterType = "Male";
-			System.out.println("Char Type: " + characterType);
-		}
-		else if (characterType == "F") {
-			characterType = "Female";
-			System.out.println("Char Type: " + characterType);
-		}
+//		if(characterType == "M") {
+//			characterType = "Male";
+//			System.out.println("Char Type: " + characterType);
+//		}
+//		else if (characterType == "F") {
+//			characterType = "Female";
+//			System.out.println("Char Type: " + characterType);
+//		}
+//		else {
+//			System.out.println("Error: ");
+//			System.out.println("Player.CHARACTER_TYPE: " +Player.CHARACTER_TYPE);
+//			System.out.println("characterType: " +characterType);
+//			System.out.println("");
+//		}
+			
 		
 		System.out.println(String.format("\tYour Character Class is: " + characterType + 
 				", and the name of your character is: %s", Player.CHARACTER_NAME));
@@ -110,9 +117,11 @@ public class GameEngine {
 				//Exit Game
 				System.out.println("Returning to Current Town");
 				CurrentTown();
-			//default:
+			default:
 				//Some code here as default option
-				
+				//Catch invalid entry
+				System.out.print("\tInvalid Entry, Please try again\n\n");
+				TravelNextTown();
 		}
 	}
 
@@ -143,7 +152,7 @@ public class GameEngine {
 		
 		OptionChoose = scannerCurrentTown.next();
 		OptionChoose = OptionChoose.toUpperCase();
-		//scannerCurrentTown.close();
+
 		switch(OptionChoose) {
 			case "T":
 				//Go to next Town
@@ -172,8 +181,14 @@ public class GameEngine {
 			case "Z":
 				System.out.println("You are Exiting the game with out saving");
 				System.exit(0);
-			//default:
+			case ".":
+				//System.out.println("Easter Egg");
+				EasterEgg.Egg();
+			default:
 				//Some code here as default option
+				//Catch invalid entry
+				System.out.print("\tInvalid Entry, Please try again\n\n");
+				CurrentTown();
 				
 		}
 	}

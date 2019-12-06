@@ -228,7 +228,7 @@ public class NCPQuest {
 		}
 		
 		System.out.println("\tPlayer Hit Points: " + CharHitPoints);
-		System.out.println("\tMonster Hit Points at init: " + mhitPoints);
+		System.out.println("\tMonster Hit Points: " + mhitPoints);
 		if(mhitPoints ==0) {
 			System.out.print("\n\t The " + Monster + " saw you and died instantly!\n\n");
 			GameEngine.CurrentTown();
@@ -246,13 +246,13 @@ public class NCPQuest {
 			switch(OptionChoose){
 				case "A":
 					//Attack
-					System.out.println("\tYou Attack!!!");
+					System.out.println("\tYou Attack!!!\n");
 					//Do hit code here
 					mhitPoints = mhitPoints - RandNumPlayerAttack(CharDamagePerHit);
 					System.out.println("\t--Current Battle Stats--");
 					System.out.println("\tPlayer Hit Points: " + CharHitPoints);
 					System.out.println("\tMonster Hit Points: " + mhitPoints);
-					System.out.println("");
+					//System.out.println("");
 					
 					
 					if(mhitPoints <= 0) {
