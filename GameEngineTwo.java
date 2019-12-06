@@ -22,6 +22,10 @@ public class GameEngineTwo {
 		
 		Player.CheckSavedCharacter();
 		Town.LoadTowns();
+		ExpLevel.LoadExpLevels();
+		if(Player.CHAR_EXP_POINTS >= ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded) {
+			Player.CHAR_LEVEL_UP_QUEST_AVAILABLE = true;
+		}
 		
 		System.out.println("\t--------------");
 		String characterType = Player.CHARACTER_TYPE;
@@ -89,8 +93,20 @@ public class GameEngineTwo {
 		System.out.print("\n");
 		System.out.println("\tYou are in Town "+ Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name +"... What do you want to do?" + NEWLINE);
 		System.out.println("\tT) Go to Next Town" + NEWLINE + "\tB) Go to Black Smith" + NEWLINE + "\tW) Go to Witch" + NEWLINE + 
-				"\tO) Go to the Wizard" + NEWLINE + "\tX) Exit Game" +NEWLINE + "\tZ) Exit Without Saving" + NEWLINE + 
-				"\tChoose Wisely: " );
+				"\tO) Go to the Wizard" + NEWLINE + "\tX) Exit Game" +NEWLINE + "\tZ) Exit Without Saving" + NEWLINE );
+		
+		//System.out.println(Player.CHARACTER_LEVEL +"\n");
+//		if (Player.CHAR_EXP_POINTS <= ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded){
+//			System.out.println("\n\nPlayer Cannot Level Up\n\n");
+//		}
+		if (Player.CHAR_EXP_POINTS >= ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded){
+			//System.out.println("\n\nPlayer Can Level Up: " + Player.CHAR_LEVEL_UP_QUEST_AVAILABLE +"\n\n");
+			System.out.print("\tQ) Quest To Level Up Available" +NEWLINE);
+		}
+//		if(Player.CHAR_EXP_POINTS >= 1000 ) {
+//			System.out.print("\tQ) Quest for Level Up" +NEWLINE);
+//		}
+		System.out.println("\tChoose Wisely: " );
 		
 		OptionChoose = scannerCurrentTown.next();
 		OptionChoose = OptionChoose.toUpperCase();
@@ -126,6 +142,11 @@ public class GameEngineTwo {
 			case ".":
 				//System.out.println("Easter Egg");
 				EasterEgg.Egg();
+			case "Q":
+				//Quest for level up
+				System.out.println("\n\tOH MY! You got scared and RAN AWAY!!!\n");
+				//CurrentTown();
+				MonsterTypeBoss.BossMonster();
 			default:
 				//Some code here as default option
 				//Catch invalid entry

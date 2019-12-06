@@ -35,6 +35,7 @@ public class Player {
 	public static int CHAR_MAX_MAGIC_ARMOR_POINTS = 0;
 	public static int CHAR_COIN = 99;
 	public static String CURRENT_TOWN = null;
+	public static Boolean CHAR_LEVEL_UP_QUEST_AVAILABLE = false;
 	
 	
 	

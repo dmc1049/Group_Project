@@ -9,8 +9,6 @@ public class MonsterTypeBoss {
 		//ZombieDragon
 		//Other
 	
-		private static final String NEWLINE = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
-	
 		public static void main(String[] args) {
 			// TODO Auto-generated method stub
 			//
@@ -20,6 +18,36 @@ public class MonsterTypeBoss {
 			BossZombie();
 			BossOther();
 			BossZombieDragon();
+		}
+		public static void BossMonster() {
+			
+			String Monster = RandMonster(RandomMonsterMethod());
+			BattleEngineBoss.BattleMonster(Monster);
+			
+		}
+		public static int RandomMonsterMethod() {
+			Random randNum = new Random();
+			int rand_int1 = randNum.nextInt(6);
+			return rand_int1;
+		}
+		public static String RandMonster(int randMonster) {
+			
+			int i = randMonster;
+			String Monster = "";
+			if(i == 1)
+				Monster = "BossTroll";
+			else if (i == 2)
+				Monster = "BossImp";
+			else if (i == 3)
+				Monster = "BossHydra";
+			else if (i == 4)
+				Monster = "BossZombie";
+			else if (i == 5)
+				Monster = "BossOther";
+			else if (i==6)
+				Monster = "BossZombieDragon";
+					
+			return Monster;
 		}
 		public static int RandNumMethod() {
 			Random randNum = new Random();
@@ -79,7 +107,7 @@ public class MonsterTypeBoss {
 			}
 			return i;
 		}
-		public static void BossTroll() {
+		public static int[] BossTroll() {
 			//random hitpoints
 			//random dropitem on death
 			//random encounter
@@ -87,6 +115,9 @@ public class MonsterTypeBoss {
 			//Damage per hit
 			
 			int hitPoints = ((RandNumMethod() + RandNumMethod2()) * 3);
+			int damagePerHit = DamagePerHit();
+			int expPoints = RandNumMethod();
+			int coinDrop = RandNumMethod();
 			int i = MagicItemChance();
 			int j = MagicItem();
 			int k = Encounter();
@@ -108,11 +139,12 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
 			
+			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
 		}
-		public static void BossImp() {
+		public static int[] BossImp() {
 			//random hitpoints
 			//random dropitem on death
 			//random encounter
@@ -120,6 +152,9 @@ public class MonsterTypeBoss {
 			//Damage per hit
 			
 			int hitPoints = ((RandNumMethod() + RandNumMethod2()) * 4);
+			int damagePerHit = DamagePerHit();
+			int expPoints = RandNumMethod();
+			int coinDrop = RandNumMethod();
 			int i = MagicItemChance();
 			int j = MagicItem();
 			int k = Encounter();
@@ -141,11 +176,13 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
 			
+			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+			
 		}
-		public static void BossHydra() {
+		public static int[] BossHydra() {
 			//random hitpoints
 			//random dropitem on death
 			//random encounter
@@ -153,6 +190,9 @@ public class MonsterTypeBoss {
 			//Damage per hit
 			
 			int hitPoints = ((RandNumMethod() + RandNumMethod2()) * 5);
+			int damagePerHit = DamagePerHit();
+			int expPoints = RandNumMethod();
+			int coinDrop = RandNumMethod();
 			int i = MagicItemChance();
 			int j = MagicItem();
 			int k = Encounter();
@@ -174,11 +214,13 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
 			
+			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+			
 		}
-		public static void BossZombie() {
+		public static int[] BossZombie() {
 			//random hitpoints
 			//random dropitem on death
 			//random encounter
@@ -186,6 +228,9 @@ public class MonsterTypeBoss {
 			//Damage per hit
 			
 			int hitPoints = ((RandNumMethod() + RandNumMethod2()) * 6);
+			int damagePerHit = DamagePerHit();
+			int expPoints = RandNumMethod();
+			int coinDrop = RandNumMethod();
 			int i = MagicItemChance();
 			int j = MagicItem();
 			int k = Encounter();
@@ -207,11 +252,13 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
 			
+			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+			
 		}
-		public static void BossOther() {
+		public static int[] BossOther() {
 			//random hitpoints
 			//random dropitem on death
 			//random encounter
@@ -219,6 +266,9 @@ public class MonsterTypeBoss {
 			//Damage per hit
 			
 			int hitPoints = ((RandNumMethod() + RandNumMethod2()) * 7);
+			int damagePerHit = DamagePerHit();
+			int expPoints = RandNumMethod();
+			int coinDrop = RandNumMethod();
 			int i = MagicItemChance();
 			int j = MagicItem();
 			int k = Encounter();
@@ -240,11 +290,13 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
 			
+			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+			
 		}
-		public static void BossZombieDragon() {
+		public static int[] BossZombieDragon() {
 			//random hitpoints
 			//random dropitem on death
 			//random encounter
@@ -252,6 +304,9 @@ public class MonsterTypeBoss {
 			//Damage per hit
 			
 			int hitPoints = ((RandNumMethod() + RandNumMethod2()) * 9);
+			int damagePerHit = DamagePerHit();
+			int expPoints = RandNumMethod();
+			int coinDrop = RandNumMethod();
 			int i = MagicItemChance();
 			int j = MagicItem();
 			int k = Encounter();
@@ -273,8 +328,10 @@ public class MonsterTypeBoss {
 				j=0;
 			}
 			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + NEWLINE +"Experience Points Gained: " + n);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
 			System.out.println("----------------");
+			
+			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
 			
 		}
 }

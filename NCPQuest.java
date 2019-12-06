@@ -19,11 +19,11 @@ public class NCPQuest {
 		String scanResult = "";
 		
 		if (rand_int1 <= 5) {
-			System.out.print("\n\tYou will need to travel to the caves that are on the outskirts of town." + NEWLINE + 
-					"\tThere you will find a cave with the letter S above its opening." + NEWLINE + 
-					"\tLook for a piece of metal about 1 foot long and 6 inches wide. It will be in a chest near the "
-					+ "back of the cave." + NEWLINE + "\tBe careful there is a Troll guarding the chest." + NEWLINE );
-			System.out.println(NEWLINE + "\t Do you accept the Quest? Y for Yes; N for No: ");
+			 System.out.print("\n\tAdventurer, fight your way to the caves that are on the outskirts of town." + NEWLINE + 
+	                    "\tThere you will find a dark cave with the letter S written in blood above its mouth." + NEWLINE + 
+	                    "\tLook for a piece of Obsidian about 1 foot long and 6 inches wide. It will be in a  golden chest near the "
+	                    + "back of the cave." + NEWLINE + "\tBe careful there is a Troll guarding the chest." + NEWLINE );
+	            System.out.println(NEWLINE + "\t Do Adventurer accept the Quest? Y for Yes; N for No: ");
 			scanResult = NCPscan.next();
 			scanResult = scanResult.toUpperCase();
 			if (scanResult.contentEquals("Y")) {
