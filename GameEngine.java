@@ -4,7 +4,7 @@ public class GameEngine {
 	
 	public static final String NEWLINE = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
 	
-	public static String[][] PlayerConfig = new String[16][16]; 
+	public static String[][] PlayerConfig = new String[20][20]; 
 		
 	public static void main(String[] args) {
 		//
@@ -87,7 +87,7 @@ public class GameEngine {
 		System.out.println("--------------------------------Your Character Stats-------------------------------------------");
 		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
 				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
-				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN
+				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
 				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t|   ");
 		System.out.print("\n----------------------------------------------------------------------------------------------");
 		System.out.print("\n");

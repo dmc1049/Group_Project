@@ -12,16 +12,16 @@ public class Armor {
 		Armors[] arr;
 		arr = new Armors[10];
 		//Array setup: ArmorID, Armor Name, Damage, Durability
-		arr[0] = new Armors(1, "One", 100, 100);
-		arr[1] = new Armors(2,"Two", 100, 100);
-		arr[2] = new Armors(3, "Three", 100, 100);
-		arr[3] = new Armors(4, "Four", 100, 100);
-		arr[4] = new Armors(5,"Five", 100, 100);
-		arr[5] = new Armors(6, "Six", 100, 100);
-		arr[6] = new Armors(7, "Seven", 100, 100);
-		arr[7] = new Armors(8,"Eight", 100, 100);
-		arr[8] = new Armors(9, "Nine", 100, 100);
-		arr[9] = new Armors(10, "Ten", 100, 100);
+		arr[0] = new Armors(1, "Leather Assless Chaps", 10, 10);
+		arr[1] = new Armors(2,"Leather Tunic", 20, 20);
+		arr[2] = new Armors(3, "Leather Plate Mail", 30, 30);
+		arr[3] = new Armors(4, "Tin Breast Plate", 30, 20);
+		arr[4] = new Armors(5,"Iron Breat Plate", 40, 50);
+		arr[5] = new Armors(6, "Bronze Armor", 50, 55);
+		arr[6] = new Armors(7, "Steel Breast Plate", 65, 75);
+		arr[7] = new Armors(8,"Helm of Iron", 50, 50);
+		arr[8] = new Armors(9, "Tin Helm", 30, 15);
+		arr[9] = new Armors(10, "Naked", 0, 0);
 		
 		ArmorsConfig = arr.clone();
 		//Test output

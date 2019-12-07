@@ -77,14 +77,14 @@ public class TravelNextTown {
 		//random chance you come across traveler
 		
 		int i = RandNumMethod();
-		if (i <=3) {
+		if (i <=2) {
 			//System.out.print("\n");
 			System.out.print("\n"
 					+ "\t You travel to the Town " + TownName + " and it was a very uneventful trip." + GameEngine.NEWLINE
 					+ "\t Look Around the town and see what it has to offer\n\n");
 			GameEngine.CurrentTown();
 		}
-		else if ((i >= 4) && (i<= 6)) {
+		else if ((i >= 3) && (i<= 6)) {
 			Scanner scannerTravel = new Scanner(System.in);
 			String OptionChoose;
 			//System.out.print("\n\tSome Text Here About Monster");
@@ -143,6 +143,8 @@ public class TravelNextTown {
 					break;
 				default:
 					//Something
+					System.out.println("\tInvalid Entry, Please try again");
+					TravelNextTown.TravelToTownEast();
 			}
 		}
 	

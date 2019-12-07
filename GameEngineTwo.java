@@ -1,9 +1,7 @@
 import java.util.Scanner;
 
 public class GameEngineTwo {
-	
-	public static final String NEWLINE = System.getProperty("line.separator");//This will retrieve line separator dependent on OS.
-	
+		
 	public static String[][] PlayerConfig = new String[16][16]; 
 		
 	public static void main(String[] args) {
@@ -33,7 +31,7 @@ public class GameEngineTwo {
 				", and the name of your character is: %s", Player.CHARACTER_NAME));
 		System.out.println("");
 		System.out.println("\tTo play the game you need to select what you want to do from the options given to you. " 
-				+ NEWLINE + "\tFor this first town you can select from the options below.\n");
+				+ GameEngine.NEWLINE + "\tFor this first town you can select from the options below.\n");
 		CurrentTown();
 	}
 
@@ -43,10 +41,10 @@ public class GameEngineTwo {
 		Scanner scannerNextTown = new Scanner(System.in);
 		System.out.println("");
 		System.out.println("\t-------Travel to New Town-------");
-		System.out.println("\tYou are in Town " + Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name + "...Where do you want to go?" + NEWLINE);
-		System.out.print("\tE) Go to Next Town to East" + NEWLINE + "\tW) Go to Next Town to West" + NEWLINE + 
-				"\tN) Go to Next Town to North" + NEWLINE + "\tS) Go to Next Town to South" + NEWLINE + 
-				"\tX) Exit Back to Current Town" +NEWLINE + "\tChoose Wisely: " );
+		System.out.println("\tYou are in Town " + Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name + "...Where do you want to go?" + GameEngine.NEWLINE);
+		System.out.print("\tE) Go to Next Town to East" + GameEngine.NEWLINE + "\tW) Go to Next Town to West" + GameEngine.NEWLINE + 
+				"\tN) Go to Next Town to North" + GameEngine.NEWLINE + "\tS) Go to Next Town to South" + GameEngine.NEWLINE + 
+				"\tX) Exit Back to Current Town" +GameEngine.NEWLINE + "\tChoose Wisely: " );
 		System.out.println("");
 		Town.LoadTowns();
 		OptionChoose = scannerNextTown.next();
@@ -87,13 +85,13 @@ public class GameEngineTwo {
 		System.out.println("--------------------------------Your Character Stats-------------------------------------------");
 		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
 				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
-				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN
+				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
 				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t|   ");
 		System.out.print("\n----------------------------------------------------------------------------------------------");
 		System.out.print("\n");
-		System.out.println("\tYou are in Town "+ Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name +"... What do you want to do?" + NEWLINE);
-		System.out.println("\tT) Go to Next Town" + NEWLINE + "\tB) Go to Black Smith" + NEWLINE + "\tW) Go to Witch" + NEWLINE + 
-				"\tO) Go to the Wizard" + NEWLINE + "\tX) Exit Game" +NEWLINE + "\tZ) Exit Without Saving" + NEWLINE );
+		System.out.println("\tYou are in Town "+ Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name +"... What do you want to do?" + GameEngine.NEWLINE);
+		System.out.println("\tT) Go to Next Town" + GameEngine.NEWLINE + "\tB) Go to Black Smith" + GameEngine.NEWLINE + "\tW) Go to Witch" + GameEngine.NEWLINE + 
+				"\tO) Go to the Wizard" + GameEngine.NEWLINE + "\tX) Exit Game" +GameEngine.NEWLINE + "\tZ) Exit Without Saving" + GameEngine.NEWLINE );
 		
 		//System.out.println(Player.CHARACTER_LEVEL +"\n");
 //		if (Player.CHAR_EXP_POINTS <= ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded){
@@ -101,10 +99,10 @@ public class GameEngineTwo {
 //		}
 		if (Player.CHAR_EXP_POINTS >= ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded){
 			//System.out.println("\n\nPlayer Can Level Up: " + Player.CHAR_LEVEL_UP_QUEST_AVAILABLE +"\n\n");
-			System.out.print("\tQ) Quest To Level Up Available" +NEWLINE);
+			System.out.print("\tQ) Quest To Level Up Available" +GameEngine.NEWLINE);
 		}
 //		if(Player.CHAR_EXP_POINTS >= 1000 ) {
-//			System.out.print("\tQ) Quest for Level Up" +NEWLINE);
+//			System.out.print("\tQ) Quest for Level Up" +GameEngine.NEWLINE);
 //		}
 		System.out.println("\tChoose Wisely: " );
 		
@@ -124,7 +122,7 @@ public class GameEngineTwo {
 				//break;
 			case "W":
 				//Go to Witch
-				System.out.println("\tGoing to the Witch, don't talk to her for a long time. \n\tShe will turn you into a Frog." + NEWLINE);
+				System.out.println("\tGoing to the Witch, don't talk to her for a long time. \n\tShe will turn you into a Frog." + GameEngine.NEWLINE);
 				NCP_Characters.ncpWitch();
 				//break;
 			case "O":
@@ -144,7 +142,7 @@ public class GameEngineTwo {
 				EasterEgg.Egg();
 			case "Q":
 				//Quest for level up
-				System.out.println("\n\tOH MY! You got scared and RAN AWAY!!!\n");
+				//System.out.println("\n\tOH MY! You got scared and RAN AWAY!!!\n");
 				//CurrentTown();
 				MonsterTypeBoss.BossMonster();
 			default:

@@ -20,14 +20,14 @@ public class Town {
 		arr = new Towns[10];
 		//Array setup: TownID, Town Name, Set NCP1, Set NCP2, Random NCP3, Town_e_id, Town_w_id, Town_n_id, Town_s_id
 		arr[0] = new Towns(1, "Oslo", 1, 2);
-        arr[1] = new Towns(2,"Bergen", 2, 2);
-        arr[2] = new Towns(3, "Reykjavík", 3, 2);
+        arr[1] = new Towns(2,"Bergen", 1, 3);
+        arr[2] = new Towns(3, "Reykjavík", 2, 3);
         arr[3] = new Towns(4, "Alesund", 1, 2);
-        arr[4] = new Towns(5,"Tonsberg", 2, 2);
-        arr[5] = new Towns(6, "Verdal", 3, 2);
+        arr[4] = new Towns(5,"Tonsberg", 1, 3);
+        arr[5] = new Towns(6, "Verdal", 2, 3);
         arr[6] = new Towns(7, "Kristiansund", 1, 2);
-        arr[7] = new Towns(8,"Bjarkoy", 2, 2);
-        arr[8] = new Towns(9, "Hamar", 3, 2);
+        arr[7] = new Towns(8,"Bjarkoy", 1, 3);
+        arr[8] = new Towns(9, "Hamar", 2, 3);
         arr[9] = new Towns(10, "Avaldsnes", 1, 2);
 		
 		TownsConfig = arr.clone();
@@ -50,14 +50,14 @@ public class Town {
 			arr = new Towns[10];
 			//Array setup: TownID, Town Name, Set NCP1, Set NCP2, Random NCP3, Town_e_id, Town_w_id, Town_n_id, Town_s_id
 			arr[0] = new Towns(1, "Oslo", 1, 2);
-	        arr[1] = new Towns(2,"Bergen", 2, 2);
-	        arr[2] = new Towns(3, "Reykjavík", 3, 2);
+	        arr[1] = new Towns(2,"Bergen", 1, 3);
+	        arr[2] = new Towns(3, "Reykjavík", 2, 3);
 	        arr[3] = new Towns(4, "Alesund", 1, 2);
-	        arr[4] = new Towns(5,"Tonsberg", 2, 2);
-	        arr[5] = new Towns(6, "Verdal", 3, 2);
+	        arr[4] = new Towns(5,"Tonsberg", 1, 3);
+	        arr[5] = new Towns(6, "Verdal", 2, 3);
 	        arr[6] = new Towns(7, "Kristiansund", 1, 2);
-	        arr[7] = new Towns(8,"Bjarkoy", 2, 2);
-	        arr[8] = new Towns(9, "Hamar", 3, 2);
+	        arr[7] = new Towns(8,"Bjarkoy", 1, 3);
+	        arr[8] = new Towns(9, "Hamar", 2, 3);
 	        arr[9] = new Towns(10, "Avaldsnes", 1, 2);
 			
 			TownsConfig = arr.clone();

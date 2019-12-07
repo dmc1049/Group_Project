@@ -22,7 +22,7 @@ public class MonsterTypeBoss {
 		public static void BossMonster() {
 			
 			String Monster = RandMonster(RandomMonsterMethod());
-			BattleEngineBoss.BattleMonster(Monster);
+			BattleEngine.BattleMonster(Monster);
 			
 		}
 		public static int RandomMonsterMethod() {
@@ -118,28 +118,30 @@ public class MonsterTypeBoss {
 			int damagePerHit = DamagePerHit();
 			int expPoints = RandNumMethod();
 			int coinDrop = RandNumMethod();
-			int i = MagicItemChance();
-			int j = MagicItem();
-			int k = Encounter();
-			int m = DropItem();
-			int n = ((RandNumMethod() + RandNumMethod())*2);
+			int magicItemChance = MagicItemChance();
+			int magicItem = MagicItem();
+			int encounter = Encounter();
+			int dropItem = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2); // Exp Points Multiplier
+			
+			expPoints = expPoints + n;
 			
 			System.out.println("--------For Troll--------");
 			System.out.println("The hitpoints for this Troll is: " + hitPoints + " and drops item number: " + RandNumMethod3());
-			System.out.print("Encounter percentage chance on Quest: " + k + "%");
-			if (k == 0) {
-				m=0;
+			System.out.print("Encounter percentage chance on Quest: " + encounter + "%");
+			if (encounter == 0) {
+				dropItem=0;
 			}
-			System.out.println(" and drop item percentage: " + m + "%");
-			System.out.print("Magic Item Drop percentage chance on Quest: " + i + "%");
-			if(i >=65) {
-				j = MagicItem();
+			System.out.println(" and drop item percentage: " + dropItem + "%");
+			System.out.print("Magic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+			if(magicItemChance >=65) {
+				magicItem = MagicItem();
 			}
 			else {
-				j=0;
+				magicItem=0;
 			}
-			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
+			System.out.println(" and magic drop item is number: " + magicItem);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + expPoints);
 			System.out.println("----------------");
 			
 			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
@@ -155,28 +157,30 @@ public class MonsterTypeBoss {
 			int damagePerHit = DamagePerHit();
 			int expPoints = RandNumMethod();
 			int coinDrop = RandNumMethod();
-			int i = MagicItemChance();
-			int j = MagicItem();
-			int k = Encounter();
-			int m = DropItem();
-			int n = ((RandNumMethod() + RandNumMethod())*2);
+			int magicItemChance = MagicItemChance();
+			int magicItem = MagicItem();
+			int encounter = Encounter();
+			int dropItem = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2); // Exp Points Multiplier
+			
+			expPoints = expPoints + n;
 			
 			System.out.println("--------For Imp--------");
 			System.out.println("The hitpoints for this Imp is: " + hitPoints + " and drops item number: " + RandNumMethod3());
-			System.out.print("Encounter percentage chance on Quest: " + k + "%");
-			if (k == 0) {
-				m=0;
+			System.out.print("Encounter percentage chance on Quest: " + encounter + "%");
+			if (encounter == 0) {
+				dropItem=0;
 			}
-			System.out.println(" and drop item percentage: " + m + "%");
-			System.out.print("Magic Item Drop percentage chance on Quest: " + i + "%");
-			if(i >=25) {
-				j = MagicItem();
+			System.out.println(" and drop item percentage: " + dropItem + "%");
+			System.out.print("Magic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+			if(magicItemChance >=25) {
+				magicItem = MagicItem();
 			}
 			else {
-				j=0;
+				magicItem=0;
 			}
-			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
+			System.out.println(" and magic drop item is number: " + magicItem);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + expPoints);
 			System.out.println("----------------");
 			
 			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
@@ -193,28 +197,31 @@ public class MonsterTypeBoss {
 			int damagePerHit = DamagePerHit();
 			int expPoints = RandNumMethod();
 			int coinDrop = RandNumMethod();
-			int i = MagicItemChance();
-			int j = MagicItem();
-			int k = Encounter();
-			int m = DropItem();
-			int n = ((RandNumMethod() + RandNumMethod())*2);
+			int magicItemChance = MagicItemChance();
+			int magicItem = MagicItem();
+			int encounter = Encounter();
+			int dropItem = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2); // Exp Points Multiplier
+			
+			expPoints = expPoints + n;
+			
 			
 			System.out.println("--------For Hydra--------");
 			System.out.println("The hitpoints for this Hydra is: " + hitPoints + " and drops item number: " + RandNumMethod3());
-			System.out.print("Encounter percentage chance on Quest: " + k + "%");
-			if (k == 0) {
-				m=0;
+			System.out.print("Encounter percentage chance on Quest: " + encounter + "%");
+			if (encounter == 0) {
+				dropItem=0;
 			}
-			System.out.println(" and drop item percentage: " + m + "%");
-			System.out.print("Magic Item Drop percentage chance on Quest: " + i + "%");
-			if(i >=25) {
-				j = MagicItem();
+			System.out.println(" and drop item percentage: " + dropItem + "%");
+			System.out.print("Magic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+			if(magicItemChance >=25) {
+				magicItem = MagicItem();
 			}
 			else {
-				j=0;
+				magicItem=0;
 			}
-			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
+			System.out.println(" and magic drop item is number: " + magicItem);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + expPoints);
 			System.out.println("----------------");
 			
 			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
@@ -231,28 +238,30 @@ public class MonsterTypeBoss {
 			int damagePerHit = DamagePerHit();
 			int expPoints = RandNumMethod();
 			int coinDrop = RandNumMethod();
-			int i = MagicItemChance();
-			int j = MagicItem();
-			int k = Encounter();
-			int m = DropItem();
-			int n = ((RandNumMethod() + RandNumMethod())*2);
+			int magicItemChance = MagicItemChance();
+			int magicItem = MagicItem();
+			int encounter = Encounter();
+			int dropItem = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2); // Exp Points Multiplier
+			
+			expPoints = expPoints + n;
 			
 			System.out.println("--------For Zombie--------");
 			System.out.println("The hitpoints for this Zombie is: " + hitPoints + " and drops item number: " + RandNumMethod3());
-			System.out.print("Encounter percentage chance on Quest: " + k + "%");
-			if (k == 0) {
-				m=0;
+			System.out.print("Encounter percentage chance on Quest: " + encounter + "%");
+			if (encounter == 0) {
+				dropItem=0;
 			}
-			System.out.println(" and drop item percentage: " + m + "%");
-			System.out.print("Magic Item Drop percentage chance on Quest: " + i + "%");
-			if(i >=25) {
-				j = MagicItem();
+			System.out.println(" and drop item percentage: " + dropItem + "%");
+			System.out.print("Magic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+			if(magicItemChance >=25) {
+				magicItem = MagicItem();
 			}
 			else {
-				j=0;
+				magicItem=0;
 			}
-			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
+			System.out.println(" and magic drop item is number: " + magicItem);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + expPoints);
 			System.out.println("----------------");
 			
 			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
@@ -269,28 +278,30 @@ public class MonsterTypeBoss {
 			int damagePerHit = DamagePerHit();
 			int expPoints = RandNumMethod();
 			int coinDrop = RandNumMethod();
-			int i = MagicItemChance();
-			int j = MagicItem();
-			int k = Encounter();
-			int m = DropItem();
-			int n = ((RandNumMethod() + RandNumMethod())*2);
+			int magicItemChance = MagicItemChance();
+			int magicItem = MagicItem();
+			int encounter = Encounter();
+			int dropItem = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2); // Exp Points Multiplier
+			
+			expPoints = expPoints + n;
 			
 			System.out.println("--------For Other--------");
 			System.out.println("The hitpoints for this Other is: " + hitPoints + " and drops item number: " + RandNumMethod3());
-			System.out.print("Encounter percentage chance on Quest: " + k + "%");
-			if (k == 0) {
-				m=0;
+			System.out.print("Encounter percentage chance on Quest: " + encounter + "%");
+			if (encounter == 0) {
+				dropItem=0;
 			}
-			System.out.println(" and drop item percentage: " + m + "%");
-			System.out.print("Magic Item Drop percentage chance on Quest: " + i + "%");
-			if(i >=25) {
-				j = MagicItem();
+			System.out.println(" and drop item percentage: " + dropItem + "%");
+			System.out.print("Magic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+			if(magicItemChance >=25) {
+				magicItem = MagicItem();
 			}
 			else {
-				j=0;
+				magicItem=0;
 			}
-			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
+			System.out.println(" and magic drop item is number: " + magicItem);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + expPoints);
 			System.out.println("----------------");
 			
 			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
@@ -307,28 +318,30 @@ public class MonsterTypeBoss {
 			int damagePerHit = DamagePerHit();
 			int expPoints = RandNumMethod();
 			int coinDrop = RandNumMethod();
-			int i = MagicItemChance();
-			int j = MagicItem();
-			int k = Encounter();
-			int m = DropItem();
-			int n = ((RandNumMethod() + RandNumMethod())*2);
+			int magicItemChance = MagicItemChance();
+			int magicItem = MagicItem();
+			int encounter = Encounter();
+			int dropItem = DropItem();
+			int n = ((RandNumMethod() + RandNumMethod())*2); // Exp Points Multiplier
+			
+			expPoints = expPoints + n;
 			
 			System.out.println("--------For Boss Zombie Dragon--------");
 			System.out.println("The hitpoints for this Boss Zombie Dragon is: " + hitPoints + " and drops item number: " + RandNumMethod3());
-			System.out.print("Encounter percentage chance on Quest: " + k + "%");
-			if (k == 0) {
-				m=0;
+			System.out.print("Encounter percentage chance on Quest: " + encounter + "%");
+			if (encounter == 0) {
+				dropItem=0;
 			}
-			System.out.println(" and drop item percentage: " + m + "%");
-			System.out.print("Magic Item Drop percentage chance on Quest: " + i + "%");
-			if(i >=25) {
-				j = MagicItem();
+			System.out.println(" and drop item percentage: " + dropItem + "%");
+			System.out.print("Magic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+			if(magicItemChance >=25) {
+				magicItem = MagicItem();
 			}
 			else {
-				j=0;
+				magicItem=0;
 			}
-			System.out.println(" and magic drop item is number: " + j);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + n);
+			System.out.println(" and magic drop item is number: " + magicItem);
+			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + expPoints);
 			System.out.println("----------------");
 			
 			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};

@@ -127,12 +127,16 @@ public class Player {
 		writer.println(CHAR_MAX_HIT_POINTS);
 		writer.println(CHAR_EXP_POINTS);
 		writer.println(CHAR_ARMOR_POINTS);
+		writer.println(CHAR_ARMOR_NAME);
 		writer.println(CHAR_MAX_ARMOR_POINTS);
 		writer.println(CHAR_WEAPON_DAMAGE);
+		writer.println(CHAR_WEAPON_NAME);
 		writer.println(CHAR_MAX_WEAPON_DAMAGE);
 		writer.println(CHAR_MAGIC_WEAPON_DAMAGE);
+		writer.println(CHAR_MAGIC_WEAPON_NAME);
 		writer.println(CHAR_MAX_MAGIC_WEAPON_DAMAGE);
 		writer.println(CHAR_MAGIC_ARMOR_POINTS);
+		writer.println(CHAR_MAGIC_ARMOR_NAME);
 		writer.println(CHAR_MAX_MAGIC_ARMOR_POINTS);
 		writer.println(CHAR_COIN);
 		writer.println(CURRENT_TOWN);
@@ -243,34 +247,50 @@ public class Player {
 						CHAR_ARMOR_POINTS = Integer.parseInt(data.trim());
 					}
 					else if (i == 7) {
+						GameEngine.PlayerConfig[i] = new String[]{"Char_Armor_Name", data};
+						CHAR_ARMOR_NAME = data;
+					}
+					else if (i == 8) {
 						GameEngine.PlayerConfig[i] = new String[]{"Char_Max_Armor_Points", data};
 						CHAR_MAX_ARMOR_POINTS = Integer.parseInt(data.trim());
 					}
-					else if (i == 8) {
+					else if (i == 9) {
 						GameEngine.PlayerConfig[i] = new String[]{"Char_Weapon_Damage", data};
 						CHAR_WEAPON_DAMAGE = Integer.parseInt(data.trim());
 					}
-					else if (i == 9) {
+					else if (i == 10) {
+						GameEngine.PlayerConfig[i] = new String[]{"Char_Weapon_Name", data};
+						CHAR_WEAPON_NAME = data;
+					}
+					else if (i == 11) {
 						GameEngine.PlayerConfig[i] = new String[]{"Char_Max_Weapon_Damage", data};
 						CHAR_MAX_WEAPON_DAMAGE = Integer.parseInt(data.trim());
 					}
-					else if (i == 10 ) {
+					else if (i == 12 ) {
 						GameEngine.PlayerConfig[i] = new String[]{"Char_Magic_Weapon_Damage", data};
 						CHAR_MAGIC_WEAPON_DAMAGE = Integer.parseInt(data.trim());
 					}
-					else if (i == 11) {
+					else if (i == 13 ) {
+						GameEngine.PlayerConfig[i] = new String[]{"Char_Magic_Weapon_Name", data};
+						CHAR_MAGIC_WEAPON_NAME = data;
+					}
+					else if (i == 14) {
 						GameEngine.PlayerConfig[i] = new String[]{"Char_Max_Magic_Weapon_Damage", data};
 						CHAR_MAX_MAGIC_WEAPON_DAMAGE = Integer.parseInt(data.trim());
 					}
-					else if (i == 12) {
+					else if (i == 15) {
 						GameEngine.PlayerConfig[i] = new String[]{"Char_Magic_Armor_Points", data};
 						CHAR_MAGIC_ARMOR_POINTS = Integer.parseInt(data.trim());
 					}
-					else if (i == 13) {
+					else if (i == 16) {
+						GameEngine.PlayerConfig[i] = new String[]{"Char_Magic_Armor_Name", data};
+						CHAR_MAGIC_ARMOR_NAME = data;
+					}
+					else if (i == 17) {
 						GameEngine.PlayerConfig[i] = new String[]{"Char_Max_Magic_Armor_Points", data};
 						CHAR_MAX_MAGIC_ARMOR_POINTS = Integer.parseInt(data.trim());
 					}
-					else if (i == 14) {
+					else if (i == 18) {
 						GameEngine.PlayerConfig[i] = new String[]{"Char_Coin", data};
 						CHAR_COIN = Integer.parseInt(data.trim());
 					}
@@ -319,18 +339,27 @@ public class Player {
 		//base Armor Points
 		//Armor gives you 50% more hitpoints based on armor rating
 		CHAR_ARMOR_POINTS = 90;
+		//Armor Name
+		CHAR_ARMOR_NAME = "Damaged Breast Plate";
 		//Max Armor Points
 		CHAR_MAX_ARMOR_POINTS = 98;
 		//Weapons Points
 		CHAR_WEAPON_DAMAGE = 80;
+		//Weapon Name
+		CHAR_WEAPON_NAME = "Broken Sword";
 		//Max Weapons Points
 		CHAR_MAX_WEAPON_DAMAGE = 89;
 		//Character Starting Coin
 		//Magic weapon
 		CHAR_MAGIC_WEAPON_DAMAGE = 10;
+		//Magic Weapon Name
+		CHAR_MAGIC_WEAPON_NAME = "NotYet";
+		//Max Magic WEapon Damage
 		CHAR_MAX_MAGIC_WEAPON_DAMAGE = 20;
 		//Magic Armor
 		CHAR_MAGIC_ARMOR_POINTS = 11;
+		//magic armor name
+		CHAR_MAGIC_ARMOR_NAME = "NotYet";
 		CHAR_MAX_MAGIC_ARMOR_POINTS = 22;
 		CHAR_COIN = 100;
 		CURRENT_TOWN = "1";
@@ -353,12 +382,16 @@ public class Player {
 		writer.println(CHAR_MAX_HIT_POINTS);
 		writer.println(CHAR_EXP_POINTS);
 		writer.println(CHAR_ARMOR_POINTS);
+		writer.println(CHAR_ARMOR_NAME);
 		writer.println(CHAR_MAX_ARMOR_POINTS);
 		writer.println(CHAR_WEAPON_DAMAGE);
+		writer.println(CHAR_WEAPON_NAME);
 		writer.println(CHAR_MAX_WEAPON_DAMAGE);
 		writer.println(CHAR_MAGIC_WEAPON_DAMAGE);
+		writer.println(CHAR_MAGIC_WEAPON_NAME);
 		writer.println(CHAR_MAX_MAGIC_WEAPON_DAMAGE);
 		writer.println(CHAR_MAGIC_ARMOR_POINTS);
+		writer.println(CHAR_MAGIC_ARMOR_NAME);
 		writer.println(CHAR_MAX_MAGIC_ARMOR_POINTS);
 		writer.println(CHAR_COIN);
 		writer.println(CURRENT_TOWN);
