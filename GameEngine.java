@@ -23,6 +23,8 @@ public class GameEngine {
 		Player.CheckSavedCharacter();
 		Town.LoadTowns();
 		ExpLevel.LoadExpLevels();
+		Armor.LoadArmors();
+		Weapon.LoadWeapons();
 		if(Player.CHAR_EXP_POINTS >= ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded) {
 			Player.CHAR_LEVEL_UP_QUEST_AVAILABLE = true;
 		}

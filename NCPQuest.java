@@ -121,7 +121,7 @@ public class NCPQuest {
 		String scanResult = "";
 		
 		if (rand_int1 <= 5) {
-			System.out.print("\tYou will need to travel to the Hanging Tree that is in the Dark Forest North-West of Twon."
+			System.out.print(GameEngine.NEWLINE +"\tYou will need to travel to the Hanging Tree that is in the Dark Forest North-West of Twon."
 					+ GameEngine.NEWLINE + "\tThere you will find a Chest that contains a potion I need." + GameEngine.NEWLINE +  
 					"\tBe careful there is a Zombie guarding the chest." + GameEngine.NEWLINE );
 			System.out.print(GameEngine.NEWLINE + "\t Do you accept the Quest? Y for Yes; N for No: ");
@@ -135,11 +135,11 @@ public class NCPQuest {
 			}
 		}
 		if(rand_int1 >=6) {
-			System.out.print("\tYou will need to travel to the Grassy Swamp that is to the South-West of town." + GameEngine.NEWLINE + 
+			System.out.print(GameEngine.NEWLINE +"\tYou will need to travel to the Grassy Swamp that is to the South-West of town." + GameEngine.NEWLINE + 
 					"\tThere you will find a path through the Garassy Swamp, follow it to the end where you will find a "
 					+ "chest." + GameEngine.NEWLINE + "\tLook for a piece of Old Wood in the chest, it will be about 1 foot long and 6 inches wide. "
 					+ "It will be in the chest." + GameEngine.NEWLINE + "\tBe careful there is an Imp guarding the chest." + GameEngine.NEWLINE );
-			System.out.print("\t Do you accept the Quest? Y for Yes; N for No: ");
+			System.out.print(GameEngine.NEWLINE + "\t Do you accept the Quest? Y for Yes; N for No: ");
 			scanResult = NCPscan.next();
 			scanResult = scanResult.toUpperCase();
 			if (scanResult.contentEquals("Y")) {
@@ -237,7 +237,7 @@ public class NCPQuest {
 		Scanner scannerBattle = new Scanner(System.in);
 		
 		while (OptionChoose != "R" && mhitPoints >=1) {
-			System.out.print("\n\tA) Attack" + GameEngine.NEWLINE + "\tR) Run Away" + GameEngine.NEWLINE + "\tChoose Wisely:");
+			System.out.print("\n\tA) Attack" + GameEngine.NEWLINE + "\tR) Run Away" + GameEngine.NEWLINE + "\tChoose Wisely: ");
 			OptionChoose = scannerBattle.next();
 			OptionChoose = OptionChoose.toUpperCase();
 			//System.out.println("----" + OptionChoose);

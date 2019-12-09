@@ -28,7 +28,7 @@ public class NCP_Characters {
 	                "\t'I am Brokkr, the BlackSmith to Loki, Odin and Freyr, I'm busy, but if you" + GameEngine.NEWLINE +
 	                "\t have coin, you have my attention.'\n" + GameEngine.NEWLINE +
 	                "\tW) Get Weapons fixed" + GameEngine.NEWLINE + "\tT) Talk to Brokkr about this town" + GameEngine.NEWLINE + 
-	                "\tQ) Ask about the Quest" + GameEngine.NEWLINE + "\tX) Leave Blacksmith" + GameEngine.NEWLINE +"\tChoose Wisely:");
+	                "\tQ) Ask about the Quest" + GameEngine.NEWLINE + "\tX) Leave Blacksmith" + GameEngine.NEWLINE +"\tChoose Wisely: ");
 		ncpOption = scannerNCPBlackSmith.next();
 		ncpOption = ncpOption.toUpperCase();
 		//scannerNCPWitch.close();
@@ -91,7 +91,7 @@ public class NCP_Characters {
                 "\t'Greetings traveler, I am Lubki, but the townsfolk call me Baba Yaga, what do you require?'\n" + GameEngine.NEWLINE + 
                 "\tH) Get healed" + GameEngine.NEWLINE + "\tT) Talk to Witch about this town" + GameEngine.NEWLINE + 
                 "\tQ) Quest to retrieve something for the Baba Yaga" + GameEngine.NEWLINE+"\tA) Ask for a Date" + GameEngine.NEWLINE + 
-                "\tX) Leave Baba Yaga" + GameEngine.NEWLINE +"\tChoose Wisely:");
+                "\tX) Leave Baba Yaga" + GameEngine.NEWLINE +"\tChoose Wisely: ");
         ncpOption = scannerNCPWitch.next();
         ncpOption = ncpOption.toUpperCase();
         //scannerNCPWitch.close();
@@ -151,7 +151,7 @@ public class NCP_Characters {
 		System.out.println("\t-------Wizards Shoppe-------");
 		System.out.print(GameEngine.NEWLINE + "\tGreetings and Salutations, I am the local Wizard, What can I do for you?" + GameEngine.NEWLINE + GameEngine.NEWLINE + 
 				"\tW) Get Magical Weapons and Armor fixed" + GameEngine.NEWLINE + "\tT) Talk to Wizard about this town" + GameEngine.NEWLINE + 
-				"\tQ) Ask about the Quest" + GameEngine.NEWLINE + "\tX) Leave Wizard" + GameEngine.NEWLINE +"\tChoose Wisely:");
+				"\tQ) Ask about the Quest" + GameEngine.NEWLINE + "\tX) Leave Wizard" + GameEngine.NEWLINE +"\tChoose Wisely: ");
 		ncpOption = scannerNCPWizard.next();
 		ncpOption = ncpOption.toUpperCase();
 		//scannerNCPWizard.close();

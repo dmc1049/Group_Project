@@ -80,7 +80,7 @@ public class Town {
 		//******************************************************************************************
 		//------ UNCOMMENT BELOW IF ANSII ART IS REMOVED--------------------------------------------------------------------
 		
-		System.out.println("--------------------------------Your Character Stats-------------------------------------------");
+		System.out.println(GameEngine.NEWLINE +"--------------------------------Your Character Stats-------------------------------------------");
 		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
 				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
 				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
@@ -155,6 +155,12 @@ public class Town {
 			case ".":
 				//System.out.println("Easter Egg");
 				EasterEgg.Egg();
+			case "2":
+				JavaProgram.TownMenu("TownMenuTwo.txt");
+				Town.CurrentTown();
+			case "3":
+				JavaProgram.TownMenu("TownMenuThree-Small_Dragon-4.txt");
+				Town.CurrentTown();
 			case "Q":
 				//Quest for level up
 				//System.out.println("\n\tOH MY! You got scared and RAN AWAY!!!\n");

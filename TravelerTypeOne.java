@@ -14,6 +14,8 @@ public class TravelerTypeOne {
 			TravelerName = "Barbra";
 		if (i == 5)
 			TravelerName = "Jenny";
+		if (i == 0)
+			TravelerName = "Jody";
 		return TravelerName;
 	}
 }

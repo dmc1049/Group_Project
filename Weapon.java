@@ -13,11 +13,11 @@ public class Weapon {
 		arr = new Weapons[10];
 		//Array setup: WeaponID, Weapon Name, Damage, Durability
 		arr[0] = new Weapons(1, "Broken Sword", 10, 10);
-		arr[1] = new Weapons(2,"Sword", 100, 100);
+		arr[1] = new Weapons(2,"Limp Sword of Viagra", 5, 5);
 		arr[2] = new Weapons(3, "Bronze Sword", 100, 100);
 		arr[3] = new Weapons(4, "Steel Sword", 100, 100);
-		arr[4] = new Weapons(5,"Club", 100, 100);
-		arr[5] = new Weapons(6, "Hammer", 100, 100);
+		arr[4] = new Weapons(5,"Club", 75, 50);
+		arr[5] = new Weapons(6, "Hammer and Nails", 65, 85);
 		arr[6] = new Weapons(7, "Stick", 100, 100);
 		arr[7] = new Weapons(8,"Stake", 1, 20);
 		arr[8] = new Weapons(9, "Katana", 50, 50);

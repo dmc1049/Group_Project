@@ -12,7 +12,7 @@ public class Armor {
 		Armors[] arr;
 		arr = new Armors[10];
 		//Array setup: ArmorID, Armor Name, Damage, Durability
-		arr[0] = new Armors(1, "Leather Assless Chaps", 10, 10);
+		arr[0] = new Armors(1, "Leather Assless Chaps of Village People", 10, 10);
 		arr[1] = new Armors(2,"Leather Tunic", 20, 20);
 		arr[2] = new Armors(3, "Leather Plate Mail", 30, 30);
 		arr[3] = new Armors(4, "Tin Breast Plate", 30, 20);
@@ -21,7 +21,8 @@ public class Armor {
 		arr[6] = new Armors(7, "Steel Breast Plate", 65, 75);
 		arr[7] = new Armors(8,"Helm of Iron", 50, 50);
 		arr[8] = new Armors(9, "Tin Helm", 30, 15);
-		arr[9] = new Armors(10, "Naked", 0, 0);
+		arr[9] = new Armors(10, "The Emperor's New Clothes, Naked", 0, 0);
+		//arr[10] = new Armors(10, "Chain Mail", 50, 75);
 		
 		ArmorsConfig = arr.clone();
 		//Test output
