@@ -82,7 +82,8 @@ public class TravelNextTown {
 			System.out.print("\n"
 					+ "\t You travel to the Town " + TownName + " and it was a very uneventful trip." + GameEngine.NEWLINE
 					+ "\t Look Around the town and see what it has to offer\n\n");
-			GameEngine.CurrentTown();
+			//GameEngine.CurrentTown();
+			Town.CurrentTown();
 		}
 		else if ((i >= 3) && (i<= 6)) {
 			Scanner scannerTravel = new Scanner(System.in);
@@ -91,7 +92,7 @@ public class TravelNextTown {
 			System.out.print("\n"
 					+ "\t You are traveling to the Town " + TownName + " and on your way you are confronted with a " + Monster + "." + GameEngine.NEWLINE
 					+ "\t Do you want to battle it or continue on to the next town?" + GameEngine.NEWLINE 
-					+ "\t B) for Battle Monster \n\t C) for Continue to next town: ");
+					+ "\t B) for Battle Monster \n\t C) for Continue to next town " + GameEngine.NEWLINE + "\tChoose Wisely: ");
 			OptionChoose = scannerTravel.next();
 			OptionChoose = OptionChoose.toUpperCase();
 			switch (OptionChoose) {
@@ -110,7 +111,8 @@ public class TravelNextTown {
 							+ "\t You are racked with fear and decide to avoid the monster." + GameEngine.NEWLINE
 							+ "\t You make your way off the Path to the next town and wander through" + GameEngine.NEWLINE
 							+ "\t the woods until you reach the next Town.\n\n");
-					GameEngine.CurrentTown();
+					//GameEngine.CurrentTown();
+					Town.CurrentTown();
 					break;
 				default:
 					//Something
@@ -134,12 +136,14 @@ public class TravelNextTown {
 					//Something here
 					System.out.print("\n\tYou meet " + Traveler + " and "+ Traveler+" tells you about how in the next town"
 							+ "\n\tthere are riches to be made on Quests\n\n");
-					GameEngine.CurrentTown();
+					//GameEngine.CurrentTown();
+					Town.CurrentTown();
 					break;
 				case "C":
 					//Something here
 					System.out.print("\n\t You continue on your way to the next town\n");
-					GameEngine.CurrentTown();
+					//GameEngine.CurrentTown();
+					Town.CurrentTown();
 					break;
 				default:
 					//Something

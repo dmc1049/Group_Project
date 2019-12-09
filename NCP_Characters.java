@@ -24,7 +24,7 @@ public class NCP_Characters {
 		String ncpOption = "";
 		Scanner scannerNCPBlackSmith = new Scanner(System.in);
 		 System.out.println("\t-------Brokkr & Sons BlackSmith Shoppe-------");
-	        System.out.println(GameEngine.NEWLINE + "\t'Well met.' a thunderous voice booms" + GameEngine.NEWLINE +
+	        System.out.print(GameEngine.NEWLINE + "\t'Well met.' a thunderous voice booms" + GameEngine.NEWLINE +
 	                "\t'I am Brokkr, the BlackSmith to Loki, Odin and Freyr, I'm busy, but if you" + GameEngine.NEWLINE +
 	                "\t have coin, you have my attention.'\n" + GameEngine.NEWLINE +
 	                "\tW) Get Weapons fixed" + GameEngine.NEWLINE + "\tT) Talk to Brokkr about this town" + GameEngine.NEWLINE + 
@@ -71,7 +71,8 @@ public class NCP_Characters {
 				//leave Blacksmith
 				System.out.println("\tYou thank the Blacksmith and leave back to Town " + Town.CurrentTownIn + "." + GameEngine.NEWLINE);
 				//return to town
-				GameEngine.CurrentTown();
+				//GameEngine.CurrentTown();
+				Town.CurrentTown();
 				//break;
 			default:
 				//default option
@@ -86,7 +87,7 @@ public class NCP_Characters {
 		String ncpOption = "";
         Scanner scannerNCPWitch = new Scanner(System.in);
         System.out.println("\t-------Baba Yaga's Hut-------");
-        System.out.println(GameEngine.NEWLINE + "\tA deformed fercious-looking old woman with chicken legs screaches" + GameEngine.NEWLINE +
+        System.out.print(GameEngine.NEWLINE + "\tA deformed fercious-looking old woman with chicken legs screaches" + GameEngine.NEWLINE +
                 "\t'Greetings traveler, I am Lubki, but the townsfolk call me Baba Yaga, what do you require?'\n" + GameEngine.NEWLINE + 
                 "\tH) Get healed" + GameEngine.NEWLINE + "\tT) Talk to Witch about this town" + GameEngine.NEWLINE + 
                 "\tQ) Quest to retrieve something for the Baba Yaga" + GameEngine.NEWLINE+"\tA) Ask for a Date" + GameEngine.NEWLINE + 
@@ -133,7 +134,8 @@ public class NCP_Characters {
                 //leave Witch
                 System.out.println("\tYou thank Baba Yaga and leave as fast as you can!" + GameEngine.NEWLINE);
                 //return to town
-                GameEngine.CurrentTown();
+                //GameEngine.CurrentTown();
+				Town.CurrentTown();
                 //break;
             default:
                 //default option
@@ -147,7 +149,7 @@ public class NCP_Characters {
 		String ncpOption = "";
 		Scanner scannerNCPWizard = new Scanner(System.in);
 		System.out.println("\t-------Wizards Shoppe-------");
-		System.out.println(GameEngine.NEWLINE + "\tGreetings and Salutations, I am the local Wizard, What can I do for you?" + GameEngine.NEWLINE + 
+		System.out.print(GameEngine.NEWLINE + "\tGreetings and Salutations, I am the local Wizard, What can I do for you?" + GameEngine.NEWLINE + GameEngine.NEWLINE + 
 				"\tW) Get Magical Weapons and Armor fixed" + GameEngine.NEWLINE + "\tT) Talk to Wizard about this town" + GameEngine.NEWLINE + 
 				"\tQ) Ask about the Quest" + GameEngine.NEWLINE + "\tX) Leave Wizard" + GameEngine.NEWLINE +"\tChoose Wisely:");
 		ncpOption = scannerNCPWizard.next();
@@ -187,7 +189,8 @@ public class NCP_Characters {
 				//leave Wizard
 				System.out.println("\tYou thank the Wizard and leave back to Town " + Town.CurrentTownIn + "." + GameEngine.NEWLINE);
 				//return to town
-				GameEngine.CurrentTown();
+				//GameEngine.CurrentTown();
+				Town.CurrentTown();
 				//break;
 			default:
 				//default option

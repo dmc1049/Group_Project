@@ -83,14 +83,15 @@ public class BattleEngine {
 		System.out.print("\n\tMonster Hit Points: " + mhitPoints + "\n");
 		if(mhitPoints ==0) {
 			System.out.print("\n\t The " + Monster + " saw you and died instantly!\n\n");
-			GameEngine.CurrentTown();
+			//GameEngine.CurrentTown();
+			Town.CurrentTown();
 		}
 		
 		String OptionChoose = "";
 		Scanner scannerBattle = new Scanner(System.in);
 		
 		while (OptionChoose != "R" && mhitPoints >=1) {
-			System.out.println("\tA) Attack" + GameEngine.NEWLINE + "\tR) Run Away" + GameEngine.NEWLINE + "\tChoose Wisely:");
+			System.out.print("\tA) Attack" + GameEngine.NEWLINE + "\tR) Run Away" + GameEngine.NEWLINE + "\tChoose Wisely:");
 			OptionChoose = scannerBattle.next();
 			OptionChoose = OptionChoose.toUpperCase();
 			//System.out.println("----" + OptionChoose);
@@ -115,9 +116,10 @@ public class BattleEngine {
 						Player.CHAR_COIN = Player.CHAR_COIN + mCoin;
 						System.out.println("\tYou have gained " + mExpPoints + " Experience Points!");
 						System.out.println("\tYou have gained " + mCoin + " Coin!");
-						System.out.println("\tPress R to continue on to the next Town...");
+						System.out.print("\tPress R to continue on to the next Town...");
 						OptionChoose = scannerBattle.next();
-						GameEngine.CurrentTown();
+						//GameEngine.CurrentTown();
+						Town.CurrentTown();
 					}
 					if(mhitPoints >= 1) {
 						CharHitPoints = CharHitPoints - RandNumMonsterAttack(mdamagePerHit);
@@ -129,7 +131,8 @@ public class BattleEngine {
 							Player.CHAR_HIT_POINTS = CharHitPoints;
 							System.out.print("\n\tYou Died! Press any key to return to town...\n");
 							OptionChoose = scannerBattle.next();
-							GameEngine.CurrentTown();
+							//GameEngine.CurrentTown();
+							Town.CurrentTown();
 						}
 						else if (CharHitPoints >=1) {
 							Player.CHAR_HIT_POINTS = CharHitPoints;
@@ -139,7 +142,8 @@ public class BattleEngine {
 				case "R":
 					//Run Away
 					System.out.println("\n\tYou Run Away!!!\n");
-					GameEngine.CurrentTown();
+					//GameEngine.CurrentTown();
+					Town.CurrentTown();
 					
 					break;
 				default:

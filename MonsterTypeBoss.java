@@ -22,7 +22,7 @@ public class MonsterTypeBoss {
 		public static void BossMonster() {
 			
 			String Monster = RandMonster(RandomMonsterMethod());
-			BattleEngine.BattleMonster(Monster);
+			BattleEngineBoss.BattleMonster(Monster);
 			
 		}
 		public static int RandomMonsterMethod() {

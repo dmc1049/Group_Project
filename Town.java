@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Town {
 
@@ -63,9 +64,8 @@ public class Town {
 			TownsConfig = arr.clone();
 			
 			
-		//	Town_ID		//	Town_Name		//	NCP_One		//	NCP_Two		//	Random_NCP_Three		//	Next_Town_E_ID
-		//	Next_Town_W_ID		//	Next_Town_N_ID		//	Next_Town_S_ID		
-		// --------------- TESTING ----------------	
+		//	Town_ID,Town_Name,NCP_One,NCP_Two,Random_NCP_Three,Next_Town_E_ID,Next_Town_W_ID,Next_Town_N_ID,Next_Town_S_ID		
+// --------------- TESTING ----------------	
 //		for (int i = 0; i < arr.length; i++) {
 //	        System.out.println("Element at " + i + " : " + arr[i].Town_ID +" "+ arr[i].Town_Name +" "+ arr[i].Set_NPC1 + " " + arr[i].Set_NPC2 );
 //		}
@@ -74,8 +74,99 @@ public class Town {
 //		}
 	}
 	public static void CurrentTown() {
-		//Taken form game engine
-		//might leave in game engine???
+		//TODO Auto-generated method stub
+		String OptionChoose = "";
+		Scanner scannerCurrentTown = new Scanner(System.in);
+		//******************************************************************************************
+		//------ UNCOMMENT BELOW IF ANSII ART IS REMOVED--------------------------------------------------------------------
+		
+		System.out.println("--------------------------------Your Character Stats-------------------------------------------");
+		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
+				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
+				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
+				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t|   ");
+		System.out.print("\n----------------------------------------------------------------------------------------------");
+		System.out.print("\n");
+		System.out.println("\tYou are in the Town "+ Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name +"... What do you want to do?" + GameEngine.NEWLINE);
+
+		 		
+		System.out.println("\tT) Go to Next Town" + GameEngine.NEWLINE + "\tB) Go to Black Smith" + GameEngine.NEWLINE + "\tW) Go to Witch" + GameEngine.NEWLINE + 
+				"\tO) Go to the Wizard" + GameEngine.NEWLINE + "\tX) Exit Game" +GameEngine.NEWLINE + "\tZ) Exit Without Saving" + GameEngine.NEWLINE );
+		// ------ UNCOMMENT TO HERE TO REMOVE ANSII ART ---------------------------------------------
+		//*****************************************************************************************
+
+		if (Player.CHAR_EXP_POINTS >= ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded){
+			//--KEEP-TESTING----System.out.println("\n\nPlayer Can Level Up: " + Player.CHAR_LEVEL_UP_QUEST_AVAILABLE +"\n\n");
+			//*************************************************************************************
+			System.out.print("\tQ) Quest To Level Up Available" +GameEngine.NEWLINE); // COMMENT THIS LINE AND UNCOMMENT BELOW THIS LINE TO ADD ANSII ART
+			//---JavaProgram.TownMenu("TownMenuTwo.txt"); //comment this line and uncomment line above to remove ansii art
+		}
+		else {
+			//***************************************************************************************
+			//---JavaProgram.TownMenu("TownMenuOne.txt");//comment this line to remove ansii art
+		}
+		//******************************************************************************************
+		//---UNCOMMENT BELOW TO ADD IN ANSII / ASCII ART ----------------------------
+//		System.out.println("--------------------------------Your Character Stats-------------------------------------------");
+//		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
+//				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
+//				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
+//				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t|   ");
+//		System.out.print("\n----------------------------------------------------------------------------------------------");
+//		System.out.print("\n");
+//		System.out.println("\tYou are in Town "+ Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name +"... What do you want to do?" + GameEngine.NEWLINE);
+		// -----------UNCOMMENT TO HERE TO ADD IN IN ANSII?ASCII ART----------------------------------
+		//********************************************************************************************
+		// -----------UNCOMMENT BELOW TO REMOVE ANSII / ASCII ART -----------------------------------
+		System.out.print("\tChoose Wisely: " );
+		//------------UNCOMMENT ABOVE TO REMOVE ANSII / ASCII ART ----------------------------------
+		//********************************************************************************************
+		OptionChoose = scannerCurrentTown.nextLine();
+		OptionChoose = OptionChoose.toUpperCase();
+
+		switch(OptionChoose) {
+			case "T":
+				//Go to next Town
+				System.out.println("\tYou will travel to the next Town, over hill and through Dale, Don't get killed");
+				GameEngineTwo.TravelNextTown();
+				//break;
+			case "B":
+				//Go to Black Smith
+				System.out.println("\tThe Blacksmith may have a quest for you");
+				NCP_Characters.ncpBlackSmith();
+				//break;
+			case "W":
+				//Go to Witch
+				System.out.println("\tGoing to the Witch, don't talk to her for a long time. \n\tShe will turn you into a Frog." + GameEngine.NEWLINE);
+				NCP_Characters.ncpWitch();
+				//break;
+			case "O":
+				//Go to Wizard
+				System.out.print("\tThe Wizard is a little quarky, he likes to mumble a lot\n");
+				NCP_Characters.ncpWizard();
+			case "X":
+				//Exit Game
+				System.out.println("You are Exiting the game");
+				Player.SaveCharacterPlayer();
+				System.exit(0);
+			case "Z":
+				System.out.println("You are Exiting the game with out saving");
+				System.exit(0);
+			case ".":
+				//System.out.println("Easter Egg");
+				EasterEgg.Egg();
+			case "Q":
+				//Quest for level up
+				//System.out.println("\n\tOH MY! You got scared and RAN AWAY!!!\n");
+				//CurrentTown();
+				MonsterTypeBoss.BossMonster();
+			default:
+				//Some code here as default option
+				//Catch invalid entry
+				System.out.print("\tInvalid Entry, Please try again\n\n");
+				CurrentTown();
+				
+		}
 	}
 }
 class Towns {

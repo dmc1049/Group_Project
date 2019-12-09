@@ -37,7 +37,8 @@ public class EasterEgg {
 
 		            System.out.println(sb);
 		        }
-		        GameEngine.CurrentTown();
+		      //GameEngine.CurrentTown();
+				Town.CurrentTown();
 		    }
 
 		
