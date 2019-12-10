@@ -80,12 +80,12 @@ public class Town {
 		//******************************************************************************************
 		//------ UNCOMMENT BELOW IF ANSII ART IS REMOVED--------------------------------------------------------------------
 		
-		System.out.println(GameEngine.NEWLINE +"--------------------------------Your Character Stats-------------------------------------------");
+		System.out.println(GameEngine.NEWLINE +"--------------------------------Your Character Stats-----------------------------");
 		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
 				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
 				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
 				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t|   ");
-		System.out.print("\n----------------------------------------------------------------------------------------------");
+		System.out.print(GameEngine.NEWLINE +"---------------------------------------------------------------------------------");
 		System.out.print("\n");
 		System.out.println("\tYou are in the Town "+ Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name +"... What do you want to do?" + GameEngine.NEWLINE);
 
@@ -107,12 +107,12 @@ public class Town {
 		}
 		//******************************************************************************************
 		//---UNCOMMENT BELOW TO ADD IN ANSII / ASCII ART ----------------------------
-//		System.out.println("--------------------------------Your Character Stats-------------------------------------------");
+//		System.out.println(GameEngine.NEWLINE +"--------------------------------Your Character Stats-----------------------------");
 //		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
 //				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
 //				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
 //				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t|   ");
-//		System.out.print("\n----------------------------------------------------------------------------------------------");
+//		System.out.print(GameEngine.NEWLINE +"---------------------------------------------------------------------------------");
 //		System.out.print("\n");
 //		System.out.println("\tYou are in Town "+ Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name +"... What do you want to do?" + GameEngine.NEWLINE);
 		// -----------UNCOMMENT TO HERE TO ADD IN IN ANSII?ASCII ART----------------------------------
@@ -128,7 +128,7 @@ public class Town {
 			case "T":
 				//Go to next Town
 				System.out.println("\tYou will travel to the next Town, over hill and through Dale, Don't get killed");
-				GameEngineTwo.TravelNextTown();
+				TravelNextTown.TravelToNextTown();
 				//break;
 			case "B":
 				//Go to Black Smith
@@ -160,6 +160,9 @@ public class Town {
 				Town.CurrentTown();
 			case "3":
 				JavaProgram.TownMenu("TownMenuThree-Small_Dragon-4.txt");
+				Town.CurrentTown();
+			case "4":
+				JavaProgram.TownMenu("Small_Imp.txt");
 				Town.CurrentTown();
 			case "Q":
 				//Quest for level up

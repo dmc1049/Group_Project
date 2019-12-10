@@ -32,14 +32,16 @@ public class MonsterTypeOne {
 		
 		int i = randMonster;
 		String Monster = "";
-		if(i == 1)
+		if(i == 0)
 			Monster = "Troll";
-		else if (i == 2)
+		else if (i == 1)
 			Monster = "Imp";
-		else if (i == 3)
+		else if (i == 2)
 			Monster = "Hydra";
-		else if (i == 4)
+		else if (i == 3)
 			Monster = "Zombie";
+		else if (i == 4)
+			Monster = "Other";
 		else if (i == 5)
 			Monster = "Other";
 				

@@ -36,17 +36,17 @@ public class MonsterTypeBoss {
 			
 			int i = randMonster;
 			String Monster = "";
-			if(i == 1)
+			if(i == 0)
 				Monster = "BossTroll";
-			else if (i == 2)
+			else if (i == 1)
 				Monster = "BossImp";
-			else if (i == 3)
+			else if (i == 2)
 				Monster = "BossHydra";
-			else if (i == 4)
+			else if (i == 3)
 				Monster = "BossZombie";
-			else if (i == 5)
+			else if (i == 4)
 				Monster = "BossOther";
-			else if (i==6)
+			else if (i == 5)
 				Monster = "BossZombieDragon";
 					
 			return Monster;

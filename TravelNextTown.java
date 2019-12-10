@@ -23,7 +23,49 @@ public class TravelNextTown {
 		int rand_int1 = randNum.nextInt(5);
 		return rand_int1;
 	}
-	
+	public static void TravelToNextTown() {
+		// TODO Auto-generated method stub
+		String OptionChoose = "";
+		Scanner scannerNextTown = new Scanner(System.in);
+		System.out.println("");
+		System.out.println("\t-------Travel to New Town-------");
+		System.out.println("\tYou are in Town " + Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name + "...Where do you want to go?" + GameEngine.NEWLINE);
+		System.out.print("\tE) Go to Next Town to East" + GameEngine.NEWLINE + "\tW) Go to Next Town to West" + GameEngine.NEWLINE + 
+				"\tN) Go to Next Town to North" + GameEngine.NEWLINE + "\tS) Go to Next Town to South" + GameEngine.NEWLINE + 
+				"\tX) Exit Back to Current Town" +GameEngine.NEWLINE + "\tChoose Wisely: " );
+		OptionChoose = scannerNextTown.next();
+		OptionChoose = OptionChoose.toUpperCase();
+		//System.out.println("");
+		Town.LoadTowns();
+
+		switch(OptionChoose) {
+			case "E":
+				//Go to Town to East
+				TravelToTownEast();
+				//break;
+			case "W":
+				//Go to Town to West
+				TravelToTownWest();
+				//break;
+			case "N":
+				//Go to Town to North
+				TravelToTownNorth();
+				//break;
+			case "S":
+				//Go to Town to South
+				TravelToTownSouth();
+				//break;
+			case "X":
+				//Exit Game
+				System.out.println("Returning to Current Town");
+				Town.CurrentTown();
+			default:
+				//Some code here as default option
+				//Catch invalid entry
+				System.out.print("\tInvalid Entry, Please try again\n\n");
+				TravelToNextTown();
+		}
+	}
 	public static void TravelToTownEast() {
 		// get town data from town.java
 		int i = RandNumMethod();
@@ -117,7 +159,7 @@ public class TravelNextTown {
 				default:
 					//Something
 					System.out.println("\tInvalid Entry, Please try again");
-					TravelNextTown.TravelToTownEast();
+					TravelToTownEast();
 			}
 			//Something else here....
 		}
@@ -148,7 +190,7 @@ public class TravelNextTown {
 				default:
 					//Something
 					System.out.println("\tInvalid Entry, Please try again");
-					TravelNextTown.TravelToTownEast();
+					TravelToTownEast();
 			}
 		}
 	

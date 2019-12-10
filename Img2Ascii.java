@@ -80,6 +80,6 @@ public class Img2Ascii {
 
     public static void main(String[] args) {
         Img2Ascii obj = new Img2Ascii();
-        obj.convertToAscii("C:\\Users\\Mike\\Desktop\\Eclipse-Workspace\\ADV_GAME_1\\small_imp-2-1.png");
+        obj.convertToAscii("C:\\Users\\Mike\\Desktop\\Eclipse-Workspace\\ADV_GAME_1\\small_imp-2-2.png");
     }
 }
