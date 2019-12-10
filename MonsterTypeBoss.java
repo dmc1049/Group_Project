@@ -191,7 +191,7 @@ public class MonsterTypeBoss {
 			expPoints = expPoints + n;
 			
 			System.out.println("\t--------For Boss Imp--------");
-			System.out.println("\tThe hitpoints for this Boss Imp is: " + hitPoints + "Encounter percentage chance on Quest: " + encounter + "%");
+			System.out.println("\tThe hitpoints for this Boss Imp is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
 			if (encounter == 0) {
 				dropItem=0;
 			}
@@ -199,7 +199,7 @@ public class MonsterTypeBoss {
 				Dropped = "Armor";
 			if(ArmorOrWeapon == 1)
 				Dropped = "Weapon";
-			System.out.println("Drop item percentage: " + RandNumMethod4() + "%." +" and drops item number: " + dropItem);
+			System.out.println("\tDrop item percentage: " + RandNumMethod4() + "%." +" and drops item number: " + dropItem);
 			if(Dropped == "Armor") {
 				//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
 				System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Armor.ArmorsConfig[dropItem].Armor_Name);
@@ -207,23 +207,23 @@ public class MonsterTypeBoss {
 			if(Dropped == "Weapon") {
 				System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Weapon.WeaponsConfig[dropItem].Weapon_Name);
 			}
-			System.out.print("\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+			System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%");
 			if(magicItemChance >=65) {
 				magicItem = MagicItem();
 			}
 			else {
 				magicItem=0;
 			}
-			System.out.print("Magic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+			System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%");
 			if(magicItemChance >=25) {
 				magicItem = MagicItem();
 			}
 			else {
 				magicItem=0;
 			}
-			System.out.println(" and magic drop item is number: " + magicItem);
-			System.out.println("Damage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"Experience Points Gained: " + expPoints);
-			System.out.println("----------------");
+			System.out.println(" The Magic Item dropped is number: " + magicItem);
+			System.out.println("\tDamage per hit upon Player Character is: " + DamagePerHit() + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints);
+			System.out.println("\t----------------");
 			
 			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
 			

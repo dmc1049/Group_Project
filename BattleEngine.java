@@ -126,9 +126,6 @@ public class BattleEngine {
 						if(CharHitPoints <= 0) {
 							CharHitPoints = 0;
 							Player.CHAR_HIT_POINTS = CharHitPoints;
-						}
-						else if(CharHitPoints <= 0) {
-							Player.CHAR_HIT_POINTS = CharHitPoints;
 							System.out.print("\n\tYou Died! Press any key to return to town...\n");
 							OptionChoose = scannerBattle.next();
 							//GameEngine.CurrentTown();
