@@ -10,11 +10,23 @@ public class MonsterTypeOne {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//
-		Troll();
-		Imp();
-		Hydra();
-		Zombie();
-		Other();
+//		Troll();
+//		Imp();
+//		Hydra();
+//		Zombie();
+//		Other();
+		Monster();
+	}
+	public static void Monster() {
+		
+		String Monster = RandMonster(RandomMonsterMethod());
+		BattleEngine.BattleMonster(Monster);
+		
+	}
+	public static int RandomMonsterMethod() {
+		Random randNum = new Random();
+		int rand_int1 = randNum.nextInt(6);
+		return rand_int1;
 	}
 	public static String RandMonster(int randMonster) {
 		
@@ -99,7 +111,7 @@ public class MonsterTypeOne {
 		int i = RandNumMethod2();
 		return i;
 	}
-	public static int[] Troll() {
+	public static int[] MonsterOne(String Monster) {
 		//random hitpoints
 		//random dropitem on death
 		//random encounter
@@ -131,228 +143,322 @@ public class MonsterTypeOne {
 		System.out.println("\tDrop item percentage: " + RandNumMethod4() + "%" + " and dropped item number is: " + dropItem);
 		if(Dropped == "Armor") {
 			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
-			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Armor.ArmorsConfig[dropItem].Armor_Name);
+			System.out.print("\tDropped Item is "+Dropped+ " Class and is the item named: *** " + Armor.ArmorsConfig[dropItem].Armor_Name + " ***");
 		}
 		if(Dropped == "Weapon") {
-			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Weapon.WeaponsConfig[dropItem].Weapon_Name);
+			System.out.print("\tDropped Item is "+Dropped+ " Class and is the item named: *** " + Weapon.WeaponsConfig[dropItem].Weapon_Name + " ***");
 		}
-		System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%");
-		if(magicItemChance >=65) {
-			magicItem = MagicItem();
-		}
-		else {
-			magicItem=0;
-		}
-		System.out.println(" and magic drop item is number: " + magicItem);
-		System.out.println("\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints);
-		System.out.println("\tCoin Drop: " + coinDrop);
-		System.out.println("\t----------------");
+//		System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+//		if(magicItemChance >=65) {
+//			magicItem = MagicItem();
+//		}
+//		else {
+//			magicItem=0;
+//		}
+//		System.out.println(" The Magic Item dropped is number: " + magicItem);
+//		if(Dropped == "Armor") {
+//			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Armor.MagicArmorsConfig[dropItem].MagicArmor_Name);
+//		}
+//		if(Dropped == "Weapon") {
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Weapon.MagicWeaponsConfig[dropItem].MagicWeapon_Name);
+//		}
+		System.out.println("\n\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints +
+			":\tCoin Drop: " + coinDrop);
+		System.out.println("\n\t----------------");
 		
 		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
 		
 	}
-	public static int[] Imp() {
-		//random hitpoints
-		//random dropitem on death
-		//random encounter
-		//random Magic item
-		//Damage per hit
-		
-		int hitPoints = RandNumMethod();
-		int damagePerHit = DamagePerHit();
-		int expPoints = RandNumMethod();
-		int coinDrop = RandNumMethod();
-		int magicItemChance = MagicItemChance();
-		int magicItem = MagicItem();
-		int encounter = Encounter();
-		int dropItem = DropItem();
-		
-		System.out.print("\n");
-		System.out.println("\t--------Stats For Imp--------");
-		System.out.println("\tThe hitpoints for this Imp is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
-		if (encounter == 0) {
-			dropItem=0;
-		}
-		int ArmorOrWeapon = RandNumMethod5();
-		String Dropped = "";
-		if(ArmorOrWeapon == 0)
-			Dropped = "Armor";
-		if(ArmorOrWeapon == 1)
-			Dropped = "Weapon";
-		System.out.println("\tDrop item percentage: " + RandNumMethod4() + "%" + " and dropped item number is: " + dropItem);
-		if(Dropped == "Armor") {
-			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
-			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Armor.ArmorsConfig[dropItem].Armor_Name);
-		}
-		if(Dropped == "Weapon") {
-			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Weapon.WeaponsConfig[dropItem].Weapon_Name);
-		}
-		System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%");
-		if(magicItemChance >=65) {
-			magicItem = MagicItem();
-		}
-		else {
-			magicItem=0;
-		}
-		System.out.println(" and magic drop item is number: " + magicItem);
-		System.out.println("\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints);
-		System.out.println("\tCoin Drop: " + coinDrop);
-		System.out.println("\t----------------");
-		
-		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
-		
-	}
-	public static int[] Hydra() {
-		//random hitpoints
-		//random dropitem on death
-		//random encounter
-		//random Magic item
-		//Damage per hit
-		
-		int hitPoints = RandNumMethod();
-		int damagePerHit = DamagePerHit();
-		int expPoints = RandNumMethod();
-		int coinDrop = RandNumMethod();
-		int magicItemChance = MagicItemChance();
-		int magicItem = MagicItem();
-		int encounter = Encounter();
-		int dropItem = DropItem();
-		
-		
-		System.out.print("\n");
-		System.out.println("\t--------Stats For Hydra--------");
-		System.out.println("\tThe hitpoints for this Hydra is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
-		if (encounter == 0) {
-			dropItem=0;
-		}
-		int ArmorOrWeapon = RandNumMethod5();
-		String Dropped = "";
-		if(ArmorOrWeapon == 0)
-			Dropped = "Armor";
-		if(ArmorOrWeapon == 1)
-			Dropped = "Weapon";
-		System.out.println("\n\tDrop item percentage: " + RandNumMethod4() + "%" + " and dropped item number is: " + dropItem);
-		if(Dropped == "Armor") {
-			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
-			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Armor.ArmorsConfig[dropItem].Armor_Name + ".");
-		}
-		if(Dropped == "Weapon") {
-			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Weapon.WeaponsConfig[dropItem].Weapon_Name + ".");
-		}
-		System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%.");
-		if(magicItemChance >=65) {
-			magicItem = MagicItem();
-		}
-		else {
-			magicItem=0;
-		}
-		System.out.print(" The Magical Item dropped is number: " + magicItem);
-		System.out.println("\n\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints);
-		System.out.println("\tCoin Drop: " + coinDrop);
-		System.out.println("\t----------------");
-		
-		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
-	}
-	public static int[] Zombie() {
-		//random hitpoints
-		//random dropitem on death
-		//random encounter
-		//random Magic item
-		//Damage per hit
-		
-		int hitPoints = RandNumMethod();
-		int damagePerHit = DamagePerHit();
-		int expPoints = RandNumMethod();
-		int coinDrop = RandNumMethod();
-		int magicItemChance = MagicItemChance();
-		int magicItem = MagicItem();
-		int encounter = Encounter();
-		int dropItem = DropItem();
-		
-		System.out.print("\n");
-		System.out.println("\t--------Stats For Zombie--------");
-		System.out.println("\tThe hitpoints for this Zombie is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
-		if (encounter == 0) {
-			dropItem=0;
-		}
-		int ArmorOrWeapon = RandNumMethod5();
-		String Dropped = "";
-		if(ArmorOrWeapon == 0)
-			Dropped = "Armor";
-		if(ArmorOrWeapon == 1)
-			Dropped = "Weapon";
-		System.out.println("\n\tDrop item percentage: " + RandNumMethod4() + "%" + " and dropped item number is: " + dropItem);
-		if(Dropped == "Armor") {
-			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
-			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Armor.ArmorsConfig[dropItem].Armor_Name);
-		}
-		if(Dropped == "Weapon") {
-			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Weapon.WeaponsConfig[dropItem].Weapon_Name);
-		}
-		System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%.");
-		if(magicItemChance >=65) {
-			magicItem = MagicItem();
-		}
-		else {
-			magicItem=0;
-		}
-		System.out.println(" The Magic Item dropped is number: " + magicItem);
-		System.out.println("\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints);
-		System.out.println("\tCoin Drop: " + coinDrop);
-		System.out.println("\t----------------");
-		
-		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
-		
-	}
-	public static int[] Other() {
-		//random hitpoints
-		//random dropitem on death
-		//random encounter
-		//random Magic item
-		//Damage per hit
-		
-		int hitPoints = RandNumMethod();
-		int damagePerHit = DamagePerHit();
-		int expPoints = RandNumMethod();
-		int coinDrop = RandNumMethod();
-		int magicItemChance = MagicItemChance();
-		int magicItem = MagicItem();
-		int encounter = Encounter();
-		int dropItem = DropItem();
-		
-		System.out.print("\n");
-		System.out.println("\t--------Stats For Other--------");
-		System.out.println("\tThe hitpoints for this Other is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
-		if (encounter == 0) {
-			dropItem=0;
-		}
-		int ArmorOrWeapon = RandNumMethod5();
-		String Dropped = "";
-		if(ArmorOrWeapon == 0)
-			Dropped = "Armor";
-		if(ArmorOrWeapon == 1)
-			Dropped = "Weapon";
-		System.out.println("\n\tDrop item percentage: " + RandNumMethod4() + "%" + " and dropped item number is: " + dropItem);
-		if(Dropped == "Armor") {
-			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
-			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Armor.ArmorsConfig[dropItem].Armor_Name);
-		}
-		if(Dropped == "Weapon") {
-			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Weapon.WeaponsConfig[dropItem].Weapon_Name);
-		}
-		System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%");
-		if(magicItemChance >=65) {
-			magicItem = MagicItem();
-		}
-		else {
-			magicItem=0;
-		}
-		System.out.println(" The Magic Item dropped is number: " + magicItem);
-		System.out.println("\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints);
-		System.out.println("\tCoin Drop: " + coinDrop);
-		System.out.println("\t----------------");
-		
-		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
-		
-	}
+//	public static int[] Troll() {
+//		//random hitpoints
+//		//random dropitem on death
+//		//random encounter
+//		//random Magic item
+//		//Damage per hit
+//		//Exp Points
+//		
+//		int hitPoints = RandNumMethod();
+//		int damagePerHit = DamagePerHit();
+//		int expPoints = RandNumMethod();
+//		int coinDrop = RandNumMethod();
+//		int magicItemChance = MagicItemChance();
+//		int magicItem = MagicItem();
+//		int encounter = Encounter();
+//		int dropItem = DropItem();
+//		
+//		System.out.print("\n");
+//		System.out.println("\t--------Stats For Troll--------");
+//		System.out.println("\tThe hitpoints for this Troll is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
+//		if (encounter == 0) {
+//			dropItem=0;
+//		}
+//		int ArmorOrWeapon = RandNumMethod5();
+//		String Dropped = "";
+//		if(ArmorOrWeapon == 0)
+//			Dropped = "Armor";
+//		if(ArmorOrWeapon == 1)
+//			Dropped = "Weapon";
+//		System.out.println("\tDrop item percentage: " + RandNumMethod4() + "%" + " and dropped item number is: " + dropItem);
+//		if(Dropped == "Armor") {
+//			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Armor.ArmorsConfig[dropItem].Armor_Name);
+//		}
+//		if(Dropped == "Weapon") {
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Weapon.WeaponsConfig[dropItem].Weapon_Name);
+//		}
+//		System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+//		if(magicItemChance >=65) {
+//			magicItem = MagicItem();
+//		}
+//		else {
+//			magicItem=0;
+//		}
+//		System.out.println(" The Magic Item dropped is number: " + magicItem);
+//		if(Dropped == "Armor") {
+//			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Armor.MagicArmorsConfig[dropItem].MagicArmor_Name);
+//		}
+//		if(Dropped == "Weapon") {
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Weapon.MagicWeaponsConfig[dropItem].MagicWeapon_Name);
+//		}
+//		System.out.println("\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints);
+//		System.out.println("\tCoin Drop: " + coinDrop);
+//		System.out.println("\t----------------");
+//		
+//		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+//		
+//	}
+//	public static int[] Imp() {
+//		//random hitpoints
+//		//random dropitem on death
+//		//random encounter
+//		//random Magic item
+//		//Damage per hit
+//		
+//		int hitPoints = RandNumMethod();
+//		int damagePerHit = DamagePerHit();
+//		int expPoints = RandNumMethod();
+//		int coinDrop = RandNumMethod();
+//		int magicItemChance = MagicItemChance();
+//		int magicItem = MagicItem();
+//		int encounter = Encounter();
+//		int dropItem = DropItem();
+//		
+//		System.out.print("\n");
+//		System.out.println("\t--------Stats For Imp--------");
+//		System.out.println("\tThe hitpoints for this Imp is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
+//		if (encounter == 0) {
+//			dropItem=0;
+//		}
+//		int ArmorOrWeapon = RandNumMethod5();
+//		String Dropped = "";
+//		if(ArmorOrWeapon == 0)
+//			Dropped = "Armor";
+//		if(ArmorOrWeapon == 1)
+//			Dropped = "Weapon";
+//		System.out.println("\tDrop item percentage: " + RandNumMethod4() + "%" + " and dropped item number is: " + dropItem);
+//		if(Dropped == "Armor") {
+//			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Armor.ArmorsConfig[dropItem].Armor_Name);
+//		}
+//		if(Dropped == "Weapon") {
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Weapon.WeaponsConfig[dropItem].Weapon_Name);
+//		}
+//		System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+//		if(magicItemChance >=65) {
+//			magicItem = MagicItem();
+//		}
+//		else {
+//			magicItem=0;
+//		}
+//		System.out.println(" The Magic Item dropped is number: " + magicItem);
+//		if(Dropped == "Armor") {
+//			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Armor.MagicArmorsConfig[dropItem].MagicArmor_Name);
+//		}
+//		if(Dropped == "Weapon") {
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Weapon.MagicWeaponsConfig[dropItem].MagicWeapon_Name);
+//		}
+//		System.out.println("\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints);
+//		System.out.println("\tCoin Drop: " + coinDrop);
+//		System.out.println("\t----------------");
+//		
+//		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+//		
+//	}
+//	public static int[] Hydra() {
+//		//random hitpoints
+//		//random dropitem on death
+//		//random encounter
+//		//random Magic item
+//		//Damage per hit
+//		
+//		int hitPoints = RandNumMethod();
+//		int damagePerHit = DamagePerHit();
+//		int expPoints = RandNumMethod();
+//		int coinDrop = RandNumMethod();
+//		int magicItemChance = MagicItemChance();
+//		int magicItem = MagicItem();
+//		int encounter = Encounter();
+//		int dropItem = DropItem();
+//		
+//		
+//		System.out.print("\n");
+//		System.out.println("\t--------Stats For Hydra--------");
+//		System.out.println("\tThe hitpoints for this Hydra is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
+//		if (encounter == 0) {
+//			dropItem=0;
+//		}
+//		int ArmorOrWeapon = RandNumMethod5();
+//		String Dropped = "";
+//		if(ArmorOrWeapon == 0)
+//			Dropped = "Armor";
+//		if(ArmorOrWeapon == 1)
+//			Dropped = "Weapon";
+//		System.out.println("\n\tDrop item percentage: " + RandNumMethod4() + "%" + " and dropped item number is: " + dropItem);
+//		if(Dropped == "Armor") {
+//			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Armor.ArmorsConfig[dropItem].Armor_Name + ".");
+//		}
+//		if(Dropped == "Weapon") {
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Weapon.WeaponsConfig[dropItem].Weapon_Name + ".");
+//		}
+//		System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%.");
+//		if(magicItemChance >=65) {
+//			magicItem = MagicItem();
+//		}
+//		else {
+//			magicItem=0;
+//		}
+//		System.out.println(" The Magic Item dropped is number: " + magicItem);
+//		if(Dropped == "Armor") {
+//			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Armor.MagicArmorsConfig[dropItem].MagicArmor_Name);
+//		}
+//		if(Dropped == "Weapon") {
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Weapon.MagicWeaponsConfig[dropItem].MagicWeapon_Name);
+//		}
+//		System.out.println("\n\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints);
+//		System.out.println("\tCoin Drop: " + coinDrop);
+//		System.out.println("\t----------------");
+//		
+//		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+//	}
+//	public static int[] Zombie() {
+//		//random hitpoints
+//		//random dropitem on death
+//		//random encounter
+//		//random Magic item
+//		//Damage per hit
+//		
+//		int hitPoints = RandNumMethod();
+//		int damagePerHit = DamagePerHit();
+//		int expPoints = RandNumMethod();
+//		int coinDrop = RandNumMethod();
+//		int magicItemChance = MagicItemChance();
+//		int magicItem = MagicItem();
+//		int encounter = Encounter();
+//		int dropItem = DropItem();
+//		
+//		System.out.print("\n");
+//		System.out.println("\t--------Stats For Zombie--------");
+//		System.out.println("\tThe hitpoints for this Zombie is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
+//		if (encounter == 0) {
+//			dropItem=0;
+//		}
+//		int ArmorOrWeapon = RandNumMethod5();
+//		String Dropped = "";
+//		if(ArmorOrWeapon == 0)
+//			Dropped = "Armor";
+//		if(ArmorOrWeapon == 1)
+//			Dropped = "Weapon";
+//		System.out.println("\n\tDrop item percentage: " + RandNumMethod4() + "%" + " and dropped item number is: " + dropItem);
+//		if(Dropped == "Armor") {
+//			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Armor.ArmorsConfig[dropItem].Armor_Name);
+//		}
+//		if(Dropped == "Weapon") {
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Weapon.WeaponsConfig[dropItem].Weapon_Name);
+//		}
+//		System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%.");
+//		if(magicItemChance >=65) {
+//			magicItem = MagicItem();
+//		}
+//		else {
+//			magicItem=0;
+//		}
+//		System.out.println(" The Magic Item dropped is number: " + magicItem);
+//		if(Dropped == "Armor") {
+//			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Armor.MagicArmorsConfig[dropItem].MagicArmor_Name);
+//		}
+//		if(Dropped == "Weapon") {
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Weapon.MagicWeaponsConfig[dropItem].MagicWeapon_Name);
+//		}
+//		System.out.println("\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints);
+//		System.out.println("\tCoin Drop: " + coinDrop);
+//		System.out.println("\t----------------");
+//		
+//		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+//		
+//	}
+//	public static int[] Other() {
+//		//random hitpoints
+//		//random dropitem on death
+//		//random encounter
+//		//random Magic item
+//		//Damage per hit
+//		
+//		int hitPoints = RandNumMethod();
+//		int damagePerHit = DamagePerHit();
+//		int expPoints = RandNumMethod();
+//		int coinDrop = RandNumMethod();
+//		int magicItemChance = MagicItemChance();
+//		int magicItem = MagicItem();
+//		int encounter = Encounter();
+//		int dropItem = DropItem();
+//		
+//		System.out.print("\n");
+//		System.out.println("\t--------Stats For Other--------");
+//		System.out.println("\tThe hitpoints for this Other is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
+//		if (encounter == 0) {
+//			dropItem=0;
+//		}
+//		int ArmorOrWeapon = RandNumMethod5();
+//		String Dropped = "";
+//		if(ArmorOrWeapon == 0)
+//			Dropped = "Armor";
+//		if(ArmorOrWeapon == 1)
+//			Dropped = "Weapon";
+//		System.out.println("\n\tDrop item percentage: " + RandNumMethod4() + "%" + " and dropped item number is: " + dropItem);
+//		if(Dropped == "Armor") {
+//			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Armor.ArmorsConfig[dropItem].Armor_Name);
+//		}
+//		if(Dropped == "Weapon") {
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Weapon.WeaponsConfig[dropItem].Weapon_Name);
+//		}
+//		System.out.print("\n\tMagic Item Drop percentage chance on Quest: " + magicItemChance + "%");
+//		if(magicItemChance >=65) {
+//			magicItem = MagicItem();
+//		}
+//		else {
+//			magicItem=0;
+//		}
+//		System.out.println(" The Magic Item dropped is number: " + magicItem);
+//		if(Dropped == "Armor") {
+//			//System.out.print(Armor.ArmorsConfig[dropItem].Armor_Name);
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Armor.MagicArmorsConfig[dropItem].MagicArmor_Name);
+//		}
+//		if(Dropped == "Weapon") {
+//			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Weapon.MagicWeaponsConfig[dropItem].MagicWeapon_Name);
+//		}
+//		System.out.println("\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints);
+//		System.out.println("\tCoin Drop: " + coinDrop);
+//		System.out.println("\t----------------");
+//		
+//		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+//		
+//	}
 }

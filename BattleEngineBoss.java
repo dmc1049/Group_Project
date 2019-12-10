@@ -39,72 +39,73 @@ public class BattleEngineBoss {
 			ExpPoints = Player.CHAR_EXP_POINTS;
 			
 			int mhitPoints = 0, mdamagePerHit = 0, mExpPoints = 0, mCoin = 0;
-			if(Monster == "BossTroll") {
-				int result[] = MonsterTypeBoss.BossTroll();
-				  //System.out.println(result[0] + result[1]); //retrieve from monster char
-				  mhitPoints = result[0];
-				  mdamagePerHit = result[1];
-				  mExpPoints = result[2];
-				  mCoin = result[3];
-				  if(mhitPoints <= 0) {
-					  BattleMonster(Monster);
-				  }
+			//if(Monster == "BossTroll") {
+			int result[] = MonsterTypeBoss.MonsterBoss(Monster);
+			//System.out.println(result[0] + result[1]); //retrieve from monster char
+			mhitPoints = result[0];
+			mdamagePerHit = result[1];
+			mExpPoints = result[2];
+			mCoin = result[3];
+			if(mhitPoints <= 0) {
+				System.out.println("Monster " + Monster + " has zero hitpoints");
+				BattleMonster(Monster);
 			}
-			if(Monster == "BossImp") {
-				int result[] = MonsterTypeBoss.BossImp();
-				  //System.out.println(result[0] + result[1]); //retrieve from monster char
-				  mhitPoints = result[0];
-				  mdamagePerHit = result[1];
-				  mExpPoints = result[2];
-				  mCoin = result[3];
-				  if(mhitPoints <= 0) {
-					  BattleMonster(Monster);
-				  }
-			}
-			if(Monster == "BossHydra") {
-				int result[] = MonsterTypeBoss.BossHydra();
-				  //System.out.println(result[0] + result[1]); //retrieve from monster char
-				  mhitPoints = result[0];
-				  mdamagePerHit = result[1];
-				  mExpPoints = result[2];
-				  mCoin = result[3];
-				  if(mhitPoints <= 0) {
-					  BattleMonster(Monster);
-				  }
-			}
-			if(Monster == "BossZombie") {
-				int result[] = MonsterTypeBoss.BossZombie();
-				  //System.out.println(result[0] + result[1]); //retrieve from monster char
-				  mhitPoints = result[0];
-				  mdamagePerHit = result[1];
-				  mExpPoints = result[2];
-				  mCoin = result[3];
-				  if(mhitPoints <= 0) {
-					  BattleMonster(Monster);
-				  }
-			}
-			if(Monster == "BossOther") {
-				int result[] = MonsterTypeBoss.BossOther();
-				  //System.out.println(result[0] + result[1]); //retrieve from monster char
-				  mhitPoints = result[0];
-				  mdamagePerHit = result[1];
-				  mExpPoints = result[2];
-				  mCoin = result[3];
-				  if(mhitPoints <= 0) {
-					  BattleMonster(Monster);
-				  }
-			}
-			if(Monster == "BossZombieDragon") {
-				int result[] = MonsterTypeBoss.BossZombieDragon();
-				  //System.out.println(result[0] + result[1]); //retrieve from monster char
-				  mhitPoints = result[0];
-				  mdamagePerHit = result[1];
-				  mExpPoints = result[2];
-				  mCoin = result[3];
-				  if(mhitPoints <= 0) {
-					  BattleMonster(Monster);
-				  }
-			}
+			//}
+//			if(Monster == "BossImp") {
+//				int result[] = MonsterTypeBoss.MonsterBoss(Monster);
+//				  //System.out.println(result[0] + result[1]); //retrieve from monster char
+//				  mhitPoints = result[0];
+//				  mdamagePerHit = result[1];
+//				  mExpPoints = result[2];
+//				  mCoin = result[3];
+//				  if(mhitPoints <= 0) {
+//					  BattleMonster(Monster);
+//				  }
+//			}
+//			if(Monster == "BossHydra") {
+//				int result[] = MonsterTypeBoss.MonsterBoss(Monster);
+//				  //System.out.println(result[0] + result[1]); //retrieve from monster char
+//				  mhitPoints = result[0];
+//				  mdamagePerHit = result[1];
+//				  mExpPoints = result[2];
+//				  mCoin = result[3];
+//				  if(mhitPoints <= 0) {
+//					  BattleMonster(Monster);
+//				  }
+//			}
+//			if(Monster == "BossZombie") {
+//				int result[] = MonsterTypeBoss.MonsterBoss(Monster);
+//				  //System.out.println(result[0] + result[1]); //retrieve from monster char
+//				  mhitPoints = result[0];
+//				  mdamagePerHit = result[1];
+//				  mExpPoints = result[2];
+//				  mCoin = result[3];
+//				  if(mhitPoints <= 0) {
+//					  BattleMonster(Monster);
+//				  }
+//			}
+//			if(Monster == "BossOther") {
+//				int result[] = MonsterTypeBoss.MonsterBoss(Monster);
+//				  //System.out.println(result[0] + result[1]); //retrieve from monster char
+//				  mhitPoints = result[0];
+//				  mdamagePerHit = result[1];
+//				  mExpPoints = result[2];
+//				  mCoin = result[3];
+//				  if(mhitPoints <= 0) {
+//					  BattleMonster(Monster);
+//				  }
+//			}
+//			if(Monster == "BossZombieDragon") {
+//				int result[] = MonsterTypeBoss.MonsterBoss(Monster);
+//				  //System.out.println(result[0] + result[1]); //retrieve from monster char
+//				  mhitPoints = result[0];
+//				  mdamagePerHit = result[1];
+//				  mExpPoints = result[2];
+//				  mCoin = result[3];
+//				  if(mhitPoints <= 0) {
+//					  BattleMonster(Monster);
+//				  }
+//			}
 			System.out.print("\n\tPlayer Hit Points: " + CharHitPoints);
 			System.out.print("\n\tMonster Hit Points: " + mhitPoints + "\n");
 			if(mhitPoints ==0) {
@@ -128,7 +129,7 @@ public class BattleEngineBoss {
 						System.out.println("\tYou Attack!!!");
 						//Do hit code here
 						mhitPoints = mhitPoints - RandNumPlayerAttack(CharDamagePerHit);
-						System.out.println("\t--Current Battle Stats--");
+						System.out.println("\n\t--Current Battle Stats--");
 						System.out.println("\tPlayer Hit Points: " + CharHitPoints);
 						System.out.println("\tMonster Hit Points: " + mhitPoints);
 						System.out.println("");

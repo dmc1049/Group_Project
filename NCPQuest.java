@@ -21,7 +21,7 @@ public class NCPQuest {
 	                    "\tThere you will find a dark cave with the letter S written in blood above its mouth." + GameEngine.NEWLINE + 
 	                    "\tLook for a piece of Obsidian about 1 foot long and 6 inches wide. It will be in a  golden chest near the "
 	                    + "back of the cave." + GameEngine.NEWLINE + "\tBe careful there is a Troll guarding the chest." + GameEngine.NEWLINE );
-	            System.out.print(GameEngine.NEWLINE + "\t Do Adventurer accept the Quest? Y for Yes; N for No: ");
+	            System.out.print(GameEngine.NEWLINE + "\tDo Adventurer accept the Quest? Y for Yes; N for No: ");
 			scanResult = NCPscan.next();
 			scanResult = scanResult.toUpperCase();
 			if (scanResult.contentEquals("Y")) {
@@ -37,7 +37,7 @@ public class NCPQuest {
 					+ "with the letter S on it." + GameEngine.NEWLINE + "\tLook for a piece of metal about 1 foot long and 6 inches "
 					+ "wide. It will be in the chest." + GameEngine.NEWLINE + "\tBe careful there is a Hydra guarding the chest."
 					+ GameEngine.NEWLINE );
-			System.out.print("\t Do you accept the Quest? Y for Yes; N for No: ");
+			System.out.print(GameEngine.NEWLINE + "\tDo you accept the Quest? Y for Yes; N for No: ");
 			scanResult = NCPscan.next();
 			scanResult = scanResult.toUpperCase();
 			if (scanResult.contentEquals("Y")) {
@@ -89,7 +89,7 @@ public class NCPQuest {
 			System.out.print("\tYou will need to travel to the Abscale Mountains that is to the South-West of town." + GameEngine.NEWLINE + 
 					"\tThere you will find a path up the mountain to the top. At the top you will find an HourGlass sitting on a"
 					+ "pedistal." + GameEngine.NEWLINE + "\tBe careful there is a Troll guarding the chest." + GameEngine.NEWLINE );
-			System.out.print("\t Do you accept the Quest? Y for Yes; N for No: ");
+			System.out.print(GameEngine.NEWLINE + "\tDo you accept the Quest? Y for Yes; N for No: ");
 			scanResult = NCPscan.next();
 			scanResult = scanResult.toUpperCase();
 			if (scanResult.contentEquals("Y")) {
@@ -124,7 +124,7 @@ public class NCPQuest {
 			System.out.print(GameEngine.NEWLINE +"\tYou will need to travel to the Hanging Tree that is in the Dark Forest North-West of Twon."
 					+ GameEngine.NEWLINE + "\tThere you will find a Chest that contains a potion I need." + GameEngine.NEWLINE +  
 					"\tBe careful there is a Zombie guarding the chest." + GameEngine.NEWLINE );
-			System.out.print(GameEngine.NEWLINE + "\t Do you accept the Quest? Y for Yes; N for No: ");
+			System.out.print(GameEngine.NEWLINE + "\tDo you accept the Quest? Y for Yes; N for No: ");
 			scanResult = NCPscan.next();
 			scanResult = scanResult.toUpperCase();
 			if (scanResult.contentEquals("Y")) {
@@ -139,7 +139,7 @@ public class NCPQuest {
 					"\tThere you will find a path through the Garassy Swamp, follow it to the end where you will find a "
 					+ "chest." + GameEngine.NEWLINE + "\tLook for a piece of Old Wood in the chest, it will be about 1 foot long and 6 inches wide. "
 					+ "It will be in the chest." + GameEngine.NEWLINE + "\tBe careful there is an Imp guarding the chest." + GameEngine.NEWLINE );
-			System.out.print(GameEngine.NEWLINE + "\t Do you accept the Quest? Y for Yes; N for No: ");
+			System.out.print(GameEngine.NEWLINE + "\tDo you accept the Quest? Y for Yes; N for No: ");
 			scanResult = NCPscan.next();
 			scanResult = scanResult.toUpperCase();
 			if (scanResult.contentEquals("Y")) {
@@ -184,46 +184,46 @@ public class NCPQuest {
 		ExpPoints = Player.CHAR_EXP_POINTS;
 		
 		int mhitPoints = 0, mdamagePerHit = 0, mExpPoints = 0, mCoin = 0;
-		if(Monster == "Troll") {
-			int result[] = MonsterTypeOne.Troll();
-			  //System.out.println(result[0] + result[1]); //retrieve from monster char
-			  mhitPoints = result[0];
-			  mdamagePerHit = result[1];
-			  mExpPoints = result[2];
-			  mCoin = result[3];
-		}
-		if(Monster == "Imp") {
-			int result[] = MonsterTypeOne.Imp();
-			  //System.out.println(result[0] + result[1]); //retrieve from monster char
-			  mhitPoints = result[0];
-			  mdamagePerHit = result[1];
-			  mExpPoints = result[2];
-			  mCoin = result[3];
-		}
-		if(Monster == "Hydra") {
-			int result[] = MonsterTypeOne.Hydra();
-			  //System.out.println(result[0] + result[1]); //retrieve from monster char
-			  mhitPoints = result[0];
-			  mdamagePerHit = result[1];
-			  mExpPoints = result[2];
-			  mCoin = result[3];
-		}
-		if(Monster == "Zombie") {
-			int result[] = MonsterTypeOne.Zombie();
-			  //System.out.println(result[0] + result[1]); //retrieve from monster char
-			  mhitPoints = result[0];
-			  mdamagePerHit = result[1];
-			  mExpPoints = result[2];
-			  mCoin = result[3];
-		}
-		if(Monster == "Other") {
-			int result[] = MonsterTypeOne.Other();
-			  //System.out.println(result[0] + result[1]); //retrieve from monster char
-			  mhitPoints = result[0];
-			  mdamagePerHit = result[1];
-			  mExpPoints = result[2];
-			  mCoin = result[3];
-		}
+		//if(Monster == "Troll") {
+		int result[] = MonsterTypeOne.MonsterOne(Monster);
+		//System.out.println(result[0] + result[1]); //retrieve from monster char
+		mhitPoints = result[0];
+		mdamagePerHit = result[1];
+		mExpPoints = result[2];
+		mCoin = result[3];
+		//}
+//		if(Monster == "Imp") {
+//			int result[] = MonsterTypeOne.MonsterOne(Monster);
+//			  //System.out.println(result[0] + result[1]); //retrieve from monster char
+//			  mhitPoints = result[0];
+//			  mdamagePerHit = result[1];
+//			  mExpPoints = result[2];
+//			  mCoin = result[3];
+//		}
+//		if(Monster == "Hydra") {
+//			int result[] = MonsterTypeOne.MonsterOne(Monster);
+//			  //System.out.println(result[0] + result[1]); //retrieve from monster char
+//			  mhitPoints = result[0];
+//			  mdamagePerHit = result[1];
+//			  mExpPoints = result[2];
+//			  mCoin = result[3];
+//		}
+//		if(Monster == "Zombie") {
+//			int result[] = MonsterTypeOne.MonsterOne(Monster);
+//			  //System.out.println(result[0] + result[1]); //retrieve from monster char
+//			  mhitPoints = result[0];
+//			  mdamagePerHit = result[1];
+//			  mExpPoints = result[2];
+//			  mCoin = result[3];
+//		}
+//		if(Monster == "Other") {
+//			int result[] = MonsterTypeOne.MonsterOne(Monster);
+//			  //System.out.println(result[0] + result[1]); //retrieve from monster char
+//			  mhitPoints = result[0];
+//			  mdamagePerHit = result[1];
+//			  mExpPoints = result[2];
+//			  mCoin = result[3];
+//		}
 		
 		System.out.println("\tPlayer Hit Points: " + CharHitPoints);
 		System.out.println("\tMonster Hit Points: " + mhitPoints);

@@ -25,6 +25,8 @@ public class GameEngine {
 		ExpLevel.LoadExpLevels();
 		Armor.LoadArmors();
 		Weapon.LoadWeapons();
+		Magic_Armor.LoadMagicArmors();
+		Magic_Weapon.LoadMagicWeapons();
 		if(Player.CHAR_EXP_POINTS >= ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded) {
 			Player.CHAR_LEVEL_UP_QUEST_AVAILABLE = true;
 		}
