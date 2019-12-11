@@ -1,5 +1,9 @@
 /* Java Program Example - Read and Display File's Contents */
-		
+/*		TAG: Team Adventure Game
+ * 		Code Altered: Don Combs
+ * 		11-24-2019 To Current Date
+ * 		
+ */		
 import java.util.Scanner;
 import java.io.*;
 

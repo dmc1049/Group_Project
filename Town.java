@@ -1,3 +1,8 @@
+/*		TAG: Team Adventure Game
+ * 		Code: Don Combs
+ * 		11-24-2019 To Current Date
+ * 		
+ */
 import java.util.Scanner;
 
 public class Town {
@@ -75,12 +80,23 @@ public class Town {
 	}
 	public static void CurrentTown() {
 		//TODO Auto-generated method stub
+		if(Player.CHAR_EXP_POINTS >= ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded) {
+			Player.CHAR_LEVEL_UP_QUEST_AVAILABLE = true;
+		}
+		
+		System.out.println("\t-------------------------------------------------------------------------");
+		String characterType = Player.CHARACTER_TYPE;
+		System.out.println(String.format("\tYour Character Class is: " + characterType + 
+				", and the name of your character is: %s", Player.CHARACTER_NAME));
+		System.out.println("");
+		System.out.println("\tTo play the game you need to select what you want to do from the options given to you. " 
+				+ GameEngine.NEWLINE + "\tFor this first town you can select from the options below.");
 		String OptionChoose = "";
 		Scanner scannerCurrentTown = new Scanner(System.in);
 		//******************************************************************************************
 		//------ UNCOMMENT BELOW IF ANSII ART IS REMOVED--------------------------------------------------------------------
 		
-		System.out.println(GameEngine.NEWLINE +"--------------------------------Your Character Stats-----------------------------");
+		System.out.println(GameEngine.NEWLINE +"---------------------------- Your Basic Character Stats --------------------------");
 		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
 				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
 				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
@@ -91,7 +107,7 @@ public class Town {
 
 		 		
 		System.out.println("\tT) Go to Next Town" + GameEngine.NEWLINE + "\tB) Go to Black Smith" + GameEngine.NEWLINE + "\tW) Go to Witch" + GameEngine.NEWLINE + 
-				"\tO) Go to the Wizard" + GameEngine.NEWLINE + "\tX) Exit Game" +GameEngine.NEWLINE + "\tZ) Exit Without Saving" + GameEngine.NEWLINE );
+				"\tO) Go to the Wizard" + GameEngine.NEWLINE + "\tP) Player Stat's" + GameEngine.NEWLINE + "\tX) Exit Game" +GameEngine.NEWLINE + "\tZ) Exit Without Saving" + GameEngine.NEWLINE );
 		// ------ UNCOMMENT TO HERE TO REMOVE ANSII ART ---------------------------------------------
 		//*****************************************************************************************
 
@@ -144,6 +160,10 @@ public class Town {
 				//Go to Wizard
 				System.out.print("\tThe Wizard is a little quarky, he likes to mumble a lot\n");
 				NCP_Characters.ncpWizard();
+			case "P":
+				//Go to Wizard
+				//System.out.print("\tThe Wizard is a little quarky, he likes to mumble a lot\n");
+				Player.PlayerStats(); //NCP_Characters.ncpWizard();
 			case "X":
 				//Exit Game
 				System.out.println("You are Exiting the game");

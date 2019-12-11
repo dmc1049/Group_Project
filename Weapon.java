@@ -1,4 +1,8 @@
-
+/*		TAG: Team Adventure Game
+ * 		Code: Don Combs
+ * 		11-24-2019 To Current Date
+ * 		
+ */
 public class Weapon {
 	
 	public static Weapons[] WeaponsConfig;
@@ -25,17 +29,17 @@ public class Weapon {
 		
 		WeaponsConfig = arr.clone();
 		//Test output
-		System.out.print("\n");
-		System.out.println("From Array:");
-		for (int i = 0; i < arr.length; i++) {
-	        System.out.println("Element at " + i + " : " + arr[i].Weapon_ID +" "+ arr[i].Weapon_Name +" "+ arr[i].Damage + " " + arr[i].Duribility );
-	        
-		}
-		System.out.print("\n");
-		System.out.println("From Config Array:");
-		for(int i = 0; i < WeaponsConfig.length; i++) {
-			System.out.println("Element at " + i + " : " + WeaponsConfig[i].Weapon_ID +" "+ WeaponsConfig[i].Weapon_Name +" "+ WeaponsConfig[i].Damage+ " " + WeaponsConfig[i].Duribility );
-		}
+//		System.out.print("\n");
+//		System.out.println("From Array:");
+//		for (int i = 0; i < arr.length; i++) {
+//	        System.out.println("Element at " + i + " : " + arr[i].Weapon_ID +" "+ arr[i].Weapon_Name +" "+ arr[i].Damage + " " + arr[i].Duribility );
+//	        
+//		}
+//		System.out.print("\n");
+//		System.out.println("From Config Array:");
+//		for(int i = 0; i < WeaponsConfig.length; i++) {
+//			System.out.println("Element at " + i + " : " + WeaponsConfig[i].Weapon_ID +" "+ WeaponsConfig[i].Weapon_Name +" "+ WeaponsConfig[i].Damage+ " " + WeaponsConfig[i].Duribility );
+//		}
 	}
 }
 class Weapons {

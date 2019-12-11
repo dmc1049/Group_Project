@@ -1,4 +1,8 @@
-
+/*		TAG: Team Adventure Game
+ * 		Code: Don Combs
+ * 		11-24-2019 To Current Date
+ * 		
+ */
 public class Magic_Armor {
 
 	public static MagicArmors[] MagicArmorsConfig;
@@ -26,17 +30,17 @@ public class Magic_Armor {
 		
 		MagicArmorsConfig = arr.clone();
 		//Test output
-		System.out.print("\n");
-		System.out.println("From Array:");
-		for (int i = 0; i < arr.length; i++) {
-	        System.out.println("Element at " + i + " : " + arr[i].MagicArmor_ID +" "+ arr[i].MagicArmor_Name +" "+ arr[i].Damage + " " + arr[i].Duribility );
-	        
-		}
-		System.out.print("\n");
-		System.out.println("From Config Array:");
-		for(int i = 0; i < MagicArmorsConfig.length; i++) {
-			System.out.println("Element at " + i + " : " + MagicArmorsConfig[i].MagicArmor_ID +" "+ MagicArmorsConfig[i].MagicArmor_Name +" "+ MagicArmorsConfig[i].Damage+ " " + MagicArmorsConfig[i].Duribility );
-		}
+//		System.out.print("\n");
+//		System.out.println("From Array:");
+//		for (int i = 0; i < arr.length; i++) {
+//	        System.out.println("Element at " + i + " : " + arr[i].MagicArmor_ID +" "+ arr[i].MagicArmor_Name +" "+ arr[i].Damage + " " + arr[i].Duribility );
+//	        
+//		}
+//		System.out.print("\n");
+//		System.out.println("From Config Array:");
+//		for(int i = 0; i < MagicArmorsConfig.length; i++) {
+//			System.out.println("Element at " + i + " : " + MagicArmorsConfig[i].MagicArmor_ID +" "+ MagicArmorsConfig[i].MagicArmor_Name +" "+ MagicArmorsConfig[i].Damage+ " " + MagicArmorsConfig[i].Duribility );
+//		}
 	}
 }
 class MagicArmors {

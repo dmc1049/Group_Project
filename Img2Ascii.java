@@ -1,4 +1,8 @@
-
+/*		TAG: Team Adventure Game
+ * 		Code altered: Don Combs
+ * 		11-24-2019 To Current Date
+ * 		
+ */
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;

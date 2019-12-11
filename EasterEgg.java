@@ -1,3 +1,8 @@
+/*		TAG: Team Adventure Game
+ * 		Code: Don Combs
+ * 		11-24-2019 To Current Date
+ * 		
+ */
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;

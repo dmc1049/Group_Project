@@ -1,4 +1,8 @@
-
+/*		TAG: Team Adventure Game
+ * 		Code: Don Combs
+ * 		11-24-2019 To Current Date
+ * 		
+ */
 public class Armor {
 
 	public static Armors[] ArmorsConfig;
@@ -26,17 +30,17 @@ public class Armor {
 		
 		ArmorsConfig = arr.clone();
 		//Test output
-		System.out.print("\n");
-		System.out.println("From Array:");
-		for (int i = 0; i < arr.length; i++) {
-	        System.out.println("Element at " + i + " : " + arr[i].Armor_ID +" "+ arr[i].Armor_Name +" "+ arr[i].Damage + " " + arr[i].Duribility );
-	        
-		}
-		System.out.print("\n");
-		System.out.println("From Config Array:");
-		for(int i = 0; i < ArmorsConfig.length; i++) {
-			System.out.println("Element at " + i + " : " + ArmorsConfig[i].Armor_ID +" "+ ArmorsConfig[i].Armor_Name +" "+ ArmorsConfig[i].Damage+ " " + ArmorsConfig[i].Duribility );
-		}
+//		System.out.print("\n");
+//		System.out.println("From Array:");
+//		for (int i = 0; i < arr.length; i++) {
+//	        System.out.println("Element at " + i + " : " + arr[i].Armor_ID +" "+ arr[i].Armor_Name +" "+ arr[i].Damage + " " + arr[i].Duribility );
+//	        
+//		}
+//		System.out.print("\n");
+//		System.out.println("From Config Array:");
+//		for(int i = 0; i < ArmorsConfig.length; i++) {
+//			System.out.println("Element at " + i + " : " + ArmorsConfig[i].Armor_ID +" "+ ArmorsConfig[i].Armor_Name +" "+ ArmorsConfig[i].Damage+ " " + ArmorsConfig[i].Duribility );
+//		}
 	}
 }
 class Armors {

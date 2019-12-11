@@ -1,3 +1,8 @@
+/*		TAG: Team Adventure Game
+ * 		Code: Don Combs
+ * 		11-24-2019 To Current Date
+ * 		
+ */
 import java.util.Scanner;
 
 public class GameEngineTwo {
@@ -43,7 +48,7 @@ public class GameEngineTwo {
 
 	public static void TravelNextTown() {
 		
-		System.out.println("ERROR ---ERROR");
+		System.out.println("ERROR ---ERROR---0");
 //		// TODO Auto-generated method stub
 //		String OptionChoose = "";
 //		Scanner scannerNextTown = new Scanner(System.in);
@@ -88,6 +93,7 @@ public class GameEngineTwo {
 	}
 
 	public static void CurrentTown() {
+		System.out.println("ERROR ---ERROR---1");
 		Town.CurrentTown();
 	}
 

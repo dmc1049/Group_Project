@@ -1,4 +1,9 @@
 //Code by Don Combs 11-2019
+/*		TAG: Team Adventure Game
+ * 		Code: Don Combs
+ * 		11-24-2019 To Current Date
+ * 		
+ */
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -60,50 +65,53 @@ public class Player {
 		//section for weapons
 		//section for cash
 	
-	
-	public static void LoadChar2() {
-		//testing example 1
-		Path path = Paths.get(FILE_NAME);
-		Scanner scanner = null;
-		try {
-			scanner = new Scanner(path);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("Read text file using Scanner");
-		//read line by line
-		while(scanner.hasNextLine()){
-		    //process each line
-		    String line = scanner.nextLine();
-		    System.out.println(line);
-		}
-	}
-	
-	public static void LoadChar() {
-		//testing example 2
-		String fileName = FILE_NAME;
-		File file = new File(fileName);
-		FileReader fr = null;
-		try {
-			fr = new FileReader(file);
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
-		BufferedReader br = new BufferedReader(fr);
-		String line;
-		try {
-			while((line = br.readLine()) != null){
-			    //process the line
-			    System.out.println(line);
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	//**********************************************************************************
+	//-------------------------------Below test examples of loading user data------------------------------
+//	public static void LoadChar2() {
+//		//testing example 1
+//		Path path = Paths.get(FILE_NAME);
+//		Scanner scanner = null;
+//		try {
+//			scanner = new Scanner(path);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		System.out.println("Read text file using Scanner");
+//		//read line by line
+//		while(scanner.hasNextLine()){
+//		    //process each line
+//		    String line = scanner.nextLine();
+//		    System.out.println(line);
+//		}
+//	}
+//	
+//	public static void LoadChar() {
+//		//testing example 2
+//		String fileName = FILE_NAME;
+//		File file = new File(fileName);
+//		FileReader fr = null;
+//		try {
+//			fr = new FileReader(file);
+//		} catch (FileNotFoundException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+//		
+//		BufferedReader br = new BufferedReader(fr);
+//		String line;
+//		try {
+//			while((line = br.readLine()) != null){
+//			    //process the line
+//			    System.out.println(line);
+//			}
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+	//--------------------------------------Above Examples of loading user data-----------------------
+	//*******************************************************************************
 	public static void SaveCharacterPlayer() {
 		//Save the player character when exiting the game
 		PrintWriter writer = null;
@@ -308,7 +316,8 @@ public class Player {
 					j=j+1;
 				}
 				myReader.close();
-	
+				
+				
 			}
 			
 			//myReader.close();
@@ -454,5 +463,42 @@ public class Player {
 		CHARACTER_NAME = CharName;
 		//scanner2.close();
 		return CharName;
+	}
+	public static void PlayerStats() {
+		//Display Player Stats menu
+		//and possible items in inventory
+		String pstatCommand = "";
+		Scanner pstats = new Scanner(System.in);
+		
+		System.out.println(GameEngine.NEWLINE +"---------------------------- Your Basic Character Stats --------------------------");
+		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
+				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t\t\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
+				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
+				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t\t\t|   ");
+		System.out.print("\n\tArmor Level: " + Player.CHAR_ARMOR_POINTS + "\t\t\t\t|   MAX Armor Points: " + Player.CHAR_MAX_ARMOR_POINTS
+				+"\n\tWeapon Damage: " + Player.CHAR_WEAPON_DAMAGE + "\t\t\t|   MAX Weapon Damage: " + Player.CHAR_MAX_WEAPON_DAMAGE
+				+"\n\tCurrent Armor: " + Player.CHAR_ARMOR_NAME  + "\t|   Current Weapon: "+ Player.CHAR_WEAPON_NAME 
+				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t\t\t|   Player Coin: "+ Player.CHAR_COIN   
+				+"\n" );
+		System.out.print(GameEngine.NEWLINE +"---------------------------------------------------------------------------------");
+		
+		System.out.print("\n\tT) Return to Town\n\tI) Player Inventory\n\tChoose Wisely: ");
+		pstatCommand = pstats.next();
+		pstatCommand = pstatCommand.toUpperCase();
+		switch (pstatCommand) {
+			case "T":
+				//something
+				Town.CurrentTown();
+				break;
+			case "I":
+				//Something
+				//open inventory when complete
+				break;
+			default:
+				Town.CurrentTown();
+				
+		}
+			
+		
 	}
 }

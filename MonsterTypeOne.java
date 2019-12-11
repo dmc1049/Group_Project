@@ -1,3 +1,8 @@
+/*		TAG: Team Adventure Game
+ * 		Code: Don Combs
+ * 		11-24-2019 To Current Date
+ * 		
+ */
 import java.util.Random;
 
 public class MonsterTypeOne {
@@ -121,10 +126,10 @@ public class MonsterTypeOne {
 		//Damage per hit
 		//Exp Points
 		
-		int hitPoints = RandNumMethod();
-		int damagePerHit = DamagePerHit();
+		int hitPoints = RandNumMethod() + ((Player.CHARACTER_LEVEL)*4);
+		int damagePerHit = DamagePerHit() + ((Player.CHARACTER_LEVEL)*3);
 		int expPoints = RandNumMethod();
-		int coinDrop = RandNumMethod();
+		int coinDrop = RandNumMethod() + ((Player.CHARACTER_LEVEL)*3);
 		int magicItemChance = MagicItemChance();
 		int magicItem = MagicItem();
 		int encounter = Encounter();
@@ -165,7 +170,7 @@ public class MonsterTypeOne {
 //		if(Dropped == "Weapon") {
 //			System.out.print("\n\tDropped Item is "+Dropped+ " Class and is the Item: " + Magic_Weapon.MagicWeaponsConfig[dropItem].MagicWeapon_Name);
 //		}
-		System.out.println("\n\tDamage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints +
+		System.out.println("\n\tMAX Damage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints +
 			":\tCoin Drop: " + coinDrop);
 		System.out.println("\n\t----------------");
 		

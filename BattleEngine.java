@@ -1,3 +1,8 @@
+/*		TAG: Team Adventure Game
+ * 		Code: Don Combs
+ * 		11-24-2019 To Current Date
+ * 		
+ */
 import java.util.Random;
 import java.util.Scanner;
 
@@ -81,7 +86,7 @@ public class BattleEngine {
 //		}
 		System.out.print("\n\tPlayer Hit Points: " + CharHitPoints);
 		System.out.print("\n\tMonster Hit Points: " + mhitPoints + "\n");
-		if(mhitPoints ==0) {
+		if(mhitPoints == 0) {
 			System.out.print("\n\t The " + Monster + " saw you and died instantly!\n\n");
 			//GameEngine.CurrentTown();
 			Town.CurrentTown();
