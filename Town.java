@@ -67,16 +67,6 @@ public class Town {
 	        arr[9] = new Towns(10, "Avaldsnes", 1, 2);
 			
 			TownsConfig = arr.clone();
-			
-			
-		//	Town_ID,Town_Name,NCP_One,NCP_Two,Random_NCP_Three,Next_Town_E_ID,Next_Town_W_ID,Next_Town_N_ID,Next_Town_S_ID		
-// --------------- TESTING ----------------	
-//		for (int i = 0; i < arr.length; i++) {
-//	        System.out.println("Element at " + i + " : " + arr[i].Town_ID +" "+ arr[i].Town_Name +" "+ arr[i].Set_NPC1 + " " + arr[i].Set_NPC2 );
-//		}
-//		for(int i = 0; i < TownsConfig.length; i++) {
-//			System.out.println("Element at " + i + " : " + TownsConfig[i].Town_ID +" "+ TownsConfig[i].Town_Name +" "+ TownsConfig[i].Set_NPC1 + " " + TownsConfig[i].Set_NPC2 );
-//		}
 	}
 	public static void CurrentTown() {
 		//TODO Auto-generated method stub
@@ -161,8 +151,7 @@ public class Town {
 				System.out.print("\tThe Wizard is a little quarky, he likes to mumble a lot\n");
 				NCP_Characters.ncpWizard();
 			case "P":
-				//Go to Wizard
-				//System.out.print("\tThe Wizard is a little quarky, he likes to mumble a lot\n");
+				//Go to Player Stat's
 				Player.PlayerStats(); //NCP_Characters.ncpWizard();
 			case "X":
 				//Exit Game
@@ -186,8 +175,6 @@ public class Town {
 				Town.CurrentTown();
 			case "Q":
 				//Quest for level up
-				//System.out.println("\n\tOH MY! You got scared and RAN AWAY!!!\n");
-				//CurrentTown();
 				MonsterTypeBoss.BossMonster();
 			default:
 				//Some code here as default option

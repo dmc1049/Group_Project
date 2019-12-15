@@ -41,16 +41,8 @@ public class NCP_Characters {
 			case "W":
 				//Heal weapon and armor
 				System.out.println("\tThe Blacksmith repairs your weapons and armor.");
-				//add in cost and see if player has enough coin to repair armor
-				//agument the difference between what they have and what they can afford
-				//System.out.println("Start if debug save player" + GameEngine.NEWLINE + Player.CHAR_COIN);
-				//Player.CHAR_COIN = 75;
-				//Player.CHAR_ARMOR_POINTS = 85;
 				Object coinOnPlayer = Player.CHAR_COIN;
 				Object charArmorPoints = Player.CHAR_ARMOR_POINTS;
-				//System.out.println(coinOnPlayer);
-				//System.out.println(charArmorPoints);
-				//System.out.println("");
 				Player.CHAR_ARMOR_POINTS = Player.CHAR_MAX_ARMOR_POINTS;
 				Player.CHAR_WEAPON_DAMAGE = Player.CHAR_MAX_WEAPON_DAMAGE;
 				if(Player.CHAR_COIN >= 25)
@@ -62,7 +54,6 @@ public class NCP_Characters {
 				ncpBlackSmith();
 			case "T":
 				//talk to Blacksmith
-				//Add random talking points here
 				System.out.println("\tThe Blacksmith tells you that the Town is great, but you should explore the outerlands.");
 				//break;
 				ncpBlackSmith();
@@ -76,7 +67,6 @@ public class NCP_Characters {
 				//leave Blacksmith
 				System.out.println("\tYou thank the Blacksmith and leave back to Town " + Town.CurrentTownIn + "." + GameEngine.NEWLINE);
 				//return to town
-				//GameEngine.CurrentTown();
 				Town.CurrentTown();
 				//break;
 			default:
@@ -104,8 +94,6 @@ public class NCP_Characters {
             case "H":
                 //Heal player
                 System.out.println("\tThe Baba Yaga attempts to heal you for 25 Gold Coins");
-                //add in cost in coin and see if player has enough for the cost of healing
-                //agument the difference between what they have and what they can afford
                 Player.CHAR_HIT_POINTS = Player.CHAR_MAX_HIT_POINTS;
                 if(Player.CHAR_COIN >= 25) {
                     Player.CHAR_COIN = Player.CHAR_COIN - 25;
@@ -120,7 +108,6 @@ public class NCP_Characters {
             case "T":
                 //talk to Witch
                 System.out.println("\tBaba Yaga ignores you.\n");
-                //System.out.println("--------------");
                 //break;
                 ncpWitch();
             case "Q":
@@ -132,14 +119,12 @@ public class NCP_Characters {
                 Player.CHAR_HIT_POINTS = Player.CHAR_HIT_POINTS - 50;
                 System.out.println("\tBaba Yaga turns you into a frog... It Costs you 50 Hit Points");
                 System.out.println("\t'Next time I will eat your soul' ");
-                //System.out.println("--------------");
                 //break;
                 ncpWitch();
             case "X":
                 //leave Witch
                 System.out.println("\tYou thank Baba Yaga and leave as fast as you can!" + GameEngine.NEWLINE);
                 //return to town
-                //GameEngine.CurrentTown();
 				Town.CurrentTown();
                 //break;
             default:
@@ -164,8 +149,6 @@ public class NCP_Characters {
 			case "W":
 				//Heal Magical weapon and armor
 				System.out.println("\tThe Wizard will attempt repairs your Magical Weapons and Armor for 100 Gold Coins.");
-				//add in cost and see if player has enough coin to repair magic armor
-				//augment the difference between what they have and what they can afford
 				if(Player.CHAR_COIN >=100){
 					Player.CHAR_MAGIC_ARMOR_POINTS = Player.CHAR_MAX_MAGIC_ARMOR_POINTS;
 					Player.CHAR_MAGIC_WEAPON_DAMAGE = Player.CHAR_MAX_MAGIC_WEAPON_DAMAGE;
@@ -180,7 +163,6 @@ public class NCP_Characters {
 				ncpWizard();
 			case "T":
 				//talk to Wizard
-				//Add random talking points here
 				System.out.println("\tThe Wizard tells you that the Town is great, but you should explore the outerlands.");
 				//break;
 				ncpWizard();
@@ -194,7 +176,6 @@ public class NCP_Characters {
 				//leave Wizard
 				System.out.println("\tYou thank the Wizard and leave back to Town " + Town.CurrentTownIn + "." + GameEngine.NEWLINE);
 				//return to town
-				//GameEngine.CurrentTown();
 				Town.CurrentTown();
 				//break;
 			default:

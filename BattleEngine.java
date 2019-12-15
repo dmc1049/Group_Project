@@ -44,46 +44,12 @@ public class BattleEngine {
 		ExpPoints = Player.CHAR_EXP_POINTS;
 		
 		int mhitPoints = 0, mdamagePerHit = 0, mExpPoints = 0, mCoin = 0;
-		//if(Monster == "Troll") {
 		int result[] = MonsterTypeOne.MonsterOne(Monster);
-		//System.out.println(result[0] + result[1]); //retrieve from monster char
 		mhitPoints = result[0];
 		mdamagePerHit = result[1];
 		mExpPoints = result[2];
 		mCoin = result[3];
-		//}
-//		if(Monster == "Imp") {
-//			int result[] = MonsterTypeOne.MonsterOne(Monster);
-//			  //System.out.println(result[0] + result[1]); //retrieve from monster char
-//			  mhitPoints = result[0];
-//			  mdamagePerHit = result[1];
-//			  mExpPoints = result[2];
-//			  mCoin = result[3];
-//		}
-//		if(Monster == "Hydra") {
-//			int result[] = MonsterTypeOne.MonsterOne(Monster);
-//			  //System.out.println(result[0] + result[1]); //retrieve from monster char
-//			  mhitPoints = result[0];
-//			  mdamagePerHit = result[1];
-//			  mExpPoints = result[2];
-//			  mCoin = result[3];
-//		}
-//		if(Monster == "Zombie") {
-//			int result[] = MonsterTypeOne.MonsterOne(Monster);
-//			  //System.out.println(result[0] + result[1]); //retrieve from monster char
-//			  mhitPoints = result[0];
-//			  mdamagePerHit = result[1];
-//			  mExpPoints = result[2];
-//			  mCoin = result[3];
-//		}
-//		if(Monster == "Other") {
-//			int result[] = MonsterTypeOne.MonsterOne(Monster);
-//			  //System.out.println(result[0] + result[1]); //retrieve from monster char
-//			  mhitPoints = result[0];
-//			  mdamagePerHit = result[1];
-//			  mExpPoints = result[2];
-//			  mCoin = result[3];
-//		}
+		
 		System.out.print("\n\tPlayer Hit Points: " + CharHitPoints);
 		System.out.print("\n\tMonster Hit Points: " + mhitPoints + "\n");
 		if(mhitPoints == 0) {

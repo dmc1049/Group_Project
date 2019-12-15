@@ -42,29 +42,6 @@ public class Player {
 	public static String CURRENT_TOWN = null;
 	public static Boolean CHAR_LEVEL_UP_QUEST_AVAILABLE = false;
 	
-	
-	
-		//is there a saved character or does the user need to make one - DONE
-			//User has saved game character - DONE
-				//look on system for save file - DONE
-				//Ask user if they want to load currently saved character or delete it and make a new one - DONE
-				//Load character from file - DONE
-				//load all modifiers
-	
-			//User needs to make character and name it - DONE
-				//User selects male or female - DONE
-				//user names character - DONE
-				//Character base attributes are loaded into player stats
-		
-			//User gets players Armor and Weapon Loaded
-			//User gets players cash added to bank
-	
-		//section for modifiers
-		//Section for Player Stats
-		//section for wearable objects
-		//section for weapons
-		//section for cash
-	
 	//**********************************************************************************
 	//-------------------------------Below test examples of loading user data------------------------------
 //	public static void LoadChar2() {
@@ -115,10 +92,6 @@ public class Player {
 	public static void SaveCharacterPlayer() {
 		//Save the player character when exiting the game
 		PrintWriter writer = null;
-//		System.out.println(CHARACTER_LEVEL + " CHARACTER_LEVEL");
-//		System.out.println(CHAR_HIT_POINTS + " CHAR_HIT_POINTS");
-//		System.out.println(CHAR_MAX_HIT_POINTS + " CHAR_MAX_HIT_POINTS");
-		
 		try {
 			writer = new PrintWriter(FILE_NAME, "UTF-8");
 		} catch (FileNotFoundException e) {
@@ -206,11 +179,9 @@ public class Player {
 		}
 		else {
 			System.out.println("ERROR: Failed to delete Character file");
-			//System.out.println("But overwrite is working??????");
 		}
 		
 	}
-
 	public static void LoadPlayerChar() {
 		// TODO Auto-generated method stub
 		// Load Char file
@@ -306,31 +277,20 @@ public class Player {
 						GameEngine.PlayerConfig[i] = new String[]{"Current_Town", data};
 						CURRENT_TOWN = data;
 					}
-					//System.out.println(data + " --Data from file");
-					//System.out.println(CHARACTER_TYPE + " from println 1");
-					//System.out.println(CHARACTER_NAME + " from println 2");
-					//System.out.println(GameEngine.PlayerConfig[i][j] + " --From Array");
-					//System.out.println(i + "," + j + " from integers");
-					//System.out.println("------------");
 					i=i+1;
 					j=j+1;
 				}
 				myReader.close();
-				
-				
 			}
-			
 			//myReader.close();
 			catch(FileNotFoundException e) {
 				System.out.println("File Not Found");
 				e.printStackTrace();
 			}
-			
 		}
 		else {
 			System.out.println("File not found, exists or is a file error");
 		}
-		
 	}
 
 	private static void CreateCharacterPlayer() {
@@ -415,12 +375,8 @@ public class Player {
 		Scanner scanner1 = new Scanner(System.in);
 		String Class = "";
 		System.out.print("\n\tEnter your Character Class: M for Male or F for Female: ");
-		//scanner.nextLine();
-		
-		//scanner1.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 		Class = scanner1.nextLine();
 		Class = Class.toUpperCase();
-		
 		switch(Class){
 			case "M":
 				//Male
@@ -436,22 +392,7 @@ public class Player {
 				PlayerClassType();
 		}
 		CHARACTER_TYPE = Class;
-		
-		//scanner1.close();
-		
-//			if(Class == "M") {
-//					Class = "Male";
-//			}
-//			else if(Class == "F"){
-//				Class = "Female";
-//			}
-//			else {
-//				//System.out.println("Invalid Selection, Try again");
-//				//PlayerClass = "";
-//				//System.exit(0);
-//				//return;
-//			}
-		
+		//Close Scanner when needed
 		return Class;
 	}
 	public static String PlayerCharacterName() {

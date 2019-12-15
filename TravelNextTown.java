@@ -41,8 +41,8 @@ public class TravelNextTown {
 		OptionChoose = scannerNextTown.next();
 		OptionChoose = OptionChoose.toUpperCase();
 		//System.out.println("");
-		Town.LoadTowns();
-
+		Town.LoadTowns(); //May not need this here - Possible to remove Maybe!!!
+		
 		switch(OptionChoose) {
 			case "E":
 				//Go to Town to East
