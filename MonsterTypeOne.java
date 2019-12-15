@@ -136,8 +136,8 @@ public class MonsterTypeOne {
 		int dropItem = DropItem();
 		
 		System.out.print("\n");
-		System.out.println("\t--------Stats For Troll--------");
-		System.out.println("\tThe hitpoints for this Troll is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
+		System.out.println("\t--------Stats For "+Monster+"--------");
+		System.out.println("\tThe hitpoints for this "+Monster+" is: " + hitPoints + " Encounter percentage chance on Quest: " + encounter + "%");
 		if (encounter == 0) {
 			dropItem=0;
 		}
