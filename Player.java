@@ -489,11 +489,12 @@ public class Player {
 			case "T":
 				//something
 				Town.CurrentTown();
-				break;
+				//break;
 			case "I":
 				//Something
 				//open inventory when complete
-				break;
+				PlayerStats();
+				//break;
 			default:
 				Town.CurrentTown();
 				
