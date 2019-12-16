@@ -89,6 +89,7 @@ public class BattleEngineBoss {
 							Player.CHAR_HIT_POINTS = CharHitPoints;
 							Player.CHAR_COIN = Player.CHAR_COIN + mCoin;
 							Player.CHARACTER_LEVEL = Player.CHARACTER_LEVEL + 1;
+							Player.CHAR_MAX_HIT_POINTS = ((int) ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded)/2;
 							System.out.println("\tYou have gained " + mExpPoints + " Experience Points!");
 							System.out.println("\tYou have gained " + mCoin + " Coin!");
 							System.out.print("\tPress R to continue on to the next Town...");

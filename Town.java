@@ -171,11 +171,18 @@ public class Town {
 				JavaProgram.TownMenu("TownMenuThree-Small_Dragon-4.txt");
 				Town.CurrentTown();
 			case "4":
-				JavaProgram.TownMenu("Small_Imp.txt");
+				//JavaProgram.TownMenu("Small_Imp.txt");
+				SmallImpPlayerMenu.PlayerMenu();
+				
 				Town.CurrentTown();
 			case "Q":
 				//Quest for level up
-				MonsterTypeBoss.BossMonster();
+				if (Player.CHAR_EXP_POINTS >= ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded){
+					MonsterTypeBoss.BossMonster();
+				}
+				else {
+					Town.CurrentTown();
+				}
 			default:
 				//Some code here as default option
 				//Catch invalid entry

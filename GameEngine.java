@@ -16,7 +16,7 @@ public class GameEngine {
 		Player.CheckSavedCharacter();
 		Town.LoadTowns();
 		ExpLevel.LoadExpLevels();
-		Player.CHAR_MAX_HIT_POINTS = ((int) ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded); //Modify as needed
+		Player.CHAR_MAX_HIT_POINTS = ((int) ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded)/2; //Modify as needed
 		Armor.LoadArmors();
 		Weapon.LoadWeapons();
 		Magic_Armor.LoadMagicArmors();
