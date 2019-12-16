@@ -1,5 +1,5 @@
 /*		TAG: Team Adventure Game
- * 		Code: Don Combs
+ * 		Code: Don Combs / Ken A.
  * 		11-24-2019 To Current Date
  * 		
  */
@@ -161,6 +161,15 @@ public class MonsterTypeOne {
 		System.out.println("\n\tMAX Damage per hit upon Player Character is: " + damagePerHit + GameEngine.NEWLINE +"\tExperience Points Gained: " + expPoints +
 			":\tCoin Drop: " + coinDrop);
 		System.out.println("\n\t----------------");
+		
+		if(Monster == "Troll")
+			MonsterAscii.TrollAscii();
+		if(Monster == "Imp")
+			MonsterAscii.ImpAscii();		
+		if(Monster == "Hydra")
+			MonsterAscii.HydraAscii();
+		if(Monster == "Zombie")
+			MonsterAscii.ZombieAscii();
 		
 		return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
 		

@@ -87,10 +87,10 @@ public class Town {
 		//------ UNCOMMENT BELOW IF ANSII ART IS REMOVED--------------------------------------------------------------------
 		
 		System.out.println(GameEngine.NEWLINE +"---------------------------- Your Basic Character Stats --------------------------");
-		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
-				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
-				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
-				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t|   ");
+		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
+				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
+				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
+				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t   ");
 		System.out.print(GameEngine.NEWLINE +"---------------------------------------------------------------------------------");
 		System.out.print("\n");
 		System.out.println("\tYou are in the Town "+ Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name +"... What do you want to do?" + GameEngine.NEWLINE);
