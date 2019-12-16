@@ -40,32 +40,34 @@ public class NCP_Characters {
 		switch(ncpOption){
 			case "W":
 				//Heal weapon and armor
-				System.out.println("\tThe Blacksmith repairs your weapons and armor.");
-				Object coinOnPlayer = Player.CHAR_COIN;
-				Object charArmorPoints = Player.CHAR_ARMOR_POINTS;
-				Player.CHAR_ARMOR_POINTS = Player.CHAR_MAX_ARMOR_POINTS;
-				Player.CHAR_WEAPON_DAMAGE = Player.CHAR_MAX_WEAPON_DAMAGE;
-				if(Player.CHAR_COIN >= 25)
+//				Object coinOnPlayer = Player.CHAR_COIN;
+//				Object charArmorPoints = Player.CHAR_ARMOR_POINTS;
+				if(Player.CHAR_COIN >= 25) {
 					Player.CHAR_COIN = Player.CHAR_COIN - 25;
-				else
-					System.out.println("\tYou do not have enough Coin to be healed. Go Battale something or sell something "
-							+ "to get the Coin!");
+					Player.CHAR_ARMOR_POINTS = Player.CHAR_MAX_ARMOR_POINTS;
+					Player.CHAR_WEAPON_DAMAGE = Player.CHAR_MAX_WEAPON_DAMAGE;
+					System.out.println("\n\tThe Blacksmith, Brokkr, repairs your weapons and armor for 25 coin.\n.");
+				}
+				else {
+					System.out.println("\n\tYou do not have enough Coin to have your Aromor and Weapons repaired. "
+							+ "Go Battle something or sell something to get the Coin!\n");
+				}
 				//break;
 				ncpBlackSmith();
 			case "T":
 				//talk to Blacksmith
-				System.out.println("\tThe Blacksmith tells you that the Town is great, but you should explore the outerlands.");
+				System.out.println("\n\tBrokkr tells you that the Town is great, but you should explore the outerlands.");
 				//break;
 				ncpBlackSmith();
 			case "Q":
 				//Quest details
-				System.out.println("\tThe tells you about how he needs something from outside of town and asks you to go "
+				System.out.println("\n\tBrokkr tells you about how he needs something from outside of town and asks you to go "
 						+ "retrieve it...");
 				//break;
 				NCPQuest.NCPBlacksmith();
 			case "X":
 				//leave Blacksmith
-				System.out.println("\tYou thank the Blacksmith and leave back to Town " + Town.CurrentTownIn + "." + GameEngine.NEWLINE);
+				System.out.println("\n\tYou Thank Brokkr and leave back to Town " + Town.TownsConfig[IntegerParseInt(Town.CurrentTownIn)].Town_Name + "." + GameEngine.NEWLINE);
 				//return to town
 				Town.CurrentTown();
 				//break;
@@ -76,6 +78,10 @@ public class NCP_Characters {
 		
 		}
 		
+	}
+	private static int IntegerParseInt(String currenttownin) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	public static void ncpWitch() {
 		

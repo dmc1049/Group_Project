@@ -80,7 +80,7 @@ public class Town {
 				", and the name of your character is: %s", Player.CHARACTER_NAME));
 		System.out.println("");
 		System.out.println("\tTo play the game you need to select what you want to do from the options given to you. " 
-				+ GameEngine.NEWLINE + "\tFor this first town you can select from the options below.");
+				+ GameEngine.NEWLINE + "\tFor this Town you can select from the options below.");
 		String OptionChoose = "";
 		Scanner scannerCurrentTown = new Scanner(System.in);
 		//******************************************************************************************
@@ -89,7 +89,7 @@ public class Town {
 		System.out.println(GameEngine.NEWLINE +"---------------------------- Your Basic Character Stats --------------------------");
 		System.out.print("\tName: " + Player.CHARACTER_NAME + "\t\t\t|   CHARACTER_LEVEL: " + Player.CHARACTER_LEVEL
 				+"\n\tCHAR_HIT_POINTS: " + Player.CHAR_HIT_POINTS + "\t\t|   CHAR_MAX_HIT_POINTS: " + Player.CHAR_MAX_HIT_POINTS
-				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
+				+"\n\tCHAR_COIN: " + Player.CHAR_COIN  + "\t\t|   Current Town: "+ Player.CURRENT_TOWN + " Town Name: " +Town.TownsConfig[(Integer.parseInt(Player.CURRENT_TOWN)-1)].Town_Name
 				+"\n\tExperience Points: " + Player.CHAR_EXP_POINTS + "\t   ");
 		System.out.print(GameEngine.NEWLINE +"---------------------------------------------------------------------------------");
 		System.out.print("\n");
@@ -177,6 +177,7 @@ public class Town {
 				Town.CurrentTown();
 			case "Q":
 				//Quest for level up
+				// FOR TESTING -- MonsterTypeBoss.BossMonster();
 				if (Player.CHAR_EXP_POINTS >= ExpLevel.ExpConfig[Player.CHARACTER_LEVEL].ExpPointsNeeded){
 					MonsterTypeBoss.BossMonster();
 				}

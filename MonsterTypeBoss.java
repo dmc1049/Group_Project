@@ -131,7 +131,8 @@ public class MonsterTypeBoss {
 			//random Magic item
 			//Damage per hit
 			
-			int hitPoints = ((RandNumMethod() + RandNumMethod2()) * 4) + ((Player.CHARACTER_LEVEL)*5);
+			int hitPoints, MaxHitPoints;
+			hitPoints = MaxHitPoints = ((RandNumMethod() + RandNumMethod2()) * 4) + ((Player.CHARACTER_LEVEL)*5);
 			int damagePerHit = DamagePerHit() + ((Player.CHARACTER_LEVEL)*4);
 			int expPoints = RandNumMethod();
 			int coinDrop = RandNumMethod() + ((Player.CHARACTER_LEVEL)*3);
@@ -192,6 +193,6 @@ public class MonsterTypeBoss {
 			if(Monster == "BossZombieDragon")
 				MonsterAscii.ZombieDragonAscii();
 			
-			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop};
+			return new int[] {hitPoints, damagePerHit, expPoints, coinDrop, MaxHitPoints};
 		}
 }

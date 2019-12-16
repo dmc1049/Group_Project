@@ -43,12 +43,14 @@ public class BattleEngineBoss {
 			CharDamagePerHit = Player.CHAR_WEAPON_DAMAGE;
 			ExpPoints = Player.CHAR_EXP_POINTS;
 			
-			int mhitPoints = 0, mdamagePerHit = 0, mExpPoints = 0, mCoin = 0;
+			int mhitPoints = 0, mdamagePerHit = 0, mExpPoints = 0, mCoin = 0, mMaxHitPoints = 0;
 			int result[] = MonsterTypeBoss.MonsterBoss(Monster);
 			mhitPoints = result[0];
 			mdamagePerHit = result[1];
 			mExpPoints = result[2];
 			mCoin = result[3];
+			mMaxHitPoints = result[4];
+			
 			if(mhitPoints <= 0) {
 				System.out.println("Monster " + Monster + " has zero hitpoints");
 				BattleMonster(Monster);
@@ -76,9 +78,13 @@ public class BattleEngineBoss {
 						System.out.println("\tYou Attack!!!");
 						//Do hit code here
 						mhitPoints = mhitPoints - RandNumPlayerAttack(CharDamagePerHit);
+						int BossPercentage = Math.round(100 * mhitPoints / mMaxHitPoints);
+						System.out.println("\tYou dealt " + CharDamagePerHit + " damage!");
+						
 						System.out.println("\n\t--Current Battle Stats--");
 						System.out.println("\tPlayer Hit Points: " + CharHitPoints);
 						System.out.println("\tMonster Hit Points: " + mhitPoints);
+						System.out.println("\tRemaining HP: "+BossPercentage + "%");
 						System.out.println("");
 						
 						
